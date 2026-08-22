@@ -3,111 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberSec Defenses | Seguridad Informática</title>
+    <title>Portafolio | CNO IV - Seguridad Informática</title>
     <style>
-        /* Estilos generales */
+        /* Paleta de colores Hacker/Cybersec */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #00ff00;
+            --accent-color: #008800;
+            --border-color: #333;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #050505;
-            color: #d3d3d3;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
-        /* Encabezado */
+        /* 1. Encabezado (Header) */
         header {
-            background-color: #000000;
-            padding: 30px 20px;
+            background-color: #111;
+            border-bottom: 2px solid var(--accent-color);
+            padding: 20px;
             text-align: center;
-            border-bottom: 2px solid #00ffcc;
-            box-shadow: 0 4px 10px rgba(0, 255, 204, 0.2);
         }
-
-        header h1 {
-            color: #00ffcc;
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        
+        header h1 { margin: 5px 0; font-size: 1.8rem; }
+        header h2 { margin: 5px 0; font-size: 1.2rem; color: #aaa; }
+        
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            border: 1px solid var(--text-color);
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
         }
 
         /* Contenedor principal */
         .container {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
-        /* Sección de servicios/tarjetas */
-        .card {
-            background-color: #111111;
-            border: 1px solid #222222;
-            border-left: 5px solid #00ffcc;
+        section {
+            margin-bottom: 40px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+            background-color: #111;
             padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            border-radius: 0 8px 8px 0;
         }
 
-        .card:hover {
-            transform: translateX(10px);
-            border-left-color: #ff0055;
-        }
-
-        .card h2 {
-            color: #ffffff;
+        h3 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
             margin-top: 0;
         }
 
-        /* Pie de página */
+        ul { list-style-type: square; }
+
+        /* 5. Formulario de Contacto */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+        }
+        .contact-form input, .contact-form textarea {
+            background-color: #000;
+            border: 1px solid var(--accent-color);
+            color: var(--text-color);
+            padding: 8px;
+            font-family: var(--font-main);
+        }
+        .contact-form button {
+            background-color: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: var(--font-main);
+        }
+        .contact-form button:hover {
+            background-color: var(--text-color);
+        }
+        #autoResponse {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px dashed var(--text-color);
+            display: none;
+            color: #fff;
+        }
+
+        /* 6. Pie de página */
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #000000;
-            border-top: 1px dotted #333333;
+            border-top: 1px solid var(--border-color);
             margin-top: 40px;
             font-size: 0.9rem;
-        }
-
-        .highlight {
-            color: #00ffcc;
-            font-weight: bold;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. ENCABEZADO -->
     <header>
-        <h1>[ CyberSec Defenses ]</h1>
-        <p>Protegiendo tu infraestructura digital en tiempo real</p>
+        <h1>Fabiola Calvillo Galván | Alias: fabi de valles</h1>
+        <h2>CNO IV – Seguridad Informática</h2>
+        <p>Universidad Politécnica de San Luis Potosí | Periodo: [Primavera 2026 / Semestre 9]</p>
+        <nav>
+            <a href="#index.html">Inicio</a>
+            <a href="#evidencias">Evidencias</a>
+            <a href="#practicas">Prácticas</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
 
     <div class="container">
-        <p>Bienvenido al portal de seguridad. En un mundo hiperconectado, las amenazas evolucionan cada segundo. Nuestro objetivo es auditar, proteger y fortificar tus sistemas contra vulnerabilidades críticas y ataques cibernéticos.</p>
+        
+        <!-- 2. PRESENTACIÓN DEL PORTAFOLIO -->
+        <section id="inicio">
+            <h3>> Presentación del Portafolio</h3>
+            <p><strong>Propósito:</strong> Este sitio web funciona como el contenedor oficial de las evidencias académicas y técnicas desarrolladas durante el curso.</p>
+            <p><strong>Enfoque del curso:</strong> La asignatura se centra en los fundamentos de la seguridad informática, metodologías de pruebas de penetración (pentesting) y el análisis exhaustivo de vulnerabilidades en sistemas.</p>
+            <p><strong>Importancia:</strong> Más allá de un requisito de evaluación, este portafolio documenta mi evolución técnica, demostrando la aplicación práctica de los conocimientos adquiridos en la mitigación de riesgos digitales.</p>
+        </section>
 
-        <div class="card">
-            <h2>> Análisis de Vulnerabilidades</h2>
-            <p>Escaneamos y evaluamos tus redes y aplicaciones web para identificar fallos de seguridad (inyección SQL, XSS, configuraciones erróneas) antes de que los atacantes los exploten.</p>
-            <p>Estado del servicio: <span class="highlight">ACTIVO</span></p>
-        </div>
+        <!-- 3. PERFIL DEL ESTUDIANTE -->
+        <section>
+            <h3>> Perfil del Estudiante</h3>
+            <p><strong>Semblanza académica:</strong> Soy estudiante de ingeniería con experiencia en el desarrollo de interfaces y lógica de programación utilizando lenguajes como Python, C++ y tecnologías web (HTML/CSS). He participado en proyectos de gestión financiera y automatización.</p>
+            <p><strong>Intereses:</strong> Seguridad informática, ciberseguridad, análisis de vulnerabilidades, investigación de protocolos de red y desarrollo seguro de software.</p>
+        </section>
 
-        <div class="card">
-            <h2>> Respuesta a Incidentes</h2>
-            <p>Si tu sistema ha sido comprometido, nuestro equipo aísla la amenaza, elimina el malware o ransomware, y restaura la operatividad de tus servidores con mínima pérdida de datos.</p>
-            <p>Estado del servicio: <span class="highlight">ACTIVO</span></p>
-        </div>
+        <!-- 4. INFORMACIÓN TÉCNICA BÁSICA -->
+        <section>
+            <h3>> Información Técnica Básica</h3>
+            <ul>
+                <li><strong>Tecnologías utilizadas:</strong> HTML5, CSS3, JavaScript (Vainilla).</li>
+                <li><strong>Plataforma de publicación:</strong> GitHub Pages <em>(Recomendado para cumplir con el punto de URL pública y SSL)</em>.</li>
+                <li><strong>Control de versiones:</strong> Git y repositorio alojado en GitHub.</li>
+            </ul>
+        </section>
 
-        <div class="card">
-            <h2>> Criptografía y Protección de Datos</h2>
-            <p>Implementamos protocolos de cifrado de extremo a extremo para garantizar que la información confidencial de tus clientes y empresa permanezca inaccesible para terceros.</p>
-            <p>Estado del servicio: <span class="highlight">ACTIVO</span></p>
-        </div>
+        <!-- 5. FORMULARIO DE CONTACTO (Con respuesta embebida) -->
+        <section id="contacto">
+            <h3>> Contacto y Soporte</h3>
+            <form id="contactForm" class="contact-form">
+                <label for="userName">Nombre / Alias:</label>
+                <input type="text" id="userName" required>
+
+                <label for="userEmail">Correo Electrónico:</label>
+                <input type="email" id="userEmail" required>
+
+                <label for="userMessage">Mensaje:</label>
+                <textarea id="userMessage" rows="4" required></textarea>
+
+                <button type="submit">Ejecutar Envío</button>
+            </form>
+
+            <div id="autoResponse">
+                <!-- La respuesta automática aparecerá aquí -->
+            </div>
+        </section>
+
     </div>
 
+    <!-- 6. PIE DE PÁGINA Y 7. CERTIFICADO SSL (Mención) -->
     <footer>
-        <p>&copy; 2026 CyberSec Defenses. Todos los derechos reservados.</p>
-        <p>CONEXIÓN ENCRIPTADA // PROTOCOLO SEGURO</p>
+        <p>Este sitio está alojado en una plataforma con <strong>Certificado SSL (HTTPS)</strong>.</p>
+        <p>&copy; 2026 Fabiola Calvillo Galván. Todos los derechos reservados. | CNO IV</p>
     </footer>
+
+    <!-- Script para la respuesta automática del formulario -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const name = document.getElementById('userName').value;
+            this.style.display = 'none'; // Oculta el formulario tras enviar
+            
+            const responseDiv = document.getElementById('autoResponse');
+            responseDiv.style.display = 'block';
+            responseDiv.innerHTML = `
+                <strong style="color: #00ff00;">[SISTEMA]: Envío interceptado exitosamente.</strong><br><br>
+                Saludos, <strong>${name}</strong>. Hemos recibido tus datos en nuestro servidor. 
+                Esta es una respuesta automatizada para confirmar que la transmisión fue exitosa y 
+                se encuentra en la cola de revisión. Te contactaremos a la brevedad.
+            `;
+        });
+    </script>
 
 </body>
 </html>
