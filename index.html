@@ -3,211 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | CNO IV - Seguridad Informática</title>
+    <title>Portafolio | Seguridad Informática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Paleta de colores Hacker/Cybersec */
-        :root {
-            --bg-color: #0a0a0a;
-            --text-color: #00ff00;
-            --accent-color: #008800;
-            --border-color: #333;
-            --font-main: 'Courier New', Courier, monospace;
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc;
         }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+        .glass-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            border: 1px solid rgba(255,255,255,0.8);
+            transition: transform 0.3s ease;
         }
-
-        /* 1. Encabezado (Header) */
-        header {
-            background-color: #111;
-            border-bottom: 2px solid var(--accent-color);
-            padding: 20px;
-            text-align: center;
+        .glass-card:hover {
+            transform: translateY(-5px);
         }
-        
-        header h1 { margin: 5px 0; font-size: 1.8rem; }
-        header h2 { margin: 5px 0; font-size: 1.2rem; color: #aaa; }
-        
-        nav {
-            margin-top: 15px;
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            border: 1px solid var(--text-color);
-            padding: 5px 10px;
-            border-radius: 3px;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-
-        /* Contenedor principal */
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            margin-bottom: 40px;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 15px;
-            background-color: #111;
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        h3 {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-            margin-top: 0;
-        }
-
-        ul { list-style-type: square; }
-
-        /* 5. Formulario de Contacto */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
-        }
-        .contact-form input, .contact-form textarea {
-            background-color: #000;
-            border: 1px solid var(--accent-color);
-            color: var(--text-color);
-            padding: 8px;
-            font-family: var(--font-main);
-        }
-        .contact-form button {
-            background-color: var(--accent-color);
-            color: #000;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: var(--font-main);
-        }
-        .contact-form button:hover {
-            background-color: var(--text-color);
-        }
-        #autoResponse {
-            margin-top: 15px;
-            padding: 10px;
-            border: 1px dashed var(--text-color);
-            display: none;
-            color: #fff;
-        }
-
-        /* 6. Pie de página */
-        footer {
-            text-align: center;
-            padding: 20px;
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #777;
+        .purple-glow {
+            box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.4);
         }
     </style>
 </head>
-<body>
+<body class="text-slate-800">
 
-    <!-- 1. ENCABEZADO -->
-    <header>
-        <h1>Fabiola Calvillo Galván | Alias: Fabi de Valles</h1>
-        <h2>CNO IV – Seguridad Informática</h2>
-        <p>Universidad Politécnica de San Luis Potosí | Periodo: [Primavera 2026 / Semestre 9]</p>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#evidencias">Evidencias</a>
-            <a href="#practicas">Prácticas</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="flex justify-between items-center px-10 py-5 bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-lg"></div>
+            <span class="text-xl font-extrabold tracking-tight">Portafolio<span class="text-purple-500">.</span></span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-500">
+            <a href="index.html" class="text-purple-600 border-b-2 border-purple-600 pb-1">Inicio</a>
+            <a href="#evidencias" class="hover:text-slate-900 transition">Evidencias</a>
+            <a href="#practicas" class="hover:text-slate-900 transition">Prácticas</a>
+            <a href="#contacto" class="hover:text-slate-900 transition">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- 1. ENCABEZADO (PORTADA TÉCNICA) -->
+    <header id="inicio" class="container mx-auto px-6 py-20 text-center">
+        <span class="text-purple-600 font-bold text-sm tracking-widest uppercase mb-4 block">CNO IV – Seguridad Informática</span>
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight text-slate-900">
+            Fabiola Calvillo Galván <br>
+            <span class="gradient-text">Alias: Fabi de Valles</span>
+        </h1>
+        <p class="text-slate-500 text-lg mb-8 max-w-xl mx-auto font-medium">
+            Universidad Politécnica de San Luis Potosí <br>
+            Periodo: [Otoño 2026]
+        </p>
     </header>
 
-    <div class="container">
+    <!-- SECCIONES DE INFORMACIÓN -->
+    <section class="container mx-auto px-6 pb-20">
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- 2. PRESENTACIÓN DEL PORTAFOLIO -->
+            <div class="glass-card p-10 border-b-4 border-b-purple-500">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-xl">🎯</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Presentación</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-3">
+                    <strong>Propósito:</strong> Contenedor oficial de las evidencias académicas del curso.
+                </p>
+                <p class="text-slate-500 text-sm leading-relaxed mb-3">
+                    <strong>Enfoque:</strong> Seguridad informática, pruebas de penetración y análisis de vulnerabilidades.
+                </p>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    <strong>Importancia:</strong> Documenta la evolución técnica y la aplicación de conocimientos en mitigación de riesgos.
+                </p>
+            </div>
+
+            <!-- 3. PERFIL DEL ESTUDIANTE -->
+            <div class="glass-card p-10 border-b-4 border-b-indigo-500">
+                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-6 text-xl">👨‍💻</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Mi Perfil</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-3">
+                    <strong>Semblanza:</strong> Estudiante de ingeniería enfocado en desarrollo de interfaces, lógica de programación y estructuración de proyectos tecnológicos.
+                </p>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    <strong>Intereses:</strong> Seguridad informática, Ciberseguridad, Investigación y Desarrollo ágil.
+                </p>
+            </div>
+
+            <!-- 4. INFORMACIÓN TÉCNICA BÁSICA -->
+            <div class="glass-card p-10 border-b-4 border-b-blue-500">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-xl">⚙️</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Ficha Técnica</h3>
+                <ul class="text-slate-500 text-sm leading-relaxed space-y-2">
+                    <li><strong>Lenguajes/Tecnologías:</strong> HTML5, Tailwind CSS, JavaScript.</li>
+                    <li><strong>Plataforma de publicación:</strong> GitHub Pages.</li>
+                    <li><strong>Control de versiones:</strong> Git / GitHub.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="container mx-auto px-6 py-16 bg-white rounded-[40px] mb-24 shadow-sm border border-slate-100 max-w-4xl">
+        <div class="text-center mb-10">
+            <span class="text-purple-600 font-bold text-sm tracking-widest uppercase">Comunicación</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Contacto Directo</h2>
+        </div>
         
-        <!-- 2. PRESENTACIÓN DEL PORTAFOLIO -->
-        <section id="inicio">
-            <h3>> Presentación del Portafolio</h3>
-            <p><strong>Propósito:</strong> Este sitio web funciona como el contenedor oficial de las evidencias académicas y técnicas desarrolladas durante el curso.</p>
-            <p><strong>Enfoque del curso:</strong> La asignatura se centra en los fundamentos de la seguridad informática, metodologías de pruebas de penetración (pentesting) y el análisis exhaustivo de vulnerabilidades en sistemas.</p>
-            <p><strong>Importancia:</strong> Más allá de un requisito de evaluación, este portafolio documenta mi evolución técnica, demostrando la aplicación práctica de los conocimientos adquiridos en la mitigación de riesgos digitales.</p>
-        </section>
-
-        <!-- 3. PERFIL DEL ESTUDIANTE -->
-        <section>
-            <h3>> Perfil del Estudiante</h3>
-            <p><strong>Semblanza académica:</strong> Soy estudiante de ingeniería con experiencia en el desarrollo de interfaces y lógica de programación utilizando lenguajes como Python, C++ y tecnologías web (HTML/CSS). He participado en proyectos de gestión financiera y automatización.</p>
-            <p><strong>Intereses:</strong> Seguridad informática, ciberseguridad, análisis de vulnerabilidades, investigación de protocolos de red y desarrollo seguro de software.</p>
-        </section>
-
-        <!-- 4. INFORMACIÓN TÉCNICA BÁSICA -->
-        <section>
-            <h3>> Información Técnica Básica</h3>
-            <ul>
-                <li><strong>Tecnologías utilizadas:</strong> HTML5, CSS3, JavaScript (Vainilla).</li>
-                <li><strong>Plataforma de publicación:</strong> GitHub Pages <em>(Recomendado para cumplir con el punto de URL pública y SSL)</em>.</li>
-                <li><strong>Control de versiones:</strong> Git y repositorio alojado en GitHub.</li>
-            </ul>
-        </section>
-
-        <!-- 5. FORMULARIO DE CONTACTO (Con respuesta embebida) -->
-        <section id="contacto">
-            <h3>> Contacto y Soporte</h3>
-            <form id="contactForm" class="contact-form">
-                <label for="userName">Nombre / Alias:</label>
-                <input type="text" id="userName" required>
-
-                <label for="userEmail">Correo Electrónico:</label>
-                <input type="email" id="userEmail" required>
-
-                <label for="userMessage">Mensaje:</label>
-                <textarea id="userMessage" rows="4" required></textarea>
-
-                <button type="submit">Ejecutar Envío</button>
+        <div class="max-w-md mx-auto">
+            <form id="contactForm" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Nombre / Alias</label>
+                    <input type="text" id="userName" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition bg-slate-50">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Correo Electrónico</label>
+                    <input type="email" id="userEmail" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition bg-slate-50">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Mensaje</label>
+                    <textarea id="userMessage" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition bg-slate-50 resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3.5 rounded-xl text-sm font-bold purple-glow hover:bg-indigo-700 transition">
+                    Enviar Mensaje
+                </button>
             </form>
 
-            <div id="autoResponse">
-                <!-- La respuesta automática aparecerá aquí -->
+            <!-- Contenedor de Respuesta Automática -->
+            <div id="autoResponse" class="hidden mt-6 p-6 bg-purple-50 rounded-2xl border border-purple-100 text-center">
+                <!-- Contenido inyectado por JS -->
             </div>
-        </section>
+        </div>
+    </section>
 
-    </div>
-
-    <!-- 6. PIE DE PÁGINA Y 7. CERTIFICADO SSL (Mención) -->
-    <footer>
-        <p>Este sitio está alojado en una plataforma con <strong>Certificado SSL (HTTPS)</strong>.</p>
-        <p>&copy; 2026 Fabiola Calvillo Galván. Todos los derechos reservados. | CNO IV</p>
+    <!-- 6. PIE DE PÁGINA Y 7. CERTIFICADO SSL -->
+    <footer class="py-10 text-center border-t border-slate-200 bg-white">
+        <p class="text-slate-500 text-sm mb-2">
+            🔒 Sitio web protegido con <strong>Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-slate-400 text-xs">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
     </footer>
 
-    <!-- Script para la respuesta automática del formulario -->
+    <!-- Script de Respuesta Automática -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
             
             const name = document.getElementById('userName').value;
-            this.style.display = 'none'; // Oculta el formulario tras enviar
             
-            const responseDiv = document.getElementById('autoResponse');
-            responseDiv.style.display = 'block';
-            responseDiv.innerHTML = `
-                <strong style="color: #00ff00;">[SISTEMA]: Envío interceptado exitosamente.</strong><br><br>
-                Saludos, <strong>${name}</strong>. Hemos recibido tus datos en nuestro servidor. 
-                Esta es una respuesta automatizada para confirmar que la transmisión fue exitosa y 
-                se encuentra en la cola de revisión. Te contactaremos a la brevedad.
-            `;
+            // Animación de ocultamiento suave
+            this.style.opacity = '0';
+            setTimeout(() => {
+                this.style.display = 'none';
+                
+                const responseDiv = document.getElementById('autoResponse');
+                responseDiv.classList.remove('hidden');
+                
+                responseDiv.innerHTML = `
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">¡Conexión establecida, ${name}!</h4>
+                    <p class="text-slate-600 text-sm">Tu mensaje ha sido encriptado y recibido en nuestra base de datos. Esta es una respuesta automática generada por el sistema. Te responderé a la brevedad.</p>
+                `;
+            }, 300);
         });
     </script>
 
