@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 1 | Actividades</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #050505; 
+            color: #e2e8f0; 
+        }
+        .glass-card {
+            background: #111111; 
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid #333333;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1; 
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-slate-300">
 
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="flex justify-between items-center px-10 py-5 bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-lg"></div>
+            <span class="text-xl font-extrabold tracking-tight text-white">Portafolio<span class="text-purple-500">.</span></span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
+            <a href="index.html" class="hover:text-white transition">Inicio</a>
+            <!-- Aquí resaltamos que estamos en el Parcial 1 -->
+            <a href="parcial1.html" class="text-purple-500 border-b-2 border-purple-500 pb-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
+            <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <header class="container mx-auto px-6 py-20 text-center">
+        <span class="text-purple-500 font-bold text-sm tracking-widest uppercase mb-4 block">Evaluación Continua</span>
+        
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-white">
+            Primer Parcial <br>
+            <span class="gradient-text text-2xl md:text-4xl block mt-3">Actividades y Evidencias</span>
+        </h1>
+        
+        <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto font-medium">
+            Recopilación de tareas, investigaciones y prácticas de laboratorio realizadas durante la primera etapa del curso de Seguridad Informática.
+        </p>
+    </header>
+
+    <!-- LISTA DE ACTIVIDADES -->
+    <section class="container mx-auto px-6 pb-24">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- ACTIVIDAD 1 -->
+            <div class="glass-card p-8 border-b-4 border-b-purple-500 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-purple-900/30 rounded-xl flex items-center justify-center text-xl">📄</div>
+                    <span class="text-xs font-bold text-purple-400 bg-purple-900/20 px-3 py-1 rounded-full">Teoría</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">Actividad: No presiones esc.. todavía</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                    Reporte de análisis sobre los keyloggers y su importancia en Ciberseguridad.
+                </p>
+                <a href="UPSLPware.html" class="inline-block text-sm font-bold text-purple-400 hover:text-purple-300 transition group">
+                    Ver Actividad <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </a>
+            </div>
+
+            <!-- ACTIVIDAD 2 -->
+            <div class="glass-card p-8 border-b-4 border-b-indigo-500 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-indigo-900/30 rounded-xl flex items-center justify-center text-xl">🔍</div>
+                    <span class="text-xs font-bold text-indigo-400 bg-indigo-900/20 px-3 py-1 rounded-full">Análisis</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">Actividad: </h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                    Reporte de análisis sobre las vulnerabilidades más comunes en aplicaciones web según el top 10 de OWASP.
+                </p>
+                <a href="#" class="inline-block text-sm font-bold text-indigo-400 hover:text-indigo-300 transition group">
+                    Ver reporte <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </a>
+            </div>
+
+            <!-- PRÁCTICA 1 -->
+            <div class="glass-card p-8 border-b-4 border-b-blue-500 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-blue-900/30 rounded-xl flex items-center justify-center text-xl">💻</div>
+                    <span class="text-xs font-bold text-blue-400 bg-blue-900/20 px-3 py-1 rounded-full">Laboratorio</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">Práctica 1: Escaneo de Red</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                    Uso de herramientas de mapeo de red y escaneo de puertos para identificar servicios activos en entornos controlados.
+                </p>
+                <a href="#" class="inline-block text-sm font-bold text-blue-400 hover:text-blue-300 transition group">
+                    Ver práctica <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
+        <p class="text-slate-400 text-sm mb-2">
+            🔒 Sitio web protegido con <strong class="text-slate-200">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-slate-500 text-xs">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
+    </footer>
+
+</body>
+</html>
