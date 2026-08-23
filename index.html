@@ -9,17 +9,19 @@
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #f8fafc;
+            background-color: #050505; /* Fondo general negro */
+            color: #e2e8f0; /* Texto claro por defecto */
         }
         .glass-card {
-            background: white;
+            background: #111111; /* Fondo de tarjetas gris muy oscuro */
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            border: 1px solid rgba(255,255,255,0.8);
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid #333333;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
         .glass-card:hover {
             transform: translateY(-5px);
+            border-color: #6366f1; /* Borde brilla en morado al pasar el mouse */
         }
         .gradient-text {
             background: linear-gradient(135deg, #6366f1, #a855f7);
@@ -31,34 +33,33 @@
         }
     </style>
 </head>
-<body class="text-slate-800">
+<body class="text-slate-300">
 
     <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="flex justify-between items-center px-10 py-5 bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+    <nav class="flex justify-between items-center px-10 py-5 bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
         <div class="flex items-center gap-2">
             <div class="w-8 h-8 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-lg"></div>
-            <span class="text-xl font-extrabold tracking-tight">Portafolio<span class="text-purple-500">.</span></span>
+            <span class="text-xl font-extrabold tracking-tight text-white">Portafolio<span class="text-purple-500">.</span></span>
         </div>
-        <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-500">
-            <a href="index.html" class="text-purple-600 border-b-2 border-purple-600 pb-1">Inicio</a>
-            <a href="parcial1.html" class="hover:text-slate-900 transition">Parcial 1</a>
-           <a href="parcial2.html" class="hover:text-slate-900 transition">Parcial 2</a>
-            <a href="parcial3.html" class="hover:text-slate-900 transition">Parcial 3</a>
-            <a href="#contacto" class="hover:text-slate-900 transition">Contacto</a>
+        <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
+            <a href="index.html" class="text-purple-500 border-b-2 border-purple-500 pb-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
+            <a href="#contacto" class="hover:text-white transition">Contacto</a>
         </div>
     </nav>
 
     <!-- 1. ENCABEZADO (PORTADA TÉCNICA) -->
     <header id="inicio" class="container mx-auto px-6 py-20 text-center">
-        <span class="text-purple-600 font-bold text-sm tracking-widest uppercase mb-4 block">CNO IV – Seguridad Informática</span>
+        <span class="text-purple-500 font-bold text-sm tracking-widest uppercase mb-4 block">CNO IV – Seguridad Informática</span>
         
-        <!-- Aquí se redujo el tamaño del nombre y el alias -->
-        <h1 class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight text-slate-900">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight text-white">
             Fabiola Calvillo Galván <br>
             <span class="gradient-text text-2xl md:text-3xl block mt-2">Alias: Fabi de Valles</span>
         </h1>
         
-        <p class="text-slate-500 text-lg mb-8 max-w-xl mx-auto font-medium">
+        <p class="text-slate-400 text-lg mb-8 max-w-xl mx-auto font-medium">
             Universidad Politécnica de San Luis Potosí <br>
             Periodo: Otoño 2026
         </p>
@@ -70,39 +71,39 @@
             
             <!-- 2. PRESENTACIÓN DEL PORTAFOLIO -->
             <div class="glass-card p-10 border-b-4 border-b-purple-500">
-                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-xl">🎯</div>
-                <h3 class="text-xl font-bold mb-3 text-slate-900">Presentación</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-3">
-                    <strong>Propósito:</strong> Contenedor oficial de las evidencias académicas del curso.
+                <div class="w-12 h-12 bg-purple-900/30 rounded-full flex items-center justify-center mb-6 text-xl">🎯</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Presentación</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                    <strong class="text-slate-200">Propósito:</strong> Contenedor oficial de las evidencias académicas del curso.
                 </p>
-                <p class="text-slate-500 text-sm leading-relaxed mb-3">
-                    <strong>Enfoque:</strong> Seguridad informática, pruebas de penetración y análisis de vulnerabilidades.
+                <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                    <strong class="text-slate-200">Enfoque:</strong> Seguridad informática, pruebas de penetración y análisis de vulnerabilidades.
                 </p>
-                <p class="text-slate-500 text-sm leading-relaxed">
-                    <strong>Importancia:</strong> Documenta la evolución técnica y la aplicación de conocimientos en mitigación de riesgos.
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    <strong class="text-slate-200">Importancia:</strong> Documenta la evolución técnica y la aplicación de conocimientos en mitigación de riesgos.
                 </p>
             </div>
 
             <!-- 3. PERFIL DEL ESTUDIANTE -->
             <div class="glass-card p-10 border-b-4 border-b-indigo-500">
-                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-6 text-xl">👨‍💻</div>
-                <h3 class="text-xl font-bold mb-3 text-slate-900">Mi Perfil</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-3">
-                    <strong>Semblanza:</strong> Estudiante de Ingeniería en Tecnologías de la Información enfocado en desarrollo de interfaces, lógica de programación y estructuración de proyectos tecnológicos.
+                <div class="w-12 h-12 bg-indigo-900/30 rounded-full flex items-center justify-center mb-6 text-xl">👨‍💻</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Mi Perfil</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                    <strong class="text-slate-200">Semblanza:</strong> Estudiante de Ingeniería en Tecnologías de la Información enfocado en desarrollo de interfaces, lógica de programación y estructuración de proyectos tecnológicos.
                 </p>
-                <p class="text-slate-500 text-sm leading-relaxed">
-                    <strong>Intereses:</strong> Seguridad informática, Ciberseguridad, Investigación y Desarrollo ágil.
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    <strong class="text-slate-200">Intereses:</strong> Seguridad informática, Ciberseguridad, Investigación y Desarrollo ágil.
                 </p>
             </div>
 
             <!-- 4. INFORMACIÓN TÉCNICA BÁSICA -->
             <div class="glass-card p-10 border-b-4 border-b-blue-500">
-                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-xl">⚙️</div>
-                <h3 class="text-xl font-bold mb-3 text-slate-900">Ficha Técnica</h3>
-                <ul class="text-slate-500 text-sm leading-relaxed space-y-2">
-                    <li><strong>Lenguajes/Tecnologías:</strong> HTML5, CSS, JavaScript, Python, C.</li>
-                    <li><strong>Plataforma de publicación:</strong> GitHub Pages.</li>
-                    <li><strong>Control de versiones:</strong> Git / GitHub.</li>
+                <div class="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-xl">⚙️</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Ficha Técnica</h3>
+                <ul class="text-slate-400 text-sm leading-relaxed space-y-2">
+                    <li><strong class="text-slate-200">Lenguajes/Tecnologías:</strong> HTML5, CSS, JavaScript, Python, C.</li>
+                    <li><strong class="text-slate-200">Plataforma de publicación:</strong> GitHub Pages.</li>
+                    <li><strong class="text-slate-200">Control de versiones:</strong> Git / GitHub.</li>
                 </ul>
             </div>
 
@@ -110,44 +111,44 @@
     </section>
 
     <!-- 5. FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="container mx-auto px-6 py-16 bg-white rounded-[40px] mb-24 shadow-sm border border-slate-100 max-w-4xl">
+    <section id="contacto" class="container mx-auto px-6 py-16 bg-[#111111] rounded-[40px] mb-24 shadow-lg border border-slate-800 max-w-4xl">
         <div class="text-center mb-10">
-            <span class="text-purple-600 font-bold text-sm tracking-widest uppercase">Comunicación</span>
-            <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Contacto Directo</h2>
+            <span class="text-purple-500 font-bold text-sm tracking-widest uppercase">Comunicación</span>
+            <h2 class="text-3xl font-extrabold text-white mt-2">Contacto Directo</h2>
         </div>
         
         <div class="max-w-md mx-auto">
             <form id="contactForm" class="space-y-5">
                 <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Nombre / Alias</label>
-                    <input type="text" id="userName" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition bg-slate-50">
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Nombre / Alias</label>
+                    <input type="text" id="userName" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Correo Electrónico</label>
-                    <input type="email" id="userEmail" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition bg-slate-50">
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Correo Electrónico</label>
+                    <input type="email" id="userEmail" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Mensaje</label>
-                    <textarea id="userMessage" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition bg-slate-50 resize-none"></textarea>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Mensaje</label>
+                    <textarea id="userMessage" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition resize-none"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3.5 rounded-xl text-sm font-bold purple-glow hover:bg-indigo-700 transition">
+                <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3.5 rounded-xl text-sm font-bold purple-glow hover:bg-indigo-500 transition">
                     Enviar Mensaje
                 </button>
             </form>
 
             <!-- Contenedor de Respuesta Automática -->
-            <div id="autoResponse" class="hidden mt-6 p-6 bg-purple-50 rounded-2xl border border-purple-100 text-center">
+            <div id="autoResponse" class="hidden mt-6 p-6 bg-purple-900/20 rounded-2xl border border-purple-500/30 text-center">
                 <!-- Contenido inyectado por JS -->
             </div>
         </div>
     </section>
 
     <!-- 6. PIE DE PÁGINA Y 7. CERTIFICADO SSL -->
-    <footer class="py-10 text-center border-t border-slate-200 bg-white">
-        <p class="text-slate-500 text-sm mb-2">
-            🔒 Sitio web protegido con <strong>Certificado de Seguridad (HTTPS)</strong>.
+    <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
+        <p class="text-slate-400 text-sm mb-2">
+            🔒 Sitio web protegido con <strong class="text-slate-200">Certificado de Seguridad (HTTPS)</strong>.
         </p>
-        <p class="text-slate-400 text-xs">
+        <p class="text-slate-500 text-xs">
             © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
         </p>
     </footer>
@@ -168,9 +169,9 @@
                 responseDiv.classList.remove('hidden');
                 
                 responseDiv.innerHTML = `
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">¡Conexión establecida, ${name}!</h4>
-                    <p class="text-slate-600 text-sm">Tu mensaje ha sido encriptado y recibido en nuestra base de datos. Esta es una respuesta automática generada por el sistema. Te responderé a la brevedad.</p>
+                    <div class="w-12 h-12 bg-green-900/30 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
+                    <h4 class="text-lg font-bold text-white mb-2">¡Conexión establecida, ${name}!</h4>
+                    <p class="text-slate-300 text-sm">Tu mensaje ha sido encriptado y recibido en nuestra base de datos. Esta es una respuesta automática generada por el sistema. Te responderé a la brevedad.</p>
                 `;
             }, 300);
         });
