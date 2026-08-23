@@ -110,38 +110,93 @@
         </div>
     </section>
 
-    <!-- 5. FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="container mx-auto px-6 py-16 bg-[#111111] rounded-[40px] mb-24 shadow-lg border border-slate-800 max-w-4xl">
-        <div class="text-center mb-10">
-            <span class="text-purple-500 font-bold text-sm tracking-widest uppercase">Comunicación</span>
-            <h2 class="text-3xl font-extrabold text-white mt-2">Contacto Directo</h2>
-        </div>
-        
-        <div class="max-w-md mx-auto">
-            <form id="contactForm" class="space-y-5">
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Nombre / Alias</label>
-                    <input type="text" id="userName" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Correo Electrónico</label>
-                    <input type="email" id="userEmail" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Mensaje</label>
-                    <textarea id="userMessage" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition resize-none"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3.5 rounded-xl text-sm font-bold purple-glow hover:bg-indigo-500 transition">
-                    Enviar Mensaje
-                </button>
-            </form>
+   <!-- 5. FORMULARIO DE CONTACTO -->
+<section id="contacto" class="container mx-auto px-6 py-16 bg-[#111111] rounded-[40px] mb-24 shadow-lg border border-slate-800 max-w-4xl">
+    <div class="text-center mb-10">
+        <span class="text-purple-500 font-bold text-sm tracking-widest uppercase">Comunicación</span>
+        <h2 class="text-3xl font-extrabold text-white mt-2">Contacto Directo</h2>
+    </div>
+    
+    <div class="max-w-md mx-auto">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-5 transition-opacity duration-300">
+            
+            <!-- 🔑 Tu clave de Web3Forms integrada -->
+            <input type="hidden" name="access_key" value="2b00e55b-4207-4271-b28d-8f3f69493ebc">
 
-            <!-- Contenedor de Respuesta Automática -->
-            <div id="autoResponse" class="hidden mt-6 p-6 bg-purple-900/20 rounded-2xl border border-purple-500/30 text-center">
-                <!-- Contenido inyectado por JS -->
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Nombre / Alias</label>
+                <input type="text" id="userName" name="name" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
             </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Correo Electrónico</label>
+                <input type="email" id="userEmail" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Mensaje</label>
+                <textarea id="userMessage" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3.5 rounded-xl text-sm font-bold purple-glow hover:bg-indigo-500 transition">
+                Enviar Mensaje
+            </button>
+        </form>
+
+        <!-- Contenedor de Respuesta Automática -->
+        <div id="autoResponse" class="hidden mt-6 p-6 bg-purple-900/20 rounded-2xl border border-purple-500/30 text-center">
+            <!-- Contenido inyectado por JS -->
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- 6. PIE DE PÁGINA Y 7. CERTIFICADO SSL -->
+<footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
+    <p class="text-slate-400 text-sm mb-2">
+        🔒 Sitio web protegido con <strong class="text-slate-200">Certificado de Seguridad (HTTPS)</strong>.
+    </p>
+    <p class="text-slate-500 text-xs">
+        © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+    </p>
+</footer>
+
+<!-- Script de Envío y Respuesta Automática -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        const form = this;
+        const name = document.getElementById('userName').value;
+        const formData = new FormData(form);
+
+        // Envía el correo mediante Web3Forms en segundo plano
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Animación de ocultamiento suave
+                form.style.opacity = '0';
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    
+                    const responseDiv = document.getElementById('autoResponse');
+                    responseDiv.classList.remove('hidden');
+                    
+                    responseDiv.innerHTML = `
+                        <div class="w-12 h-12 bg-green-900/30 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
+                        <h4 class="text-lg font-bold text-white mb-2">¡Conexión establecida, ${name}!</h4>
+                        <p class="text-slate-300 text-sm">Tu mensaje ha sido encriptado y recibido en mi bandeja de correo. Esta es una respuesta automática generada por el sistema. Te responderé a la brevedad.</p>
+                    `;
+                }, 300);
+            } else {
+                alert('Hubo un error al enviar el mensaje. Inténtalo de nuevo.');
+            }
+        }).catch(error => {
+            alert('Error de red. Verifica tu conexión.');
+        });
+    });
+</script>
 
     <!-- 6. PIE DE PÁGINA Y 7. CERTIFICADO SSL -->
     <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
