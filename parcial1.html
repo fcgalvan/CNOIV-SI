@@ -48,8 +48,18 @@
         </div>
     </nav>
 
+    <!-- BOTÓN DE RETROCESO (SUPERIOR) -->
+    <div class="container mx-auto px-6 pt-8">
+        <a href="javascript:history.back()" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition duration-300 font-medium">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Volver a la página anterior
+        </a>
+    </div>
+
     <!-- ENCABEZADO DE LA SECCIÓN -->
-    <header class="container mx-auto px-6 py-20 text-center">
+    <header class="container mx-auto px-6 py-12 text-center">
         <span class="text-purple-500 font-bold text-sm tracking-widest uppercase mb-4 block">Evaluación Continua</span>
         
         <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-white">
@@ -63,20 +73,20 @@
     </header>
 
     <!-- LISTA DE ACTIVIDADES -->
-    <section class="container mx-auto px-6 pb-24">
+    <section class="container mx-auto px-6 pb-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <!-- ACTIVIDAD 1 -->
             <div class="glass-card p-8 border-b-4 border-b-purple-500 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-purple-900/30 rounded-xl flex items-center justify-center text-xl">📄</div>
-                    <span class="text-xs font-bold text-purple-400 bg-purple-900/20 px-3 py-1 rounded-full">Teoría</span>
+                    <div class="w-12 h-12 bg-purple-900/30 rounded-xl flex items-center justify-center text-xl">🔍</div>
+                    <span class="text-xs font-bold text-purple-400 bg-purple-900/20 px-3 py-1 rounded-full">Análisis</span>
                 </div>
                 <h3 class="text-xl font-bold mb-3 text-white">Actividad: No presiones esc.. todavía</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
                     Reporte de análisis sobre los keyloggers y su importancia en Ciberseguridad.
                 </p>
-                <a href="UPSLPware.html" class="inline-block text-sm font-bold text-purple-400 hover:text-purple-300 transition group">
+                <a href="actividad3.html" class="inline-block text-sm font-bold text-purple-400 hover:text-purple-300 transition group">
                     Ver Actividad <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
                 </a>
             </div>
@@ -113,6 +123,16 @@
 
         </div>
     </section>
+
+    <!-- BOTÓN DE RETROCESO (INFERIOR) -->
+    <div class="container mx-auto px-6 pb-16 flex justify-center">
+        <a href="javascript:history.back()" class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-xl shadow-lg transition-all duration-300 border border-slate-700 hover:border-slate-500">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Volver a la página anterior
+        </a>
+    </div>
 
     <!-- PIE DE PÁGINA -->
     <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
