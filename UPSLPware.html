@@ -38,19 +38,42 @@
 </head>
 <body class="text-slate-300">
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="flex justify-between items-center px-10 py-5 bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-        <div class="flex items-center gap-3">
-            <!-- Aquí reemplazamos el cuadrito o mundito por tu imagen de logo -->
-            <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-9 w-auto object-contain">
-            <span class="text-xl font-extrabold tracking-tight text-white">Portafolio de Evidencias CNO IV - Seguridad Informática<span class="text-purple-500">.</span></span>
+    <!-- MENÚ DE NAVEGACIÓN RESPONSIVO -->
+    <nav class="bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            
+            <!-- Logo y Título -->
+            <div class="flex items-center gap-3">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-7 md:h-9 w-auto object-contain">
+                <span class="text-xs md:text-xl font-extrabold tracking-tight text-white leading-tight">
+                    Portafolio de Evidencias CNO IV<span class="hidden sm:inline"> - Seguridad Informática</span><span class="text-purple-500">.</span>
+                </span>
+            </div>
+
+            <!-- Botón de Menú Hamburguesa para Móviles -->
+            <button id="menuBtn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+                <a href="index.html" class="hover:text-white transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
+                <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
+            </div>
         </div>
-        <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
-            <a href="index.html" class="hover:text-white transition">Inicio</a>
-            <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
-            <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
-            <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
-            <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
+
+        <!-- Menú Desplegable para Celulares -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col space-y-3 text-sm font-medium text-slate-400">
+            <a href="index.html" class="hover:text-white transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-white transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-white transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-white transition py-1">Parcial 3</a>
+            <a href="index.html#contacto" class="hover:text-white transition py-1">Contacto</a>
         </div>
     </nav>
 
@@ -69,7 +92,7 @@
         <span class="text-indigo-500 font-bold text-sm tracking-widest uppercase mb-4 block">Reporte de Práctica</span>
         <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-white">
             Act. 03 - No presiones esc... todavía <br>
-            <span class="gradient-text text-2xl md:text-3xl block mt-3">Implementación y Análisis de un Keylogger</span>
+            <span class="gradient-text text-xl md:text-3xl block mt-3">Implementación y Análisis de un Keylogger</span>
         </h1>
     </header>
 
@@ -188,13 +211,23 @@ with Listener(on_press=on_press, on_release=on_release) as listener:
 
     <!-- PIE DE PÁGINA -->
     <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
-        <p class="text-slate-400 text-sm mb-2">
+        <p class="text-slate-400 text-sm mb-2 px-4">
             🔒 Sitio web protegido con <strong class="text-slate-200">Certificado de Seguridad (HTTPS)</strong>.
         </p>
-        <p class="text-slate-500 text-xs">
+        <p class="text-slate-500 text-xs px-4">
             © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
         </p>
     </footer>
+
+    <!-- Script de Interacción para el Menú Móvil -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
