@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Seguridad Informática</title>
+    <title>Portafolio de Evidencias | Seguridad Informática</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -20,16 +20,13 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
         .glass-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: #6366f1; 
         }
         .gradient-text {
             background: linear-gradient(135deg, #6366f1, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        .purple-glow {
-            box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.4);
         }
     </style>
 </head>
@@ -38,140 +35,113 @@
     <!-- MENÚ DE NAVEGACIÓN RESPONSIVO -->
     <nav class="bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
-            
-            <!-- Logo y Título -->
             <div class="flex items-center gap-3">
                 <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-7 md:h-9 w-auto object-contain">
                 <span class="text-xs md:text-xl font-extrabold tracking-tight text-white leading-tight">
                     Portafolio de Evidencias CNO IV<span class="hidden sm:inline"> - Seguridad Informática</span><span class="text-purple-500">.</span>
                 </span>
             </div>
-
-            <!-- Botón de Menú Hamburguesa para Móviles -->
             <button id="menuBtn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-1">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
-
-            <!-- Enlaces de Escritorio -->
+            
+            <!-- MENÚ DE ESCRITORIO -->
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="index.html" class="hover:text-white transition">Inicio</a>
+                <a href="index.html" class="text-white font-semibold transition">Inicio</a>
                 <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
                 <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
                 <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
+                <a href="proyectos.html" class="hover:text-white transition">Proyectos</a>
                 <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
             </div>
         </div>
 
-        <!-- Menú Desplegable para Celulares -->
+        <!-- MENÚ MÓVIL -->
         <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col space-y-3 text-sm font-medium text-slate-400">
-            <a href="index.html" class="hover:text-white transition py-1">Inicio</a>
+            <a href="index.html" class="text-white font-semibold transition py-1">Inicio</a>
             <a href="parcial1.html" class="hover:text-white transition py-1">Parcial 1</a>
             <a href="parcial2.html" class="hover:text-white transition py-1">Parcial 2</a>
             <a href="parcial3.html" class="hover:text-white transition py-1">Parcial 3</a>
+            <a href="proyectos.html" class="hover:text-white transition py-1">Proyectos</a>
             <a href="index.html#contacto" class="hover:text-white transition py-1">Contacto</a>
         </div>
     </nav>
 
-    <!-- 1. ENCABEZADO (PORTADA TÉCNICA) -->
-    <header id="inicio" class="container mx-auto px-6 py-16 md:py-20 text-center">
-        <span class="text-purple-500 font-bold text-xs md:text-sm tracking-widest uppercase mb-3 block">CNO IV – Seguridad Informática</span>
-        
-        <h1 class="text-2xl md:text-4xl font-extrabold mb-4 tracking-tight text-white">
-            Fabiola Calvillo Galván <br>
-            <span class="gradient-text text-xl md:text-3xl block mt-2">Alias: Fabi de Valles</span>
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header class="container mx-auto px-6 py-16 text-center">
+        <span class="text-purple-500 font-bold text-sm tracking-widest uppercase mb-4 block">Universidad Politécnica de San Luis Potosí</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-white">
+            Portafolio de Evidencias <br>
+            <span class="gradient-text">Seguridad Informática</span>
         </h1>
-        
-        <p class="text-slate-400 text-sm md:text-lg mb-8 max-w-xl mx-auto font-medium leading-relaxed">
-            Universidad Politécnica de San Luis Potosí <br>
-            Periodo: Otoño 2026
+        <p class="text-slate-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+            Recopilación de prácticas, análisis de vulnerabilidades, simulaciones y proyectos desarrollados a lo largo del curso.
         </p>
     </header>
 
-    <!-- SECCIONES DE INFORMACIÓN -->
-    <section class="container mx-auto px-6 pb-20">
+    <!-- CONTENIDO PRINCIPAL / SECCIONES DE ACCESO RÁPIDO -->
+    <main class="container mx-auto px-6 pb-20 space-y-12">
         <div class="grid md:grid-cols-3 gap-8">
-            
-            <!-- 2. PRESENTACIÓN DEL PORTAFOLIO -->
-            <div class="glass-card p-6 md:p-10 border-b-4 border-b-purple-500">
-                <div class="w-12 h-12 bg-purple-900/30 rounded-full flex items-center justify-center mb-6 text-xl">🎯</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Presentación</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                    <strong class="text-slate-200">Propósito:</strong> Contenedor oficial de las evidencias académicas del curso.
-                </p>
-                <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                    <strong class="text-slate-200">Enfoque:</strong> Seguridad informática, pruebas de penetración y análisis de vulnerabilidades.
-                </p>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    <strong class="text-slate-200">Importancia:</strong> Documenta la evolución técnica y la aplicación de conocimientos en mitigación de riesgos.
-                </p>
-            </div>
-
-            <!-- 3. PERFIL DEL ESTUDIANTE -->
-            <div class="glass-card p-6 md:p-10 border-b-4 border-b-indigo-500">
-                <div class="w-12 h-12 bg-indigo-900/30 rounded-full flex items-center justify-center mb-6 text-xl">👨‍💻</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Mi Perfil</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                    <strong class="text-slate-200">Semblanza:</strong> Estudiante de Ingeniería en Tecnologías de la Información enfocado en desarrollo de interfaces, lógica de programación y estructuración de proyectos tecnológicos.
-                </p>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    <strong class="text-slate-200">Intereses:</strong> Seguridad informática, Ciberseguridad, Investigación y Desarrollo ágil.
-                </p>
-            </div>
-
-            <!-- 4. INFORMACIÓN TÉCNICA BÁSICA -->
-            <div class="glass-card p-6 md:p-10 border-b-4 border-b-blue-500">
-                <div class="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-xl">⚙️</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Ficha Técnica</h3>
-                <ul class="text-slate-400 text-sm leading-relaxed space-y-2">
-                    <li><strong class="text-slate-200">Lenguajes/Tecnologías:</strong> HTML5, CSS, JavaScript, Python, C.</li>
-                    <li><strong class="text-slate-200">Plataforma de publicación:</strong> GitHub Pages.</li>
-                    <li><strong class="text-slate-200">Control de versiones:</strong> Git / GitHub.</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 5. FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="container mx-auto px-6 py-16 bg-[#111111] rounded-[30px] md:rounded-[40px] mb-24 shadow-lg border border-slate-800 max-w-4xl">
-        <div class="text-center mb-10">
-            <span class="text-purple-500 font-bold text-sm tracking-widest uppercase">Comunicación</span>
-            <h2 class="text-3xl font-extrabold text-white mt-2">Contacto Directo</h2>
-        </div>
-        
-        <div class="max-w-md mx-auto">
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-5 transition-opacity duration-300">
-                
-                <!-- 🔑 Tu clave de Web3Forms integrada -->
-                <input type="hidden" name="access_key" value="2b00e55b-4207-4271-b28d-8f3f69493ebc">
-
+            <!-- Parcial 1 -->
+            <a href="parcial1.html" class="glass-card p-8 flex flex-col justify-between border-t-4 border-t-purple-500 group">
                 <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Nombre / Alias</label>
-                    <input type="text" id="userName" name="name" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
+                    <span class="text-purple-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2 block">Unidad I</span>
+                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition">Parcial 1</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Fundamentos de seguridad, criptografía y primeras prácticas de auditoría y análisis de riesgos.
+                    </p>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Correo Electrónico</label>
-                    <input type="email" id="userEmail" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition">
+                <div class="flex items-center text-purple-400 text-sm font-semibold">
+                    Explorar prácticas <span class="ml-2 group-hover:translate-x-1 transition">→</span>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Mensaje</label>
-                    <textarea id="userMessage" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-black text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition resize-none"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3.5 rounded-xl text-sm font-bold purple-glow hover:bg-indigo-500 transition">
-                    Enviar Mensaje
-                </button>
-            </form>
+            </a>
 
-            <!-- Contenedor de Respuesta Automática -->
-            <div id="autoResponse" class="hidden mt-6 p-6 bg-purple-900/20 rounded-2xl border border-purple-500/30 text-center">
-                <!-- Contenido inyectado por JS -->
-            </div>
+            <!-- Parcial 2 -->
+            <a href="parcial2.html" class="glass-card p-8 flex flex-col justify-between border-t-4 border-t-indigo-500 group">
+                <div>
+                    <span class="text-indigo-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2 block">Unidad II</span>
+                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">Parcial 2</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Seguridad en aplicaciones web, vectores de ataque, simulaciones de phishing y técnicas defensivas.
+                    </p>
+                </div>
+                <div class="flex items-center text-indigo-400 text-sm font-semibold">
+                    Explorar prácticas <span class="ml-2 group-hover:translate-x-1 transition">→</span>
+                </div>
+            </a>
+
+            <!-- Parcial 3 -->
+            <a href="parcial3.html" class="glass-card p-8 flex flex-col justify-between border-t-4 border-t-blue-500 group">
+                <div>
+                    <span class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2 block">Unidad III</span>
+                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition">Parcial 3</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Políticas de seguridad, gestión de incidentes y proyectos integradores finales de la materia.
+                    </p>
+                </div>
+                <div class="flex items-center text-blue-400 text-sm font-semibold">
+                    Explorar prácticas <span class="ml-2 group-hover:translate-x-1 transition">→</span>
+                </div>
+            </a>
         </div>
-    </section>
 
-    <!-- 6. PIE DE PÁGINA Y 7. CERTIFICADO SSL -->
+        <!-- SECCIÓN DE CONTACTO -->
+        <section id="contacto" class="glass-card p-8 md:p-12 text-center max-w-3xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">¿Tienes alguna duda o comentario?</h2>
+            <p class="text-slate-400 text-sm md:text-base mb-6">
+                Puedes ponerte en contacto a través de los canales institucionales o revisar más sobre mis proyectos de desarrollo.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="proyectos.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl transition duration-300 text-sm">
+                    Ver Proyectos
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
     <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
         <p class="text-slate-400 text-sm mb-2 px-4">
             🔒 Sitio web protegido con <strong class="text-slate-200">Certificado de Seguridad (HTTPS)</strong>.
@@ -181,53 +151,12 @@
         </p>
     </footer>
 
-    <!-- Scripts de Interacción (Menú Móvil y Formulario) -->
+    <!-- Script de Menú Móvil -->
     <script>
-        // Script para desplegar el menú en celulares
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
-
-        // Script de Envío y Respuesta Automática del Formulario
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            
-            const form = this;
-            const name = document.getElementById('userName').value;
-            const formData = new FormData(form);
-
-            // Envía el correo mediante Web3Forms en segundo plano
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Animación de ocultamiento suave
-                    form.style.opacity = '0';
-                    setTimeout(() => {
-                        form.style.display = 'none';
-                        
-                        const responseDiv = document.getElementById('autoResponse');
-                        responseDiv.classList.remove('hidden');
-                        
-                        responseDiv.innerHTML = `
-                            <div class="w-12 h-12 bg-green-900/30 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
-                            <h4 class="text-lg font-bold text-white mb-2">¡Conexión establecida, ${name}!</h4>
-                            <p class="text-slate-300 text-sm">Tu mensaje ha sido encriptado y recibido en mi bandeja de correo. Esta es una respuesta automática generada por el sistema. Te responderé a la brevedad.</p>
-                        `;
-                    }, 300);
-                } else {
-                    alert('Hubo un error al enviar el mensaje. Inténtalo de nuevo.');
-                }
-            }).catch(error => {
-                alert('Error de red. Verifica tu conexión.');
-            });
         });
     </script>
 
