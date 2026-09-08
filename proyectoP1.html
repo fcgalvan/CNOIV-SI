@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR01 – De la teoría a la práctica: walkthrough en acción (guía y video)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+        }
+        h1 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .figure-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PR01 – De la teoría a la práctica: walkthrough en acción (guía y video)</h1>
+
+    <h2>1. Configuración de la Red y Descubrimiento de Objetivos</h2>
+    <p>Para la realización de esta práctica se utilizó un entorno controlado y aislado en VirtualBox, compuesto por dos máquinas virtuales conectadas a la red privada VirtualBox Host-Only Ethernet Adapter:</p>
+    <ul>
+        <li>Atacante (Kali Linux): Dirección IP asignada 192.168.56.101/24.</li>
+        <li>Objetivo (SnakeOil): Dirección IP por descubrir en el segmento 192.168.56.0/24</li>
+    </ul>
+
+    <h3>Kali</h3>
+    <img src="kali_config.png" alt="Figura 1: Máquina virtual Kali Linux">
+    <p class="figure-caption">Figura 1. Máquina virtual Kali Linux utilizada como equipo de auditoría. Esta evidencia muestra el sistema desde el cual se realizaron las actividades de descubrimiento de hosts, escaneo de puertos y enumeración de servicios dentro del entorno aislado[cite: 2].</p>
+
+    <h3>SnakeOil</h3>
+    <img src="snakeoil_config.png" alt="Figura 2: Máquina virtual SnakeOil">
+    <p class="figure-caption">Figura 2. Máquina virtual SnakeOil utilizada como sistema objetivo. La imagen permite identificar el segundo equipo que forma parte del laboratorio y sobre el cual se realizaron las pruebas de reconocimiento y auditoría documentadas en este reporte[cite: 2].</p>
+
+    <h2>Descubrimiento de Hosts Activos</h2>
+    <p>Se ejecutó un escaneo de peticiones ARP en el segmento local mediante la herramienta arp-scan[cite: 2]:</p>
+    <p><strong>Resultados obtenidos[cite: 2]:</strong></p>
+    <ul>
+        <li>192.168.56.1: Interfaz del Host / Gateway virtual[cite: 2].</li>
+        <li>192.168.56.100: Host activo secundario[cite: 2].</li>
+        <li>192.168.56.102: Máquina objetivo SnakeOil (Dirección MAC 08:00:27:c5:36:78)[cite: 2].</li>
+    </ul>
+
+    <img src="arp_scan_1.png" alt="Figura 3: Descubrimiento de dispositivos activos">
+    <p class="figure-caption">Figura 3. Evidencia del descubrimiento de dispositivos activos dentro de la red privada de VirtualBox. La captura corresponde a la fase inicial de reconocimiento, en la que se identifican los equipos disponibles en el segmento de red antes de seleccionar el objetivo[cite: 2].</p>
+
+    <img src="arp_scan_2.png" alt="Figura 4: Resultado del análisis ARP">
+    <p class="figure-caption">Figura 4. Resultado del análisis ARP utilizado para confirmar la presencia de la máquina objetivo SnakeOil. La evidencia permite relacionar la dirección IP 192.168.56.102 con la dirección MAC identificada durante el descubrimiento de hosts[cite: 2].</p>
+
+    <h2>2. Escaneo de Puertos y Detección de Servicios</h2>
+    <p>Con la IP del objetivo identificada (192.168.56.102), se procedió a realizar un escaneo exhaustivo de los 65,535 puertos TCP utilizando Nmap para identificar servicios y versiones[cite: 2]:</p>
+
+    <img src="nmap_scan.png" alt="Figura 5: Escaneo con Nmap">
+    <p class="figure-caption">Figura 5. Resultado del escaneo realizado con Nmap sobre la dirección IP del objetivo. La captura muestra la fase de enumeración de servicios, utilizada para identificar los puertos TCP accesibles y obtener información sobre los servicios expuestos[cite: 2].</p>
+
+    <h3>Tabla de Puertos Abiertos</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Puerto</th>
+                <th>Estado</th>
+                <th>Servicio</th>
+                <th>Versión / Información Relevante</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>22/tcp</td>
+                <td>Abierto</td>
+                <td>SSH</td>
+                <td>OpenSSH 7.9p1 Debian 10+deb10u2[cite: 2]</td>
+            </tr>
+            <tr>
+                <td>80/tcp</td>
+                <td>Abierto</td>
+                <td>HTTP</td>
+                <td>Nginx 1.14.2 (Welcome to SNAKEOIL!)[cite: 2]</td>
+            </tr>
+            <tr>
+                <td>8080/tcp</td>
+                <td>Abierto</td>
+                <td>HTTP</td>
+                <td>Nginx 1.14.2 (Welcome to Good Tech Inc.'s Snake Oil Project)[cite: 2]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Auditoría Web y Enumeración de la API (Puerto 8080)</h2>
+    <p>Al inspeccionar el servicio HTTP en el puerto 8080, se encontró un blog en desarrollo. En la publicación /4 (Useful Links), se identificó una referencia explícita al uso de tokens JWT (JSON Web Tokens) mediante la biblioteca flask-jwt-extended de Python[cite: 2].</p>
+
+    <img src="web_audit_1.png" alt="Figura 6">
+    <p class="figure-caption">Figura 6. Página web identificada en el servicio HTTP del puerto 8080. Esta evidencia muestra el sitio o blog en desarrollo encontrado durante la inspección inicial del servicio web[cite: 2].</p>
+
+    <img src="web_audit_2.png" alt="Figura 7">
+    <p class="figure-caption">Figura 7. Evidencia de la navegación dentro del contenido publicado por la aplicación web. La captura permite observar información disponible públicamente que fue revisada como parte de la auditoría del servicio[cite: 2].</p>
+
+    <img src="web_audit_3.png" alt="Figura 8">
+    <p class="figure-caption">Figura 8. Evidencia relacionada con la publicación o recurso de enlaces útiles identificado durante la revisión del sitio. En esta etapa se detectó información que permitió reconocer el uso de mecanismos de autenticación basados en JWT[cite: 2].</p>
+
+    <img src="web_audit_4.png" alt="Figura 9">
+    <p class="figure-caption">Figura 9. Evidencia de la referencia a JSON Web Tokens (JWT) y a la biblioteca flask-jwt-extended. Esta información fue relevante para comprender que la aplicación cuenta con funcionalidades relacionadas con autenticación y autorización[cite: 2].</p>
+
+    <h2>Descubrimiento de Rutas con Gobuster</h2>
+    <p>Se ejecutó la herramienta Gobuster para realizar un análisis por fuerza bruta de los endpoints de la aplicación[cite: 2]:</p>
+
+    <img src="gobuster_result.png" alt="Figura 10">
+    <p class="figure-caption">Figura 10. Resultado de la enumeración de rutas mediante Gobuster. La captura documenta el proceso de identificación de endpoints accesibles en la aplicación web y sirve como evidencia de los recursos encontrados para su posterior revisión[cite: 2].</p>
+
+    <p><strong>Endpoints descubiertos[cite: 2]:</strong></p>
+    <ul>
+        <li>/users (Status: 200) — Devuelve información de usuarios registrados[cite: 2].</li>
+        <li>/login (Status: 405) — Endpoint reservado para peticiones POST de inicio de sesión[cite: 2].</li>
+        <li>/registration (Status: 200) — Endpoint de registro de usuarios[cite: 2].</li>
+    </ul>
+
+    <h2>4. Hallazgos y Vulnerabilidades Detectadas</h2>
+    <h3>4.1 Fuga de Información Sensible (/users)</h3>
+    <p>Al consultar GET /users, la API expone públicamente un listado JSON con los nombres de usuario y los hashes de contraseña cifrados con PBKDF2 ($pbkdf2-sha256$29000$...). Se confirmó la presencia del usuario patrick[cite: 2].</p>
+
+    <img src="vulnerability_1.png" alt="Figura 11">
+    <p class="figure-caption">Figura 11. Evidencia de la consulta al endpoint /users. La respuesta muestra que el recurso devuelve información correspondiente a usuarios registrados, por lo que fue considerado un punto relevante durante la revisión de seguridad[cite: 2].</p>
+
+    <img src="vulnerability_2.png" alt="Figura 12">
+    <p class="figure-caption">Figura 12. Detalle de la información expuesta por el endpoint /users. La evidencia permite observar la presencia de datos de cuentas y material de autenticación que no debería estar disponible de manera pública[cite: 2].</p>
+
+    <img src="vulnerability_3.png" alt="Figura 13">
+    <p class="figure-caption">Figura 13. Evidencia del formato de almacenamiento de las contraseñas observado en la respuesta de la API. Se identifican hashes PBKDF2, lo que confirma que la aplicación no expone contraseñas en texto plano, aunque la divulgación de los hashes continúa siendo información sensible[cite: 2].</p>
+
+    <img src="vulnerability_4.png" alt="Figura 14">
+    <p class="figure-caption">Figura 14. Continuación de la evidencia obtenida desde el endpoint /users. La captura permite apreciar la información devuelta por la API y respalda el hallazgo relacionado con la exposición innecesaria de datos de usuarios[cite: 2].</p>
+
+    <img src="vulnerability_5.png" alt="Figura 15">
+    <p class="figure-caption">Figura 15. Evidencia complementaria del contenido accesible públicamente a través de la API. Esta información fue utilizada para analizar el alcance de la fuga de información y determinar el impacto potencial del endpoint expuesto[cite: 2].</p>
+
+    <img src="vulnerability_6.png" alt="Figura 16">
+    <p class="figure-caption">Figura 16. Evidencia final del hallazgo documentado en la auditoría. La captura respalda la conclusión de que el endpoint /users requiere controles adicionales para limitar la exposición de información sensible[cite: 2].</p>
+
+    <h3>4.2 Análisis del impacto del hallazgo</h3>
+    <p>La exposición pública del endpoint /users representa una fuga de información sensible, ya que permite a cualquier usuario con acceso al servicio obtener nombres de usuario y hashes de contraseña. Aunque los hashes observados se encuentran almacenados mediante PBKDF2, su divulgación innecesaria incrementa la superficie de ataque y puede facilitar intentos no autorizados de análisis de credenciales[cite: 2].</p>
+    <p>La información obtenida también permite identificar cuentas existentes, como el usuario patrick, lo que constituye una fuente adicional de información para un atacante. Por esta razón, el hallazgo se considera de riesgo alto, principalmente por la combinación de enumeración de usuarios y exposición de material de autenticación que no debería ser público[cite: 2].</p>
+
+    <h3>4.3 Riesgo asociado a la enumeración de endpoints</h3>
+    <p>La identificación de las rutas /users, /login y /registration demuestra que la aplicación expone diferentes funcionalidades relacionadas con la gestión y autenticación de usuarios. La disponibilidad de estos endpoints no constituye por sí misma una vulnerabilidad; sin embargo, su comportamiento debe estar protegido mediante controles de autenticación, autorización y validación de solicitudes[cite: 2].</p>
+    <p>El endpoint /login respondió con el código HTTP 405 ante una consulta no compatible con el método esperado, lo cual indica que está destinado a solicitudes POST. Por otro lado, /users y /registration fueron accesibles durante la enumeración. Se recomienda revisar que cada endpoint exponga únicamente la información estrictamente necesaria para la función que desempeña[cite: 2].</p>
+
+    <h2>5. Recomendaciones de Mitigación</h2>
+    <h3>5.1 Proteger el endpoint /users</h3>
+    <p>El endpoint /users no debe exponer hashes de contraseña ni otros datos sensibles. Se recomienda eliminar dichos campos de cualquier respuesta pública y aplicar controles de autenticación y autorización antes de permitir el acceso a información de cuentas[cite: 2].</p>
+    <p>Las respuestas de la API deben seguir el principio de mínima divulgación de información, entregando únicamente los datos necesarios para la funcionalidad solicitada[cite: 2].</p>
+
+    <h3>5.2 Fortalecer la gestión de autenticación</h3>
+    <p>Los mecanismos de autenticación deben configurarse de manera que las credenciales y los tokens no sean expuestos innecesariamente. Debido a que la aplicación hace referencia al uso de JWT mediante flask-jwt-extended, se recomienda revisar la configuración del ciclo de vida de los tokens, la protección de endpoints y la validación adecuada de las solicitudes autenticadas[cite: 2].</p>
+    <p>También es recomendable mantener separada la información de autenticación de los datos públicos de los usuarios y aplicar controles de autorización según el rol o privilegio requerido[cite: 2].</p>
+
+    <h3>5.3 Mantener actualizados los servicios y reducir la superficie de exposición</h3>
+    <p>Los servicios identificados durante el escaneo, incluyendo SSH y los servicios HTTP basados en Nginx, deben mantenerse actualizados y configurados de acuerdo con las necesidades reales del sistema. Los servicios o puertos que no sean necesarios deben permanecer deshabilitados o restringidos[cite: 2].</p>
+    <p>Asimismo, se recomienda realizar revisiones periódicas de configuración, pruebas de seguridad en el entorno de desarrollo y validación de los endpoints antes de publicar nuevas versiones de la aplicación[cite: 2].</p>
+
+    <h2>6. Conclusiones</h2>
+    <p>La práctica permitió aplicar una metodología básica de reconocimiento y enumeración dentro de un entorno controlado de laboratorio. Inicialmente se identificó la máquina objetivo mediante el descubrimiento de hosts en la red privada. Posteriormente, el escaneo de puertos permitió determinar la presencia de servicios SSH y HTTP, incluyendo una aplicación web disponible en el puerto 8080[cite: 2].</p>
+    <p>La auditoría y enumeración de rutas permitieron identificar endpoints relacionados con usuarios y autenticación. El principal hallazgo documentado fue la exposición pública de información sensible en el endpoint /users, incluyendo nombres de usuario y hashes de contraseña. Este resultado demuestra la importancia de limitar la información devuelta por las APIs y aplicar correctamente controles de acceso[cite: 2].</p>
+    <p>Durante la fase posterior al reconocimiento, se realizaron múltiples intentos para explotar las vulnerabilidades identificadas y avanzar hacia la obtención de acceso administrativo sobre el sistema objetivo, incluyendo pruebas dirigidas al manejo de los tokens JWT y a las credenciales obtenidas del endpoint /users. Sin embargo, pese a los distintos enfoques probados, no fue posible completar de manera satisfactoria la explotación ni escalar privilegios dentro del sistema, por lo que el walkthrough no logró concluirse en su totalidad conforme a lo planteado originalmente[cite: 2].</p>
+    <p>En conclusión, la práctica evidencia que una configuración aparentemente funcional puede presentar riesgos cuando la información sensible se expone a través de servicios accesibles. Si bien la fase de reconocimiento y enumeración permitió identificar hallazgos relevantes, no se logró completar con éxito la etapa de explotación, lo que resalta la importancia de continuar practicando la reducción de la superficie de ataque, la correcta protección de endpoints y el principio de mínima divulgación como medidas fundamentales para mejorar la seguridad de una aplicación web[cite: 2].</p>
+
+    <h2>7. Resumen de Hallazgos</h2>
+    <ul>
+        <li><strong>Hallazgo principal:</strong> Exposición de información sensible mediante GET /users[cite: 2].</li>
+        <li><strong>Evidencia:</strong> El endpoint devuelve información de usuarios registrados, incluyendo nombres de usuario y hashes de contraseña PBKDF2[cite: 2].</li>
+        <li><strong>Impacto:</strong> Posible enumeración de usuarios y exposición innecesaria de material de autenticación[cite: 2].</li>
+        <li><strong>Nivel de riesgo:</strong> Alto[cite: 2].</li>
+        <li><strong>Recomendación principal:</strong> Eliminar los hashes de contraseña de las respuestas de la API y restringir el acceso al endpoint mediante controles de autenticación y autorización[cite: 2].</li>
+        <li><strong>Nota sobre el alcance:</strong> Las conclusiones y recomendaciones anteriores se basan en la evidencia documentada en el reporte original. No se incorporaron vulnerabilidades adicionales que no estuvieran respaldadas por las pruebas registradas[cite: 2].</li>
+    </ul>
+
+</body>
+</html>
