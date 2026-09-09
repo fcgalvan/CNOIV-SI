@@ -81,21 +81,27 @@
     </style>
 </head>
 <body class="py-12 px-4 sm:px-6 lg:px-8">
+    
 
     <div class="max-w-4xl mx-auto space-y-10">
 
-        <!-- Barra de Navegación -->
-        <nav class="glass-card px-6 py-4 flex items-center justify-between">
-            <a href="javascript:history.back()" class="inline-flex items-center space-x-2 text-sm font-semibold text-slate-300 hover:text-indigo-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                <span>Regresar</span>
-            </a>
-            <div class="text-xs uppercase tracking-widest text-indigo-400 font-bold hidden sm:block">
-                Seguridad Informática &bull; Portafolio
-            </div>
-        </nav>
+        <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="flex justify-between items-center px-10 py-5 bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <!-- Aquí reemplazamos el cuadrito o mundito por tu imagen de logo -->
+            <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-9 w-auto object-contain">
+            <span class="text-xl font-extrabold tracking-tight text-white">Portafolio<span class="text-purple-500">.</span></span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
+            <a href="index.html" class="hover:text-white transition">Inicio</a>
+            <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
+            <a href="proyectos.html" class="hover:text-white transition">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
+        </div>
+    </nav>
+
 
         <!-- Encabezado -->
         <div class="glass-card p-8 text-center space-y-4">
