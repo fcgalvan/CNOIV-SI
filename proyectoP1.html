@@ -86,22 +86,20 @@
     <div class="max-w-4xl mx-auto space-y-10">
 
         <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="flex justify-between items-center px-10 py-5 bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-        <div class="flex items-center gap-3">
-            <!-- Aquí reemplazamos el cuadrito o mundito por tu imagen de logo -->
-            <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-9 w-auto object-contain">
-            <span class="text-xl font-extrabold tracking-tight text-white">Portafolio<span class="text-purple-500">.</span></span>
-        </div>
-        <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
-            <a href="index.html" class="hover:text-white transition">Inicio</a>
-            <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
-            <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
-            <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
-            <a href="proyectos.html" class="hover:text-white transition">Proyectos</a>
-            <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
-        </div>
-    </nav>
-
+        <nav class="flex justify-between items-center px-10 py-5 bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+            <div class="flex items-center gap-3">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-9 w-auto object-contain">
+                <span class="text-xl font-extrabold tracking-tight text-white">Portafolio<span class="text-purple-500">.</span></span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
+                <a href="index.html" class="hover:text-white transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
+                <a href="proyectos.html" class="hover:text-white transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
+            </div>
+        </nav>
 
         <!-- Encabezado -->
         <div class="glass-card p-8 text-center space-y-4">
@@ -115,6 +113,15 @@
                 <p><strong>CNO IV: Seguridad Informática</strong> | Otoño 2026</p>
                 <p><strong>Mtro. Servando López Contreras</strong></p>
                 <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455)</p>
+            </div>
+            <!-- Botón de Descarga del PDF -->
+            <div class="pt-4 flex justify-center">
+                <a href="PR01_Walkthrough.pdf" download="PR01_Walkthrough.pdf" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg transition purple-glow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Descargar Reporte en PDF
+                </a>
             </div>
         </div>
 
@@ -139,7 +146,8 @@
                         <li>5.3 Mantener actualizados los servicios y reducir la superficie de exposición | 21</li>
                     </ul>
                 </li>
-                <li>6. Conclusiones | 22</li>
+                <li>6. Video Walkthrough en Acción | 22</li>
+                <li>7. Conclusiones | 23</li>
             </ul>
         </div>
 
@@ -245,6 +253,15 @@
             <p>Los servicios identificados durante el escaneo, incluyendo SSH y los servicios HTTP basados en Nginx, deben mantenerse actualizados y configurados de acuerdo con las necesidades reales del sistema.</p>
         </div>
 
+        <!-- Sección de Video Walkthrough -->
+        <div class="glass-card p-8 space-y-4">
+            <h2 class="text-2xl font-bold text-indigo-400">Video Walkthrough en Acción</h2>
+            <p class="text-slate-300">A continuación se muestra el video demostrativo del desarrollo y análisis realizado durante la práctica:</p>
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-700 shadow-lg">
+                <iframe class="w-full h-full" src="https://youtu.be/EbLvSRoFy2s?si=pDTj_9sKBSXNy9vE" title="PR01 - Walkthrough en Acción" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <!-- Sección 6 -->
         <div class="glass-card p-8 space-y-4">
             <h2 class="text-2xl font-bold text-indigo-400">6. Conclusiones</h2>
@@ -253,7 +270,8 @@
         </div>
 
     </div>
-    <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
+
+    <footer class="py-10 text-center border-t border-slate-800 bg-[#050505] mt-12">
         <p class="text-slate-400 text-sm mb-2 px-4">
             🔒 Sitio web protegido con <strong class="text-slate-200">Certificado de Seguridad (HTTPS)</strong>.
         </p>
@@ -267,9 +285,11 @@
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
     </script>
 
 </body>
