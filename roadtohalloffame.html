@@ -156,120 +156,147 @@
             </section>
         </div>
 
-        <!-- SECCIÓN: MAPA INTERACTIVO DE PROGRESO -->
+        <!-- SECCIÓN: MAPA INTERACTIVO DE PROGRESO (LABORATORIOS 07 EN ADELANTE) -->
         <section class="content-card p-8 md:p-12 map-grid-bg relative overflow-hidden">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 border-b border-gray-200 pb-4">
                 <div>
-                    <span class="text-[10px] uppercase tracking-[0.25em] text-blue-600 font-bold block mb-1">Cartografía de Prácticas</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">Mapa de Ruta: Hall of Fame</h2>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-blue-600 font-bold block mb-1">Cartografía de Prácticas – Parcial I</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">Road to Hall of Fame (Labs 07+)</h2>
                 </div>
-                <p class="text-xs text-gray-500 italic mt-2 md:mt-0">💡 Pasa el cursor sobre los nodos para ver los detalles técnicos de cada laboratorio.</p>
+                <p class="text-xs text-gray-500 italic mt-2 md:mt-0">💡 Pasa el cursor sobre los nodos para ver los detalles técnicos de cada laboratorio del documento oficial.</p>
             </div>
 
             <!-- Contenedor del Mapa Interactivo -->
             <div class="relative max-w-5xl mx-auto py-12 px-6">
                 
-                <!-- Línea de conexión visual del mapa -->
-                <svg class="absolute inset-0 w-full h-full pointer-events-none stroke-blue-300/60" fill="none" stroke-width="2.5" stroke-dasharray="6 4">
-                    <path d="M 90,140 Q 280,30 450,160 T 780,100 T 920,260" class="hidden md:block w-full h-full" />
-                </svg>
+                <!-- Distribución en cuadrícula de los nodos del mapa (Actividades 07 a 12 en adelante) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 relative z-10">
 
-                <!-- Distribución en cuadrícula de los nodos del mapa -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 relative z-10">
-
-                    <!-- NODO 1 -->
+                    <!-- NODO 07 -->
                     <div class="node-container relative flex flex-col items-center group">
-                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-52 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
-                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Laboratorio 01</span>
-                            <h4 class="font-bold text-xs text-gray-900 mb-1">Phishing & Credential Harvester</h4>
-                            <p class="text-[11px] text-gray-600 font-light leading-snug">Simulación controlada de ataque de ingeniería social con SET en entorno local.</p>
+                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 07</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">File Path Traversal: Simple Case</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Explotación básica usando secuencias ../../../../etc/passwd en PortSwigger.</p>
                         </div>
                         <div class="w-16 h-16 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
-                            <span class="font-mono font-bold text-sm text-gray-900 group-hover:text-white">01</span>
+                            <span class="font-mono font-bold text-sm text-gray-900 group-hover:text-white">07</span>
                         </div>
-                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">FPT 01</span>
-                        <a href="actividad04.html" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Lab 07</span>
+                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
                             Ver reporte →
                         </a>
                     </div>
 
-                    <!-- NODO 2 -->
-                    <div class="node-container relative flex flex-col items-center group">
-                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-52 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
-                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Laboratorio 02</span>
-                            <h4 class="font-bold text-xs text-gray-900 mb-1">Análisis de Vulnerabilidades Web</h4>
-                            <p class="text-[11px] text-gray-600 font-light leading-snug">Identificación de puntos débiles y brechas de seguridad en plataformas.</p>
-                        </div>
-                        <div class="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:border-blue-600 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
-                            <span class="font-mono font-bold text-sm text-gray-600 group-hover:text-white">02</span>
-                        </div>
-                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">FPT 02</span>
-                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-gray-500 font-bold hover:text-blue-600">
-                            Detalles →
-                        </a>
-                    </div>
-
-                    <!-- NODO 3 -->
+                    <!-- NODO 08 -->
                     <div class="node-container relative flex flex-col items-center group">
                         <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
-                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Laboratorio 03</span>
-                            <h4 class="font-bold text-xs text-gray-900 mb-1">File Path Traversal Avanzado</h4>
-                            <p class="text-[11px] text-gray-600 font-light leading-snug">Traversal sequences stripped with superfluous URL-decode and bypass.</p>
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 08</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">Traversal Blocked with Absolute Path Bypass</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Bypass de filtros usando rutas absolutas directas desde la raíz.</p>
                         </div>
                         <div class="w-16 h-16 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
-                            <span class="font-mono font-bold text-sm text-blue-600 group-hover:text-white">03</span>
+                            <span class="font-mono font-bold text-sm text-gray-900 group-hover:text-white">08</span>
                         </div>
-                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">FPT 03</span>
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Lab 08</span>
                         <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
-                            Detalles →
+                            Ver reporte →
                         </a>
                     </div>
 
-                    <!-- NODO 4 -->
+                    <!-- NODO 09 -->
                     <div class="node-container relative flex flex-col items-center group">
-                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-52 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
-                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Laboratorio 04</span>
-                            <h4 class="font-bold text-xs text-gray-900 mb-1">Auditoría de Credenciales y Hashes</h4>
-                            <p class="text-[11px] text-gray-600 font-light leading-snug">Análisis de robustez de contraseñas y métodos de descifrado seguro.</p>
+                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 09</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">Traversal Sequences Stripped Non-Recursively</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Uso de URL Encoding, Double URL Encoding y secuencias anidadas.</p>
                         </div>
-                        <div class="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:border-blue-600 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
-                            <span class="font-mono font-bold text-sm text-gray-600 group-hover:text-white">04</span>
+                        <div class="w-16 h-16 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
+                            <span class="font-mono font-bold text-sm text-blue-600 group-hover:text-white">09</span>
                         </div>
-                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">FPT 04</span>
-                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-gray-500 font-bold hover:text-blue-600">
-                            Detalles →
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Lab 09</span>
+                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
+                            Ver reporte →
                         </a>
                     </div>
 
-                    <!-- NODO 5 -->
+                    <!-- NODO 10 -->
                     <div class="node-container relative flex flex-col items-center group">
-                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-52 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
-                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Laboratorio 05</span>
-                            <h4 class="font-bold text-xs text-gray-900 mb-1">Mitigación de Inyecciones SQL</h4>
-                            <p class="text-[11px] text-gray-600 font-light leading-snug">Implementación de consultas parametrizadas y validación de entradas.</p>
+                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 10</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">Traversal Stripped with Superfluous URL-Decode</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Evasión de filtros mediante decodificación URL redundante.</p>
                         </div>
-                        <div class="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:border-blue-600 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
-                            <span class="font-mono font-bold text-sm text-gray-600 group-hover:text-white">05</span>
+                        <div class="w-16 h-16 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
+                            <span class="font-mono font-bold text-sm text-gray-900 group-hover:text-white">10</span>
                         </div>
-                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">FPT 05</span>
-                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-gray-500 font-bold hover:text-blue-600">
-                            Detalles →
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Lab 10</span>
+                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
+                            Ver reporte →
                         </a>
                     </div>
 
-                    <!-- NODO 6 -->
+                    <!-- NODO 11 -->
                     <div class="node-container relative flex flex-col items-center group">
-                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-52 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
-                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Laboratorio 06</span>
-                            <h4 class="font-bold text-xs text-gray-900 mb-1">Hall of Fame Final</h4>
-                            <p class="text-[11px] text-gray-600 font-light leading-snug">Consolidación integral del portafolio y competencias defensivas avanzadas.</p>
+                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 11</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">Validation of Start of Path</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Bypass cuando la aplicación valida que la ruta comience con el directorio base.</p>
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
+                            <span class="font-mono font-bold text-sm text-gray-900 group-hover:text-white">11</span>
+                        </div>
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Lab 11</span>
+                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
+                            Ver reporte →
+                        </a>
+                    </div>
+
+                    <!-- NODO 12 -->
+                    <div class="node-container relative flex flex-col items-center group">
+                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 12</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">Validation with Null Byte Bypass</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Bypass de extensiones obligatorias empleando bytes nulos (%00).</p>
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-blue-50 border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
+                            <span class="font-mono font-bold text-sm text-blue-600 group-hover:text-white">12</span>
+                        </div>
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Lab 12</span>
+                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
+                            Ver reporte →
+                        </a>
+                    </div>
+
+                    <!-- NODO 13 -->
+                    <div class="node-container relative flex flex-col items-center group">
+                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 13</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">Red Team Report: My File Server 1</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Pentesting completo, enumeración con Nmap/SMBMap y explotación con DirtyCow.</p>
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
+                            <span class="font-mono font-bold text-sm text-gray-900 group-hover:text-white">13</span>
+                        </div>
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Act 13</span>
+                        <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
+                            Ver reporte →
+                        </a>
+                    </div>
+
+                    <!-- NODO 14 -->
+                    <div class="node-container relative flex flex-col items-center group">
+                        <div class="tooltip-card absolute bottom-24 left-1/2 -translate-x-1/2 w-56 bg-white border border-blue-200 p-4 rounded-xl shadow-xl z-30 text-left pointer-events-none">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Actividad 14</span>
+                            <h4 class="font-bold text-xs text-gray-900 mb-1">Ciberseguridad en una Mirada</h4>
+                            <p class="text-[11px] text-gray-600 font-light leading-snug">Diseño de infografía profesional sobre fundamentos de Cisco Networking Academy.</p>
                         </div>
                         <div class="w-16 h-16 rounded-full bg-blue-50 border-2 border-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-300 cursor-pointer">
                             <span class="font-mono font-bold text-sm text-blue-600 group-hover:text-white">🏆</span>
                         </div>
-                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">FPT 06</span>
+                        <span class="text-xs font-mono font-semibold text-gray-900 mt-3">Meta Final</span>
                         <a href="#" class="mt-2 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider text-blue-600 font-bold hover:underline">
-                            Meta Final →
+                            Cierre →
                         </a>
                     </div>
 
