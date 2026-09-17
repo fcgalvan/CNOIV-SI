@@ -1,134 +1,138 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Act. 03 - Keylogger | Seguridad Informática</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #050505; 
-            color: #e2e8f0; 
+            background-color: #f5f0eb; /* Fondo arena / nude claro */
+            color: #2c2825; /* Texto oscuro cálido */
         }
-        .glass-card {
-            background: #111111; 
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 1px solid #333333;
-            transition: border-color 0.3s ease;
+        .editorial-title {
+            font-family: 'Cormorant Garamond', serif;
         }
-        .glass-card:hover {
-            border-color: #6366f1; 
+        .editorial-card {
+            background: #ede6df;
+            border-radius: 4px;
+            border: 1px solid #d5cbc1;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .editorial-card:hover {
+            border-color: #a87b5f;
         }
-        /* Estilo para los bloques de código simulando consola */
+        .terracotta-accent {
+            color: #a87b5f;
+        }
+        .editorial-shadow {
+            box-shadow: 0 15px 30px -10px rgba(74, 60, 49, 0.08);
+        }
+        /* Estilo para los bloques de código simulando consola editorial */
         .console-block {
-            background-color: #000000;
-            border: 1px solid #1f2937;
+            background-color: #242220;
+            border: 1px solid #3d3834;
             font-family: monospace;
-            color: #10b981; /* Texto verde terminal */
+            color: #d4a373; /* Texto tono ámbar cálido terminal */
         }
     </style>
 </head>
-<body class="text-slate-300">
+<body class="selection:bg-[#a87b5f] selection:text-white">
 
-    <!-- MENÚ DE NAVEGACIÓN RESPONSIVO -->
-    <nav class="bg-[#050505]/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4">
+    <!-- MENÚ DE NAVEGACIÓN EDITORIAL -->
+    <nav class="bg-[#f5f0eb]/90 backdrop-blur-md border-b border-[#e2d8cd] sticky top-0 z-50 px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
             
             <!-- Logo y Título -->
             <div class="flex items-center gap-3">
-                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-7 md:h-9 w-auto object-contain">
-                <span class="text-xs md:text-xl font-extrabold tracking-tight text-white leading-tight">
-                    Portafolio de Evidencias CNO IV<span class="hidden sm:inline"> - Seguridad Informática</span><span class="text-purple-500">.</span>
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-7 md:h-9 w-auto object-contain brightness-90">
+                <span class="text-xs md:text-sm font-semibold tracking-wider text-[#5c5249] uppercase leading-tight">
+                    Portafolio CNO IV<span class="hidden sm:inline"> - Seguridad Informática</span><span class="terracotta-accent">.</span>
                 </span>
             </div>
 
             <!-- Botón de Menú Hamburguesa para Móviles -->
-            <button id="menuBtn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-1">
+            <button id="menuBtn" class="md:hidden text-[#5c5249] hover:text-[#2c2825] focus:outline-none p-1">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
 
             <!-- Enlaces de Escritorio -->
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="index.html" class="hover:text-white transition">Inicio</a>
-                <a href="parcial1.html" class="hover:text-white transition">Parcial 1</a>
-                <a href="parcial2.html" class="hover:text-white transition">Parcial 2</a>
-                <a href="parcial3.html" class="hover:text-white transition">Parcial 3</a>
-                <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
+            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
+                <a href="index.html" class="hover:text-[#a87b5f] transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-[#a87b5f] transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-[#a87b5f] transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-[#a87b5f] transition">Parcial 3</a>
+                <a href="index.html#contacto" class="hover:text-[#a87b5f] transition">Contacto</a>
             </div>
         </div>
 
         <!-- Menú Desplegable para Celulares -->
-        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col space-y-3 text-sm font-medium text-slate-400">
-            <a href="index.html" class="hover:text-white transition py-1">Inicio</a>
-            <a href="parcial1.html" class="hover:text-white transition py-1">Parcial 1</a>
-            <a href="parcial2.html" class="hover:text-white transition py-1">Parcial 2</a>
-            <a href="parcial3.html" class="hover:text-white transition py-1">Parcial 3</a>
-            <a href="index.html#contacto" class="hover:text-white transition py-1">Contacto</a>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-[#e2d8cd] flex flex-col space-y-3 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
+            <a href="index.html" class="hover:text-[#a87b5f] transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-[#a87b5f] transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-[#a87b5f] transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-[#a87b5f] transition py-1">Parcial 3</a>
+            <a href="index.html#contacto" class="hover:text-[#a87b5f] transition py-1">Contacto</a>
         </div>
     </nav>
 
     <!-- BOTÓN DE RETROCESO (SUPERIOR) -->
     <div class="container mx-auto px-6 pt-8 max-w-4xl">
-        <a href="javascript:history.back()" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition duration-300 font-medium">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        <a href="javascript:history.back()" class="inline-flex items-center text-[#a87b5f] hover:text-[#8e654c] transition duration-300 text-xs font-semibold tracking-wider uppercase">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
             </svg>
             Volver a la página anterior
         </a>
     </div>
 
     <!-- ENCABEZADO DEL REPORTE -->
-    <header class="container mx-auto px-6 py-10 text-center">
-        <span class="text-indigo-500 font-bold text-sm tracking-widest uppercase mb-4 block">Reporte de Práctica</span>
-        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-white">
+    <header class="container mx-auto px-6 py-10 text-center max-w-4xl">
+        <span class="terracotta-accent font-medium text-xs tracking-[0.25em] uppercase mb-4 block">Reporte de Práctica</span>
+        <h1 class="editorial-title text-3xl md:text-5xl font-normal mb-4 tracking-wide text-[#2c2825]">
             Act. 03 - No presiones esc... todavía <br>
-            <span class="gradient-text text-xl md:text-3xl block mt-3">Implementación y Análisis de un Keylogger</span>
+            <span class="terracotta-accent italic text-2xl md:text-3xl block mt-3 font-light">Implementación y Análisis de un Keylogger</span>
         </h1>
+        <div class="w-16 h-[1px] bg-[#d5cbc1] mx-auto mt-6"></div>
     </header>
 
     <!-- CONTENIDO DEL DOCUMENTO -->
-    <main class="container mx-auto px-6 pb-12 max-w-4xl space-y-10">
+    <main class="container mx-auto px-6 pb-16 max-w-4xl space-y-10">
         
         <!-- INTRODUCCIÓN Y CONCEPTO -->
-        <section class="glass-card p-8 md:p-10 border-t-4 border-t-purple-500">
-            <h2 class="text-2xl font-bold mb-4 text-white">1. Introducción y Concepto</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">
+        <section class="editorial-card editorial-shadow p-8 md:p-10 border-t-2 border-t-[#a87b5f]">
+            <h2 class="editorial-title text-2xl md:text-3xl font-normal mb-4 text-[#2c2825]">1. Introducción y Concepto</h2>
+            <p class="text-[#6c6158] text-sm leading-relaxed mb-4 font-light">
                 Un keylogger es cualquier herramienta (de software o hardware) capaz de capturar y registrar las pulsaciones de teclado realizadas en un dispositivo. Su estudio ilustra de manera directa cómo funcionan las técnicas de captura de entrada (input capture) y por qué la vigilancia de eventos puede representar un vector de ataque grave.
             </p>
-            <p class="text-slate-400 leading-relaxed">
-                De forma conceptual, un keylogger es un mecanismo de monitoreo situado entre el usuario y el sistema que intercepta eventos (pulsación y liberación) generados por el teclado. Se apoya en la idea de <em>event hooks</em> y <em>callbacks</em>, donde el programa "escucha" las notificaciones del sistema operativo para registrarlas.
+            <p class="text-[#6c6158] text-sm leading-relaxed font-light">
+                De forma conceptual, un keylogger es un mecanismo de monitoreo situado entre el usuario y el sistema que intercepta eventos (pulsación y liberación) generados por el teclado. Se apoya en la idea de <em class="italic text-[#3c3530]">event hooks</em> y <em class="italic text-[#3c3530]">callbacks</em>, donde el programa "escucha" las notificaciones del sistema operativo para registrarlas.
             </p>
         </section>
 
         <!-- IMPORTANCIA EN CIBERSEGURIDAD -->
-        <section class="glass-card p-8 md:p-10 border-t-4 border-t-indigo-500">
-            <h2 class="text-2xl font-bold mb-4 text-white">2. Importancia en la Ciberseguridad</h2>
-            <ul class="list-disc list-inside text-slate-400 leading-relaxed space-y-3">
-                <li><strong>Vector de robo de información:</strong> Son técnicas comunes para sustraer credenciales, datos bancarios y comunicaciones privadas.</li>
-                <li><strong>Ejemplo didáctico:</strong> Permiten entender cómo el sistema operativo expone eventos y cómo puede aprovecharse indebidamente.</li>
-                <li><strong>Base de otras amenazas:</strong> Suelen combinarse con exfiltración de datos y evasión de defensas en campañas de malware más amplias.</li>
-                <li><strong>Auditoría y cumplimiento:</strong> Ayudan a diferenciar entre vigilancia corporativa legítima y vigilancia encubierta.</li>
+        <section class="editorial-card editorial-shadow p-8 md:p-10 border-t-2 border-t-[#8c7865]">
+            <h2 class="editorial-title text-2xl md:text-3xl font-normal mb-4 text-[#2c2825]">2. Importancia en la Ciberseguridad</h2>
+            <ul class="list-disc list-inside text-[#6c6158] text-sm leading-relaxed space-y-3 font-light">
+                <li><strong class="text-[#3c3530] font-medium">Vector de robo de información:</strong> Son técnicas comunes para sustraer credenciales, datos bancarios y comunicaciones privadas.</li>
+                <li><strong class="text-[#3c3530] font-medium">Ejemplo didáctico:</strong> Permiten entender cómo el sistema operativo expone eventos y cómo puede aprovecharse indebidamente.</li>
+                <li><strong class="text-[#3c3530] font-medium">Base de otras amenazas:</strong> Suelen combinarse con exfiltración de datos y evasión de defensas en campañas de malware más amplias.</li>
+                <li><strong class="text-[#3c3530] font-medium">Auditoría y cumplimiento:</strong> Ayudan a diferenciar entre vigilancia corporativa legítima y vigilancia encubierta.</li>
             </ul>
         </section>
 
         <!-- IMPLEMENTACIÓN -->
-        <section class="glass-card p-8 md:p-10 border-t-4 border-t-blue-500">
-            <h2 class="text-2xl font-bold mb-4 text-white">3. Implementación y Desarrollo</h2>
-            <p class="text-slate-400 leading-relaxed mb-6">
-                Se desarrolló un script en Python utilizando programación orientada a eventos, incorporando asociación temporal (librería <code>datetime</code>) para estampar la hora exacta, persistencia del registro en un archivo local (<code>registro_teclado.txt</code>) mediante el modo de adición "a", y manejo de excepciones (<code>try-except</code>) para capturar tanto caracteres estándar como teclas especiales.
+        <section class="editorial-card editorial-shadow p-8 md:p-10 border-t-2 border-t-[#6c6158]">
+            <h2 class="editorial-title text-2xl md:text-3xl font-normal mb-4 text-[#2c2825]">3. Implementación y Desarrollo</h2>
+            <p class="text-[#6c6158] text-sm leading-relaxed mb-6 font-light">
+                Se desarrolló un script en Python utilizando programación orientada a eventos, incorporando asociación temporal (librería <code class="text-[#a87b5f] bg-[#e8dfd5] px-1.5 py-0.5 rounded">datetime</code>) para estampar la hora exacta, persistencia del registro en un archivo local (<code class="text-[#a87b5f] bg-[#e8dfd5] px-1.5 py-0.5 rounded">registro_teclado.txt</code>) mediante el modo de adición "a", y manejo de excepciones (<code class="text-[#a87b5f] bg-[#e8dfd5] px-1.5 py-0.5 rounded">try-except</code>) para capturar tanto caracteres estándar como teclas especiales.
             </p>
             
-            <div class="console-block p-5 rounded-xl overflow-x-auto text-sm mb-4">
+            <div class="console-block p-5 rounded-lg overflow-x-auto text-xs md:text-sm mb-4 shadow-inner">
 <pre><code>from pynput.keyboard import Key, Listener
 from datetime import datetime
 
@@ -158,13 +162,13 @@ with Listener(on_press=on_press, on_release=on_release) as listener:
         </section>
 
         <!-- PRUEBAS Y RESULTADOS -->
-        <section class="glass-card p-8 md:p-10 border-t-4 border-t-emerald-500">
-            <h2 class="text-2xl font-bold mb-4 text-white">4. Pruebas y Resultados</h2>
-            <p class="text-slate-400 leading-relaxed mb-6">
-                Se ejecutó el script <code>UPSLPware.py</code> comprobando una captura exitosa y secuencial de la entrada del usuario, interceptando caracteres y teclas de control con un formato de salida preciso. El programa finalizó correctamente al presionar la tecla Esc. A continuación, se muestra un extracto del archivo generado durante las pruebas:
+        <section class="editorial-card editorial-shadow p-8 md:p-10 border-t-2 border-t-[#a87b5f]">
+            <h2 class="editorial-title text-2xl md:text-3xl font-normal mb-4 text-[#2c2825]">4. Pruebas y Resultados</h2>
+            <p class="text-[#6c6158] text-sm leading-relaxed mb-6 font-light">
+                Se ejecutó el script <code class="text-[#a87b5f] bg-[#e8dfd5] px-1.5 py-0.5 rounded">UPSLPware.py</code> comprobando una captura exitosa y secuencial de la entrada del usuario, interceptando caracteres y teclas de control con un formato de salida preciso. El programa finalizó correctamente al presionar la tecla Esc. A continuación, se muestra un extracto del archivo generado durante las pruebas:
             </p>
 
-            <div class="console-block p-5 rounded-xl overflow-x-auto text-sm text-cyan-400 mb-6">
+            <div class="console-block p-5 rounded-lg overflow-x-auto text-xs md:text-sm mb-6 shadow-inner">
 <pre><code>[Extracto de registro capturado]
 2026-08-23 | 12:47:58.191 | PRESS | evento 001 | Tecla: | t
 2026-08-23 | 12:47:58.683 | PRESS | evento 002 | Tecla: | 1
@@ -180,9 +184,9 @@ with Listener(on_press=on_press, on_release=on_release) as listener:
 
             <!-- BOTÓN DE DESCARGA PDF -->
             <div class="flex justify-center md:justify-start">
-                <a href="registro_teclado.pdf" download="registro_teclado.pdf" class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-emerald-500/30 transition-all duration-300">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                <a href="registro_teclado.pdf" download="registro_teclado.pdf" class="inline-flex items-center px-6 py-3 bg-[#a87b5f] hover:bg-[#8e654c] text-white text-xs font-semibold tracking-widest uppercase rounded-lg shadow-sm transition-all duration-300">
+                    <svg class="w-4 h-4 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                     </svg>
                     Descargar registro_teclado.pdf
                 </a>
@@ -190,9 +194,9 @@ with Listener(on_press=on_press, on_release=on_release) as listener:
         </section>
 
         <!-- CONCLUSIONES -->
-        <section class="glass-card p-8 md:p-10 border-t-4 border-t-purple-500">
-            <h2 class="text-2xl font-bold mb-4 text-white">5. Conclusiones</h2>
-            <p class="text-slate-400 leading-relaxed">
+        <section class="editorial-card editorial-shadow p-8 md:p-10 border-t-2 border-t-[#8c7865]">
+            <h2 class="editorial-title text-2xl md:text-3xl font-normal mb-4 text-[#2c2825]">5. Conclusiones</h2>
+            <p class="text-[#6c6158] text-sm leading-relaxed font-light">
                 La práctica permitió comprender a nivel técnico cómo operan las técnicas de captura de entrada, demostrando la facilidad con la que un programa en segundo plano puede monitorear a un usuario. La incorporación de persistencia y asociación temporal evidencia cómo un atacante podría perfilar el comportamiento de una víctima para extraer información sensible, subrayando la criticidad de mantener controles de seguridad estrictos.
             </p>
         </section>
@@ -200,21 +204,21 @@ with Listener(on_press=on_press, on_release=on_release) as listener:
     </main>
 
     <!-- BOTÓN DE RETROCESO (INFERIOR) -->
-    <div class="container mx-auto px-6 pb-12 max-w-4xl flex justify-center">
-        <a href="javascript:history.back()" class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-xl shadow-lg transition-all duration-300 border border-slate-700 hover:border-slate-500">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+    <div class="container mx-auto px-6 pb-16 max-w-4xl flex justify-center">
+        <a href="javascript:history.back()" class="inline-flex items-center px-6 py-3 bg-[#ede6df] hover:bg-[#e2d8cd] text-[#5c5249] text-xs font-semibold tracking-widest uppercase rounded-lg transition-all duration-300 border border-[#d5cbc1]">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
             </svg>
             Volver a la página anterior
         </a>
     </div>
 
     <!-- PIE DE PÁGINA -->
-    <footer class="py-10 text-center border-t border-slate-800 bg-[#050505]">
-        <p class="text-slate-400 text-sm mb-2 px-4">
-            🔒 Sitio web protegido con <strong class="text-slate-200">Certificado de Seguridad (HTTPS)</strong>.
+    <footer class="py-12 text-center border-t border-[#e2d8cd] bg-[#f5f0eb]">
+        <p class="text-[#6c6158] text-xs mb-2 px-4 tracking-wide">
+            🔒 Sitio web protegido con <strong class="text-[#3c3530] font-medium">Certificado de Seguridad (HTTPS)</strong>.
         </p>
-        <p class="text-slate-500 text-xs px-4">
+        <p class="text-[#8c7865] text-[11px] px-4 tracking-wider uppercase font-light">
             © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
         </p>
     </footer>
