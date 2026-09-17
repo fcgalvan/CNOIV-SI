@@ -5,30 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PR01 - De la Teoría a la Práctica: Walkthrough en Acción</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #f5f0eb; /* Fondo arena / nude claro */
-            color: #2c2825; /* Texto oscuro cálido */
+            background-color: #ffffff;
+            color: #1f2937;
         }
-        .editorial-title {
-            font-family: 'Cormorant Garamond', serif;
+        .main-card {
+            background: #fdfbf7;
+            border-radius: 1.5rem;
+            border: 1px solid #f3ece4;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
         }
-        .editorial-card {
-            background: #ede6df;
-            border-radius: 4px;
-            border: 1px solid #d5cbc1;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
         }
-        .editorial-card:hover {
-            border-color: #a87b5f;
-        }
-        .terracotta-accent {
-            color: #a87b5f;
-        }
-        .editorial-shadow {
-            box-shadow: 0 15px 30px -10px rgba(74, 60, 49, 0.08);
+        .content-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.05);
         }
         table {
             width: 100%;
@@ -36,22 +34,22 @@
             margin: 20px 0;
         }
         th, td {
-            border: 1px solid #d5cbc1;
+            border: 1px solid #e5e7eb;
             padding: 12px;
             text-align: left;
             font-size: 0.875rem;
         }
         th {
-            background-color: #e2d8cd;
-            color: #2c2825;
+            background-color: #f9fafb;
+            color: #111827;
             font-weight: 600;
         }
         tr:nth-child(even) {
-            background-color: #f0e9e2;
+            background-color: #fcfcfc;
         }
         code, pre {
-            background-color: #e8dfd5;
-            color: #a87b5f;
+            background-color: #f3f4f6;
+            color: #2563eb;
             padding: 2px 6px;
             border-radius: 4px;
             font-family: Consolas, monospace;
@@ -60,7 +58,7 @@
         pre {
             padding: 15px;
             overflow-x: auto;
-            border: 1px solid #d5cbc1;
+            border: 1px solid #e5e7eb;
         }
         ul {
             list-style-type: disc;
@@ -72,94 +70,112 @@
         }
     </style>
 </head>
-<body class="selection:bg-[#a87b5f] selection:text-white">
+<body class="selection:bg-blue-600 selection:text-white">
 
-        <!-- MENÚ DE NAVEGACIÓN EDITORIAL -->
-    <nav class="bg-[#f5f0eb]/90 backdrop-blur-md border-b border-[#e2d8cd] sticky top-0 z-50 px-6 py-4">
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase">
+        🚀 Portafolio Académico Oficial – Ciclo Otoño 2026
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
             
             <!-- Logo y Título -->
-            <div class="flex items-center gap-3">
-                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-7 md:h-9 w-auto object-contain brightness-90">
-                <span class="text-xs md:text-sm font-semibold tracking-wider text-[#5c5249] uppercase leading-tight">
-                    Portafolio CNO IV<span class="hidden sm:inline"> - Seguridad Informática</span><span class="terracotta-accent">.</span>
+            <div class="flex items-center gap-4">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-8 md:h-10 w-auto object-contain">
+                <span class="text-xs md:text-sm font-bold tracking-tight text-gray-900 uppercase">
+                    Portafolio<span class="text-blue-600">.</span>CNO IV
                 </span>
             </div>
 
-            <!-- Botón de Menú Hamburguesa para Móviles -->
-            <button id="menuBtn" class="md:hidden text-[#5c5249] hover:text-[#2c2825] focus:outline-none p-1">
+            <!-- Botón de Menú Móvil -->
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
 
             <!-- Enlaces de Escritorio -->
-            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
-                <a href="index.html" class="hover:text-[#a87b5f] transition">Inicio</a>
-                <a href="parcial1.html" class="hover:text-[#a87b5f] transition">Parcial 1</a>
-                <a href="parcial2.html" class="hover:text-[#a87b5f] transition">Parcial 2</a>
-                <a href="parcial3.html" class="hover:text-[#a87b5f] transition">Parcial 3</a>
-                <a href="roadtohalloffame.html" class="hover:text-[#a87b5f] transition">Road to Hall of Fame</a>
-                <a href="proyectos.html" class="hover:text-[#a87b5f] transition">Proyectos</a>
-                <a href="index.html#contacto" class="hover:text-[#a87b5f] transition">Contacto</a>
+            <div class="hidden md:flex space-x-8 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-blue-600 transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-blue-600 transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="text-blue-600 border-b-2 border-blue-600 pb-1 transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
             </div>
         </div>
 
-        <!-- Menú Desplegable para Celulares -->
-        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-[#e2d8cd] flex flex-col space-y-3 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
-            <a href="index.html" class="hover:text-[#a87b5f] transition py-1">Inicio</a>
-            <a href="parcial1.html" class="hover:text-[#a87b5f] transition py-1">Parcial 1</a>
-            <a href="parcial2.html" class="hover:text-[#a87b5f] transition py-1">Parcial 2</a>
-            <a href="parcial3.html" class="hover:text-[#a87b5f] transition py-1">Parcial 3</a>
-            <a href="roadtohalloffame.html" class="hover:text-[#a87b5f] transition py-1">Road to Hall of Fame</a>
-            <a href="proyectos.html" class="hover:text-[#a87b5f] transition py-1">Proyectos</a>
-            <a href="index.html#contacto" class="hover:text-[#a87b5f] transition py-1">Contacto</a>
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+            <a href="index.html" class="hover:text-blue-600 transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-blue-600 transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-blue-600 transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-blue-600 transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="hover:text-blue-600 transition py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="text-blue-600 py-1">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-blue-600 transition py-1">Contacto</a>
         </div>
     </nav>
 
-    <div class="max-w-4xl mx-auto space-y-10 px-6 py-12">
+    <div class="max-w-6xl mx-auto space-y-8 px-6 py-10">
 
-        <!-- Encabezado -->
-        <div class="editorial-card editorial-shadow p-8 md:p-12 text-center space-y-4 border-t-2 border-t-[#a87b5f]">
-            <p class="text-xs uppercase tracking-[0.2em] terracotta-accent font-medium">
-                Universidad Politécnica de San Luis Potosí &bull; Ingeniería en Tecnologías de la Información
-            </p>
-            <h1 class="editorial-title text-3xl sm:text-5xl font-normal text-[#2c2825] tracking-wide">
-                PR01 - De la Teoría a la Práctica: Walkthrough en Acción
-            </h1>
-            <div class="w-16 h-[1px] bg-[#d5cbc1] mx-auto my-4"></div>
-            <div class="text-xs md:text-sm text-[#6c6158] space-y-1 font-light">
-                <p><strong>CNO IV: Seguridad Informática</strong> | Otoño 2026</p>
-                <p><strong>Mtro. Servando López Contreras</strong></p>
-                <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455)</p>
+        <!-- Encabezado Principal Tipo Hero Estilo Imagen -->
+        <div class="main-card p-8 md:p-12 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-block px-3 py-1 bg-blue-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                    CNO IV – Seguridad Informática
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+                    PR01 - De la Teoría a la Práctica: Walkthrough en Acción
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
+                    Universidad Politécnica de San Luis Potosí — Explora las soluciones técnicas, guías de práctica y análisis desarrollados para las etapas del curso.
+                </p>
+                <div class="pt-2 text-xs text-gray-500 space-y-1">
+                    <p><strong>Mtro. Servando López Contreras</strong> | Otoño 2026</p>
+                    <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455)</p>
+                </div>
+                <div class="pt-2">
+                    <a href="PR01_Walkthrough.pdf" download="PR01_Walkthrough.pdf" class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold tracking-wider uppercase rounded-lg shadow-sm transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Descargar Reporte en PDF
+                    </a>
+                </div>
             </div>
-            <!-- Botón de Descarga del PDF -->
-            <div class="pt-6 flex justify-center">
-                <a href="PR01_Walkthrough.pdf" download="PR01_Walkthrough.pdf" class="inline-flex items-center gap-2 px-6 py-3 bg-[#a87b5f] hover:bg-[#8e654c] text-white text-xs font-semibold tracking-widest uppercase rounded-lg shadow-sm transition-all duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+
+            <!-- Tarjeta lateral de Perfil (Igual a la referencia) -->
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center w-full lg:w-72 flex-shrink-0 flex flex-col items-center">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
-                    Descargar Reporte en PDF
-                </a>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm">Fabiola Calvillo Galván</h3>
+                <p class="text-xs text-gray-400 mt-1">Ciclo Otoño 2026</p>
             </div>
         </div>
 
         <!-- Contenido / Índice -->
-        <div class="editorial-card editorial-shadow p-8 border-t-2 border-t-[#8c7865]">
-            <h2 class="editorial-title text-2xl font-normal mb-4 text-[#2c2825]">Contenido</h2>
-            <ul class="space-y-2 text-[#6c6158] text-sm font-light">
+        <div class="content-card p-8">
+            <h2 class="text-xl font-bold mb-4 text-gray-900">Contenido</h2>
+            <ul class="space-y-2 text-gray-600 text-sm font-light">
                 <li>1. Configuración de la Red y Descubrimiento de Objetivos | 3</li>
                 <li>2. Escaneo de Puertos y Detección de Servicios | 7</li>
                 <li>3. Auditoría Web y Enumeración de la API (Puerto 8080) | 8</li>
                 <li>4. Hallazgos y Vulnerabilidades Detectadas | 15
-                    <ul class="pl-5 mt-2 space-y-1 text-xs text-[#7c7168]">
+                    <ul class="pl-5 mt-2 space-y-1 text-xs text-gray-500">
                         <li>4.1 Fuga de Información Sensible (/users) | 15</li>
                         <li>4.2 Análisis del impacto del hallazgo | 20</li>
                         <li>4.4 Riesgo asociado a la enumeración de endpoints | 21</li>
                     </ul>
                 </li>
                 <li>5. Recomendaciones de Mitigación | 21
-                    <ul class="pl-5 mt-2 space-y-1 text-xs text-[#7c7168]">
+                    <ul class="pl-5 mt-2 space-y-1 text-xs text-gray-500">
                         <li>5.1 Proteger el endpoint /users | 21</li>
                         <li>5.2 Fortalecer la gestión de autenticación | 21</li>
                         <li>5.3 Mantener actualizados los servicios y reducir la superficie de exposición | 21</li>
@@ -171,32 +187,32 @@
         </div>
 
         <!-- Sección 1 -->
-        <div class="editorial-card editorial-shadow p-8 space-y-4 border-t-2 border-t-[#6c6158]">
-            <h2 class="editorial-title text-2xl font-normal text-[#2c2825]">1. Configuración de la Red y Descubrimiento de Objetivos</h2>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Para la realización de esta práctica se utilizó un entorno controlado y aislado en VirtualBox, compuesto por dos máquinas virtuales conectadas a la red privada <code>VirtualBox Host-Only Ethernet Adapter</code>:</p>
-            <ul class="list-disc pl-5 space-y-2 text-[#6c6158] text-sm font-light">
-                <li><strong class="text-[#2c2825]">Atacante (Kali Linux):</strong> Dirección IP asignada <code>192.168.56.101/24</code>.</li>
-                <li><strong class="text-[#2c2825]">Objetivo (SnakeOil):</strong> Dirección IP por descubrir en el segmento <code>192.168.56.0/24</code></li>
+        <div class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900">1. Configuración de la Red y Descubrimiento de Objetivos</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Para la realización de esta práctica se utilizó un entorno controlado y aislado en VirtualBox, compuesto por dos máquinas virtuales conectadas a la red privada <code>VirtualBox Host-Only Ethernet Adapter</code>:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-600 text-sm font-light">
+                <li><strong class="text-gray-900">Atacante (Kali Linux):</strong> Dirección IP asignada <code>192.168.56.101/24</code>.</li>
+                <li><strong class="text-gray-900">Objetivo (SnakeOil):</strong> Dirección IP por descubrir en el segmento <code>192.168.56.0/24</code></li>
             </ul>
 
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825] mt-6">Descubrimiento de Hosts Activos</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Se ejecutó un escaneo de peticiones ARP en el segmento local mediante la herramienta <code>arp-scan</code>:</p>
-            <p class="text-[#6c6158] text-sm font-light"><strong class="text-[#2c2825]">Resultados obtenidos:</strong></p>
-            <ul class="list-disc pl-5 space-y-1 text-[#6c6158] text-sm font-light">
+            <h3 class="text-base font-bold text-gray-900 mt-6">Descubrimiento de Hosts Activos</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Se ejecutó un escaneo de peticiones ARP en el segmento local mediante la herramienta <code>arp-scan</code>:</p>
+            <p class="text-gray-600 text-sm font-light"><strong class="text-gray-900">Resultados obtenidos:</strong></p>
+            <ul class="list-disc pl-5 space-y-1 text-gray-600 text-sm font-light">
                 <li><code>192.168.56.1</code>: Interfaz del Host / Gateway virtual.</li>
                 <li><code>192.168.56.100</code>: Host activo secundario.</li>
                 <li><code>192.168.56.102</code>: Máquina objetivo Snake Oil (Dirección MAC <code>08:00:27:c5:36:78</code>).</li>
             </ul>
-            <p class="text-xs text-[#8c7865] italic">Figura 4. Resultado del análisis ARP utilizado para confirmar la presencia de la máquina objetivo SnakeOil.</p>
+            <p class="text-xs text-gray-400 italic">Figura 4. Resultado del análisis ARP utilizado para confirmar la presencia de la máquina objetivo SnakeOil.</p>
         </div>
 
         <!-- Sección 2 -->
-        <div class="editorial-card editorial-shadow p-8 space-y-4 border-t-2 border-t-[#a87b5f]">
-            <h2 class="editorial-title text-2xl font-normal text-[#2c2825]">2. Escaneo de Puertos y Detección de Servicios</h2>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Con la IP del objetivo identificada (<code>192.168.56.102</code>), se procedió a realizar un escaneo exhaustivo de los 65,535 puertos TCP utilizando Nmap para identificar servicios y versiones.</p>
-            <p class="text-xs text-[#8c7865] italic">Figura 5. Resultado del escaneo realizado con Nmap sobre la dirección IP del objetivo.</p>
+        <div class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900">2. Escaneo de Puertos y Detección de Servicios</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Con la IP del objetivo identificada (<code>192.168.56.102</code>), se procedió a realizar un escaneo exhaustivo de los 65,535 puertos TCP utilizando Nmap para identificar servicios y versiones.</p>
+            <p class="text-xs text-gray-400 italic">Figura 5. Resultado del escaneo realizado con Nmap sobre la dirección IP del objetivo.</p>
 
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825] mt-4">Tabla de Puertos Abiertos</h3>
+            <h3 class="text-base font-bold text-gray-900 mt-4">Tabla de Puertos Abiertos</h3>
             <div class="overflow-x-auto">
                 <table>
                     <thead>
@@ -232,13 +248,13 @@
         </div>
 
         <!-- Sección 3 -->
-        <div class="editorial-card editorial-shadow p-8 space-y-4 border-t-2 border-t-[#8c7865]">
-            <h2 class="editorial-title text-2xl font-normal text-[#2c2825]">3. Auditoría Web y Enumeración de la API (Puerto 8080)</h2>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Al inspeccionar el servicio HTTP en el puerto 8080, se encontró un blog en desarrollo. En la publicación /4 (Useful Links), se identificó una referencia explícita al uso de tokens JWT (JSON Web Tokens) mediante la biblioteca <code>flask-jwt-extended</code> de Python.</p>
+        <div class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900">3. Auditoría Web y Enumeración de la API (Puerto 8080)</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Al inspeccionar el servicio HTTP en el puerto 8080, se encontró un blog en desarrollo. En la publicación /4 (Useful Links), se identificó una referencia explícita al uso de tokens JWT (JSON Web Tokens) mediante la biblioteca <code>flask-jwt-extended</code> de Python.</p>
 
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825] mt-4">Descubrimiento de Rutas con Gobuster</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Se ejecutó la herramienta Gobuster para realizar un análisis por fuerza bruta de los endpoints de la aplicación:</p>
-            <ul class="list-disc pl-5 space-y-1 text-[#6c6158] text-sm font-light">
+            <h3 class="text-base font-bold text-gray-900 mt-4">Descubrimiento de Rutas con Gobuster</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Se ejecutó la herramienta Gobuster para realizar un análisis por fuerza bruta de los endpoints de la aplicación:</p>
+            <ul class="list-disc pl-5 space-y-1 text-gray-600 text-sm font-light">
                 <li><code>/users</code> (Status: 200) - Devuelve información de usuarios registrados.</li>
                 <li><code>/login</code> (Status: 405) - Endpoint reservado para peticiones POST de inicio de sesión.</li>
                 <li><code>/registration</code> (Status: 200) - Endpoint de registro de usuarios.</li>
@@ -246,77 +262,77 @@
         </div>
 
         <!-- Sección 4 -->
-        <div class="editorial-card editorial-shadow p-8 space-y-4 border-t-2 border-t-[#6c6158]">
-            <h2 class="editorial-title text-2xl font-normal text-[#2c2825]">4. Hallazgos y Vulnerabilidades Detectadas</h2>
+        <div class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900">4. Hallazgos y Vulnerabilidades Detectadas</h2>
             
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825]">4.1 Fuga de Información Sensible (/users)</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Al consultar <code>GET /users</code>, la API expone públicamente un listado JSON con los nombres de usuario y los hashes de contraseña cifrados con PBKDF2 (<code>$pbkdf2-sha256$29000$...</code>). Se confirmó la presencia del usuario <code>patrick</code>.</p>
+            <h3 class="text-base font-bold text-gray-900">4.1 Fuga de Información Sensible (/users)</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Al consultar <code>GET /users</code>, la API expone públicamente un listado JSON con los nombres de usuario y los hashes de contraseña cifrados con PBKDF2 (<code>$pbkdf2-sha256$29000$...</code>). Se confirmó la presencia del usuario <code>patrick</code>.</p>
 
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825] mt-4">4.2 Análisis del impacto del hallazgo</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">La exposición pública del endpoint <code>/users</code> representa una fuga de información sensible, ya que permite a cualquier usuario con acceso al servicio obtener nombres de usuario y hashes de contraseña. Aunque los hashes observados se encuentran almacenados mediante PBKDF2, su divulgación innecesaria incrementa la superficie de ataque y puede facilitar intentos no autorizados de análisis de credenciales.</p>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">La información obtenida también permite identificar cuentas existentes, como el usuario <code>patrick</code>, lo que constituye una fuente adicional de información para un atacante. Por esta razón, el hallazgo se considera de riesgo alto.</p>
+            <h3 class="text-base font-bold text-gray-900 mt-4">4.2 Análisis del impacto del hallazgo</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">La exposición pública del endpoint <code>/users</code> representa una fuga de información sensible, ya que permite a cualquier usuario con acceso al servicio obtener nombres de usuario y hashes de contraseña. Aunque los hashes observados se encuentran almacenados mediante PBKDF2, su divulgación innecesaria incrementa la superficie de ataque y puede facilitar intentos no autorizados de análisis de credenciales.</p>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">La información obtenida también permite identificar cuentas existentes, como el usuario <code>patrick</code>, lo que constituye una fuente adicional de información para un atacante. Por esta razón, el hallazgo se considera de riesgo alto.</p>
 
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825] mt-4">4.4 Riesgo asociado a la enumeración de endpoints</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">La identificación de las rutas <code>/users</code>, <code>/login</code> y <code>/registration</code> demuestra que la aplicación expone diferentes funcionalidades relacionadas con la gestión y autenticación de usuarios. La disponibilidad de estos endpoints no constituye por sí misma una vulnerabilidad; sin embargo, su comportamiento debe estar protegido mediante controles de autenticación, autorización y validación de solicitudes.</p>
+            <h3 class="text-base font-bold text-gray-900 mt-4">4.4 Riesgo asociado a la enumeración de endpoints</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">La identificación de las rutas <code>/users</code>, <code>/login</code> y <code>/registration</code> demuestra que la aplicación expone diferentes funcionalidades relacionadas con la gestión y autenticación de usuarios. La disponibilidad de estos endpoints no constituye por sí misma una vulnerabilidad; sin embargo, su comportamiento debe estar protegido mediante controles de autenticación, autorización y validación de solicitudes.</p>
         </div>
 
         <!-- Sección 5 -->
-        <div class="editorial-card editorial-shadow p-8 space-y-4 border-t-2 border-t-[#a87b5f]">
-            <h2 class="editorial-title text-2xl font-normal text-[#2c2825]">5. Recomendaciones de Mitigación</h2>
+        <div class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900">5. Recomendaciones de Mitigación</h2>
             
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825]">5.1 Proteger el endpoint /users</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">El endpoint <code>/users</code> no debe exponer hashes de contraseña ni otros datos sensibles. Se recomienda eliminar dichos campos de cualquier respuesta pública y aplicar controles de autenticación y autorización antes de permitir el acceso a información de cuentas.</p>
+            <h3 class="text-base font-bold text-gray-900">5.1 Proteger el endpoint /users</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">El endpoint <code>/users</code> no debe exponer hashes de contraseña ni otros datos sensibles. Se recomienda eliminar dichos campos de cualquier respuesta pública y aplicar controles de autenticación y autorización antes de permitir el acceso a información de cuentas.</p>
 
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825] mt-4">5.2 Fortalecer la gestión de autenticación</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Los mecanismos de autenticación deben configurarse de manera que las credenciales y los tokens no sean expuestos innecesariamente. Debido a que la aplicación hace referencia al uso de JWT mediante <code>flask-jwt-extended</code>, se recomienda revisar la configuración del ciclo de vida de los tokens.</p>
+            <h3 class="text-base font-bold text-gray-900 mt-4">5.2 Fortalecer la gestión de autenticación</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Los mecanismos de autenticación deben configurarse de manera que las credenciales y los tokens no sean expuestos innecesariamente. Debido a que la aplicación hace referencia al uso de JWT mediante <code>flask-jwt-extended</code>, se recomienda revisar la configuración del ciclo de vida de los tokens.</p>
 
-            <h3 class="text-lg editorial-title font-normal text-[#2c2825] mt-4">5.3 Mantener actualizados los servicios y reducir la superficie de exposición</h3>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Los servicios identificados durante el escaneo, incluyendo SSH y los servicios HTTP basados en Nginx, deben mantenerse actualizados y configurados de acuerdo con las necesidades reales del sistema.</p>
+            <h3 class="text-base font-bold text-gray-900 mt-4">5.3 Mantener actualizados los servicios y reducir la superficie de exposición</h3>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Los servicios identificados durante el escaneo, incluyendo SSH y los servicios HTTP basados en Nginx, deben mantenerse actualizados y configurados de acuerdo con las necesidades reales del sistema.</p>
         </div>
 
         <!-- Sección de Video Walkthrough -->
-        <div class="editorial-card editorial-shadow p-8 space-y-4 border-t-2 border-t-[#8c7865]">
-            <h2 class="editorial-title text-2xl font-normal text-[#2c2825]">Video Walkthrough en Acción</h2>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Puedes ver la demostración completa del desarrollo y análisis de la práctica haciendo clic en el siguiente enlace:</p>
+        <div class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900">Video Walkthrough en Acción</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Puedes ver la demostración completa del desarrollo y análisis de la práctica haciendo clic en el siguiente enlace:</p>
         
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-[#e2d8cd] rounded-lg border border-[#d5cbc1]">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-gray-50 rounded-xl border border-gray-100">
                 <div class="flex items-center gap-4">
-                    <div class="p-3 bg-[#f5f0eb] terracotta-accent rounded-md shadow-sm">
+                    <div class="p-3 bg-blue-50 text-blue-600 rounded-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                         </svg>
                     </div>
                     <div>
-                        <h4 class="text-[#2c2825] font-medium text-sm">PR01 - De la Teoría a la Práctica: Walkthrough</h4>
-                        <p class="text-xs text-[#8c7865]">YouTube • Video explicativo de la práctica</p>
+                        <h4 class="text-gray-900 font-semibold text-sm">PR01 - De la Teoría a la Práctica: Walkthrough</h4>
+                        <p class="text-xs text-gray-400">YouTube • Video explicativo de la práctica</p>
                     </div>
                 </div>
-                <a href="https://youtu.be/EbLvSRoFy2s" target="_blank" class="px-5 py-2.5 bg-[#a87b5f] hover:bg-[#8e654c] text-white text-xs font-semibold tracking-widest uppercase rounded-lg shadow-sm transition-all duration-300 whitespace-nowrap">
+                <a href="https://youtu.be/EbLvSRoFy2s" target="_blank" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold tracking-wider uppercase rounded-lg shadow-sm transition-all duration-300 whitespace-nowrap">
                     Ver en YouTube ➔
                 </a>
             </div>
         </div>
 
         <!-- Sección 6 -->
-        <div class="editorial-card editorial-shadow p-8 space-y-4 border-t-2 border-t-[#6c6158]">
-            <h2 class="editorial-title text-2xl font-normal text-[#2c2825]">6. Conclusiones</h2>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">La práctica permitió aplicar una metodología básica de reconocimiento y enumeración dentro de un entorno controlado de laboratorio. El principal hallazgo documentado fue la exposición pública de información sensible en el endpoint <code>/users</code>, incluyendo nombres de usuario y hashes de contraseña.</p>
-            <p class="text-[#6c6158] text-sm font-light leading-relaxed">Durante la fase posterior al reconocimiento, se realizaron múltiples intentos para explotar las vulnerabilidades identificadas y avanzar hacia la obtención de acceso administrativo sobre el sistema objetivo; sin embargo, pese a los distintos enfoques probados, no fue posible completar de manera satisfactoria la explotación ni escalar privilegios dentro del sistema, por lo que el walkthrough no logró concluirse en su totalidad conforme a lo planteado originalmente.</p>
+        <div class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900">6. Conclusiones</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">La práctica permitió aplicar una metodología básica de reconocimiento y enumeración dentro de un entorno controlado de laboratorio. El principal hallazgo documentado fue la exposición pública de información sensible en el endpoint <code>/users</code>, incluyendo nombres de usuario y hashes de contraseña.</p>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Durante la fase posterior al reconocimiento, se realizaron múltiples intentos para explotar las vulnerabilidades identificadas y avanzar hacia la obtención de acceso administrativo sobre el sistema objetivo; sin embargo, pese a los distintos enfoques probados, no fue posible completar de manera satisfactoria la explotación ni escalar privilegios dentro del sistema, por lo que el walkthrough no logró concluirse en su totalidad conforme a lo planteado originalmente.</p>
         </div>
 
     </div>
 
     <!-- PIE DE PÁGINA -->
-    <footer class="py-12 text-center border-t border-[#e2d8cd] bg-[#f5f0eb] mt-12">
-        <p class="text-[#6c6158] text-xs mb-2 px-4 tracking-wide">
-            🔒 Sitio web protegido con <strong class="text-[#3c3530] font-medium">Certificado de Seguridad (HTTPS)</strong>.
+    <footer class="py-10 text-center border-t border-gray-100 bg-white mt-12">
+        <p class="text-gray-500 text-xs mb-2 px-4">
+            🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
         </p>
-        <p class="text-[#8c7865] text-[11px] px-4 tracking-wider uppercase font-light">
+        <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
             © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
         </p>
     </footer>
 
-    <!-- Script de Interacción para el Menú Móvil -->
+    <!-- Script del Menú Móvil -->
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
