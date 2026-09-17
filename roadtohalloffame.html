@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act. 06: Road to Hall of Fame | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f5f0eb; /* Fondo arena / nude claro */
+            color: #2c2825; /* Texto oscuro cálido */
+        }
+        .editorial-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .editorial-card {
+            background: #ede6df;
+            border-radius: 4px;
+            border: 1px solid #d5cbc1;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .editorial-card:hover {
+            transform: translateY(-3px);
+            border-color: #a87b5f;
+        }
+        .terracotta-accent {
+            color: #a87b5f;
+        }
+        .editorial-shadow {
+            box-shadow: 0 15px 30px -10px rgba(74, 60, 49, 0.08);
+        }
+        /* Estilo de línea de ruta (Roadmap) */
+        .roadmap-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            width: 2px;
+            background: #d5cbc1;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#a87b5f] selection:text-white">
+
+    <!-- MENÚ DE NAVEGACIÓN EDITORIAL -->
+    <nav class="bg-[#f5f0eb]/90 backdrop-blur-md border-b border-[#e2d8cd] sticky top-0 z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            
+            <!-- Logo y Título -->
+            <div class="flex items-center gap-3">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-7 md:h-9 w-auto object-contain brightness-90">
+                <span class="text-xs md:text-sm font-semibold tracking-wider text-[#5c5249] uppercase leading-tight">
+                    Portafolio CNO IV<span class="hidden sm:inline"> - Seguridad Informática</span><span class="terracotta-accent">.</span>
+                </span>
+            </div>
+
+            <!-- Botón de Menú Hamburguesa para Móviles -->
+            <button id="menuBtn" class="md:hidden text-[#5c5249] hover:text-[#2c2825] focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex space-x-6 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
+                <a href="index.html" class="hover:text-[#a87b5f] transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-[#a87b5f] transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-[#a87b5f] transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-[#a87b5f] transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="text-[#2c2825] font-semibold border-b border-[#a87b5f] pb-0.5">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-[#a87b5f] transition">Proyectos</a>
+               
+            </div>
+        </div>
+
+        <!-- Menú Desplegable para Celulares -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-[#e2d8cd] flex flex-col space-y-3 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
+            <a href="index.html" class="hover:text-[#a87b5f] transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-[#a87b5f] transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-[#a87b5f] transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-[#a87b5f] transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="text-[#2c2825] font-semibold py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="hover:text-[#a87b5f] transition py-1">Proyectos</a>
+        </div>
+    </nav>
+
+    <!-- BOTÓN DE RETROCESO -->
+    <div class="container mx-auto px-6 pt-8 max-w-4xl">
+        <a href="index.html" class="inline-flex items-center text-xs tracking-widest uppercase terracotta-accent hover:text-[#8e654c] transition duration-300 font-medium">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Volver al Inicio
+        </a>
+    </div>
+
+    <!-- ENCABEZADO DE LA ACTIVIDAD -->
+    <header class="container mx-auto px-6 py-12 text-center max-w-4xl">
+        <span class="text-xs uppercase tracking-[0.2em] terracotta-accent font-medium mb-4 block">Universidad Politécnica de San Luis Potosí</span>
+        <h1 class="editorial-title text-3xl md:text-5xl font-normal mb-4 tracking-wide text-[#2c2825]">
+            Act. 06: Road to Hall of Fame <br>
+            <span class="text-xl md:text-3xl block mt-2 text-[#6c6158] italic">Ruta de Progreso y Consolidación de Evidencias</span>
+        </h1>
+        <div class="w-16 h-[1px] bg-[#d5cbc1] mx-auto my-6"></div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-4xl">
+
+        <!-- OBJETIVO GENERAL -->
+        <section class="editorial-card editorial-shadow p-8 border-l-4 border-l-[#a87b5f]">
+            <h2 class="editorial-title text-2xl font-normal mb-4 text-[#2c2825] flex items-center gap-3">
+                <span>🎯</span> Objetivo General
+            </h2>
+            <p class="text-[#6c6158] leading-relaxed text-sm md:text-base font-light">
+                Diseñar e integrar en el Portafolio Digital un nuevo módulo web denominado <strong>ROAD TO HALL OF FAME</strong>, que estructure y presente de forma visual, organizada y profesional los laboratorios, incorporando evidencias técnicas, navegación funcional y un botón de descarga del documento completo, demostrando competencias en documentación técnica, desarrollo web y presentación profesional de resultados en seguridad informática.
+            </p>
+        </section>
+
+        <!-- OBJETIVOS ESPECÍFICOS -->
+        <section class="editorial-card editorial-shadow p-8 border-l-4 border-l-[#8c7865]">
+            <h2 class="editorial-title text-2xl font-normal mb-4 text-[#2c2825] flex items-center gap-3">
+                <span>📌</span> Objetivos Específicos
+            </h2>
+            <ul class="space-y-3 text-sm md:text-base text-[#6c6158] font-light">
+                <li class="flex items-start gap-2">
+                    <span class="terracotta-accent font-bold">▪</span>
+                    <span><strong>Estructurar e implementar:</strong> Integrar dentro del Portafolio Digital un apartado de navegación denominado <em>ROAD TO HALL OF FAME</em>, asegurando coherencia arquitectónica, usabilidad y correcta funcionalidad de enlaces.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="terracotta-accent font-bold">▪</span>
+                    <span><strong>Organizar y presentar:</strong> Mostrar los laboratorios incluyendo imagen, título, descripción técnica breve y evidencia, garantizando fidelidad al contenido original y claridad en la documentación.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN DE DESCARGA DE PDF -->
+        <section class="editorial-card editorial-shadow p-8 border-l-4 border-l-[#6c6158] flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <h2 class="editorial-title text-2xl font-normal mb-2 text-[#2c2825] flex items-center gap-3">
+                    <span>📄</span> Documento Completo en PDF
+                </h2>
+                <p class="text-[#6c6158] text-sm font-light max-w-xl">
+                    Accede al reporte oficial consolidado de la trayectoria y laboratorios que conforman este módulo de especialización.
+                </p>
+            </div>
+            <a href="Road_to_Hall_of_Fame.pdf" target="_blank" class="inline-flex items-center gap-3 bg-[#a87b5f] hover:bg-[#8e654c] text-white font-medium text-xs tracking-wider uppercase px-6 py-3.5 rounded transition duration-300 shrink-0 shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Descargar Reporte PDF
+            </a>
+        </section>
+
+        <!-- ROADMAP VISUAL (RUTA DE PROGRESO) -->
+        <section class="editorial-card editorial-shadow p-8 md:p-12">
+            <h2 class="editorial-title text-3xl font-normal mb-2 text-[#2c2825] text-center">
+                🗺️ Ruta de Progreso: Road to Hall of Fame
+            </h2>
+            <p class="text-xs text-[#8c7865] text-center uppercase tracking-widest mb-10 font-light">Evolución de laboratorios y prácticas integradas</p>
+
+            <!-- Contenedor del Roadmap -->
+            <div class="relative pl-8 md:pl-12 space-y-12 roadmap-line">
+
+                <!-- Hito 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-[#a87b5f] border-4 border-[#f5f0eb] flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div class="bg-[#f5f0eb] p-6 rounded border border-[#d5cbc1] editorial-shadow">
+                        <span class="text-[11px] uppercase tracking-widest terracotta-accent font-semibold block mb-1">Fase Inicial</span>
+                        <h3 class="editorial-title text-xl font-semibold text-[#2c2825] mb-2">Análisis de Vulnerabilidades y Phishing</h3>
+                        <p class="text-xs md:text-sm text-[#6c6158] font-light mb-4">
+                            Implementación de entornos controlados de simulación de ataques de ingeniería social y recolección de credenciales para concientización defensiva.
+                        </p>
+                        <a href="actividad04.html" class="inline-flex items-center text-xs tracking-wider uppercase terracotta-accent font-medium hover:text-[#8e654c]">
+                            Ver evidencia asociada →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hito 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-[#8c7865] border-4 border-[#f5f0eb] flex items-center justify-center text-white text-xs font-bold">2</div>
+                    <div class="bg-[#f5f0eb] p-6 rounded border border-[#d5cbc1] editorial-shadow">
+                        <span class="text-[11px] uppercase tracking-widest text-[#8c7865] font-semibold block mb-1">Fase Intermedia</span>
+                        <h3 class="editorial-title text-xl font-semibold text-[#2c2825] mb-2">Hardening y Aseguramiento de Sistemas</h3>
+                        <p class="text-xs md:text-sm text-[#6c6158] font-light mb-4">
+                            Aplicación de políticas de control de accesos, auditorías de configuración y mitigación de brechas en infraestructuras de red locales.
+                        </p>
+                        <span class="text-xs text-[#8c7865] font-mono italic">Módulo completado</span>
+                    </div>
+                </div>
+
+                <!-- Hito 3 -->
+                <div class="relative group">
+                    <div class="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-[#6c6158] border-4 border-[#f5f0eb] flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="bg-[#f5f0eb] p-6 rounded border border-[#d5cbc1] editorial-shadow">
+                        <span class="text-[11px] uppercase tracking-widest text-[#6c6158] font-semibold block mb-1">Fase Avanzada (Hall of Fame)</span>
+                        <h3 class="editorial-title text-xl font-semibold text-[#2c2825] mb-2">Consolidación y Buenas Prácticas</h3>
+                        <p class="text-xs md:text-sm text-[#6c6158] font-light mb-4">
+                            Evaluación final de competencias en ciberseguridad defensiva, estructuración arquitectónica y despliegue del portafolio profesional.
+                        </p>
+                        <span class="text-xs terracotta-accent font-semibold uppercase tracking-wider">Meta Alcanzada 🏆</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-12 text-center border-t border-[#e2d8cd] bg-[#f5f0eb]">
+        <p class="text-[#6c6158] text-xs mb-2 px-4 tracking-wide">
+            🔒 Sitio web protegido con <strong class="text-[#3c3530] font-medium">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-[#8c7865] text-[11px] px-4 tracking-wider uppercase font-light">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
+    </footer>
+
+    <!-- Script de Menú Móvil -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
