@@ -9,8 +9,8 @@
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #f5f0eb; /* Fondo arena / nude claro */
-            color: #2c2825; /* Texto oscuro cálido */
+            background-color: #f5f0eb; 
+            color: #2c2825; 
         }
         .editorial-title {
             font-family: 'Cormorant Garamond', serif;
@@ -31,16 +31,11 @@
         .editorial-shadow {
             box-shadow: 0 15px 30px -10px rgba(74, 60, 49, 0.08);
         }
-        /* Estilo de línea de ruta (Roadmap) */
-        .roadmap-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 24px;
-            width: 2px;
-            background: #d5cbc1;
-            z-index: 0;
+        
+        /* Fondo con patrón de puntos estilo la imagen de referencia */
+        .dot-grid-bg {
+            background-image: radial-gradient(#d5cbc1 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
@@ -49,47 +44,38 @@
     <!-- MENÚ DE NAVEGACIÓN EDITORIAL -->
     <nav class="bg-[#f5f0eb]/90 backdrop-blur-md border-b border-[#e2d8cd] sticky top-0 z-50 px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
-            
-            <!-- Logo y Título -->
             <div class="flex items-center gap-3">
                 <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-7 md:h-9 w-auto object-contain brightness-90">
                 <span class="text-xs md:text-sm font-semibold tracking-wider text-[#5c5249] uppercase leading-tight">
                     Portafolio CNO IV<span class="hidden sm:inline"> - Seguridad Informática</span><span class="terracotta-accent">.</span>
                 </span>
             </div>
-
-            <!-- Botón de Menú Hamburguesa para Móviles -->
             <button id="menuBtn" class="md:hidden text-[#5c5249] hover:text-[#2c2825] focus:outline-none p-1">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
-
-            <!-- Enlaces de Escritorio -->
             <div class="hidden md:flex space-x-6 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
                 <a href="index.html" class="hover:text-[#a87b5f] transition">Inicio</a>
                 <a href="parcial1.html" class="hover:text-[#a87b5f] transition">Parcial 1</a>
                 <a href="parcial2.html" class="hover:text-[#a87b5f] transition">Parcial 2</a>
                 <a href="parcial3.html" class="hover:text-[#a87b5f] transition">Parcial 3</a>
-                <a href="roadtohalloffame.html" class="text-[#2c2825] font-semibold border-b border-[#a87b5f] pb-0.5">Road to Hall of Fame</a>
                 <a href="proyectos.html" class="hover:text-[#a87b5f] transition">Proyectos</a>
-               
+                <a href="hall_of_fame.html" class="text-[#2c2825] font-semibold border-b border-[#a87b5f] pb-0.5">Hall of Fame</a>
             </div>
         </div>
-
-        <!-- Menú Desplegable para Celulares -->
         <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-[#e2d8cd] flex flex-col space-y-3 text-xs font-medium tracking-widest uppercase text-[#5c5249]">
             <a href="index.html" class="hover:text-[#a87b5f] transition py-1">Inicio</a>
             <a href="parcial1.html" class="hover:text-[#a87b5f] transition py-1">Parcial 1</a>
             <a href="parcial2.html" class="hover:text-[#a87b5f] transition py-1">Parcial 2</a>
             <a href="parcial3.html" class="hover:text-[#a87b5f] transition py-1">Parcial 3</a>
-            <a href="roadtohalloffame.html" class="text-[#2c2825] font-semibold py-1">Road to Hall of Fame</a>
             <a href="proyectos.html" class="hover:text-[#a87b5f] transition py-1">Proyectos</a>
+            <a href="hall_of_fame.html" class="text-[#2c2825] font-semibold py-1">Hall of Fame</a>
         </div>
     </nav>
 
     <!-- BOTÓN DE RETROCESO -->
-    <div class="container mx-auto px-6 pt-8 max-w-4xl">
+    <div class="container mx-auto px-6 pt-8 max-w-6xl">
         <a href="index.html" class="inline-flex items-center text-xs tracking-widest uppercase terracotta-accent hover:text-[#8e654c] transition duration-300 font-medium">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
@@ -98,115 +84,143 @@
         </a>
     </div>
 
-    <!-- ENCABEZADO DE LA ACTIVIDAD -->
-    <header class="container mx-auto px-6 py-12 text-center max-w-4xl">
-        <span class="text-xs uppercase tracking-[0.2em] terracotta-accent font-medium mb-4 block">Universidad Politécnica de San Luis Potosí</span>
-        <h1 class="editorial-title text-3xl md:text-5xl font-normal mb-4 tracking-wide text-[#2c2825]">
+    <!-- ENCABEZADO -->
+    <header class="container mx-auto px-6 py-10 text-center max-w-5xl">
+        <span class="text-xs uppercase tracking-[0.2em] terracotta-accent font-medium mb-3 block">Universidad Politécnica de San Luis Potosí</span>
+        <h1 class="editorial-title text-3xl md:text-5xl font-normal mb-3 tracking-wide text-[#2c2825]">
             Act. 06: Road to Hall of Fame <br>
-            <span class="text-xl md:text-3xl block mt-2 text-[#6c6158] italic">Ruta de Progreso y Consolidación de Evidencias</span>
+            <span class="text-xl md:text-2xl block mt-2 text-[#6c6158] italic font-light">Ruta Interactiva de Laboratorios de Seguridad</span>
         </h1>
         <div class="w-16 h-[1px] bg-[#d5cbc1] mx-auto my-6"></div>
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-4xl">
+    <main class="container mx-auto px-4 pb-20 space-y-12 max-w-6xl">
 
-        <!-- OBJETIVO GENERAL -->
-        <section class="editorial-card editorial-shadow p-8 border-l-4 border-l-[#a87b5f]">
-            <h2 class="editorial-title text-2xl font-normal mb-4 text-[#2c2825] flex items-center gap-3">
-                <span>🎯</span> Objetivo General
-            </h2>
-            <p class="text-[#6c6158] leading-relaxed text-sm md:text-base font-light">
-                Diseñar e integrar en el Portafolio Digital un nuevo módulo web denominado <strong>ROAD TO HALL OF FAME</strong>, que estructure y presente de forma visual, organizada y profesional los laboratorios, incorporando evidencias técnicas, navegación funcional y un botón de descarga del documento completo, demostrando competencias en documentación técnica, desarrollo web y presentación profesional de resultados en seguridad informática.
-            </p>
-        </section>
-
-        <!-- OBJETIVOS ESPECÍFICOS -->
-        <section class="editorial-card editorial-shadow p-8 border-l-4 border-l-[#8c7865]">
-            <h2 class="editorial-title text-2xl font-normal mb-4 text-[#2c2825] flex items-center gap-3">
-                <span>📌</span> Objetivos Específicos
-            </h2>
-            <ul class="space-y-3 text-sm md:text-base text-[#6c6158] font-light">
-                <li class="flex items-start gap-2">
-                    <span class="terracotta-accent font-bold">▪</span>
-                    <span><strong>Estructurar e implementar:</strong> Integrar dentro del Portafolio Digital un apartado de navegación denominado <em>ROAD TO HALL OF FAME</em>, asegurando coherencia arquitectónica, usabilidad y correcta funcionalidad de enlaces.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <span class="terracotta-accent font-bold">▪</span>
-                    <span><strong>Organizar y presentar:</strong> Mostrar los laboratorios incluyendo imagen, título, descripción técnica breve y evidencia, garantizando fidelidad al contenido original y claridad en la documentación.</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- SECCIÓN DE DESCARGA DE PDF -->
-        <section class="editorial-card editorial-shadow p-8 border-l-4 border-l-[#6c6158] flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-                <h2 class="editorial-title text-2xl font-normal mb-2 text-[#2c2825] flex items-center gap-3">
-                    <span>📄</span> Documento Completo en PDF
+        <!-- OBJETIVOS -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <section class="editorial-card editorial-shadow p-6 border-l-4 border-l-[#a87b5f]">
+                <h2 class="editorial-title text-xl font-normal mb-3 text-[#2c2825] flex items-center gap-2">
+                    <span>🎯</span> Objetivo General
                 </h2>
-                <p class="text-[#6c6158] text-sm font-light max-w-xl">
-                    Accede al reporte oficial consolidado de la trayectoria y laboratorios que conforman este módulo de especialización.
+                <p class="text-[#6c6158] leading-relaxed text-xs md:text-sm font-light">
+                    Diseñar e integrar un módulo web interactivo tipo roadmap que estructure visualmente los laboratorios y evidencias técnicas en seguridad informática, garantizando navegación fluida y documentación profesional.
                 </p>
+            </section>
+            
+            <section class="editorial-card editorial-shadow p-6 border-l-4 border-l-[#8c7865] flex flex-col justify-between">
+                <div>
+                    <h2 class="editorial-title text-xl font-normal mb-2 text-[#2c2825] flex items-center gap-2">
+                        <span>📄</span> Reporte Consolidado
+                    </h2>
+                    <p class="text-[#6c6158] text-xs font-light mb-4">
+                        Descarga el documento integral en formato PDF con el desarrollo detallado de toda la ruta de aprendizaje.
+                    </p>
+                </div>
+                <a href="Road_to_Hall_of_Fame.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#a87b5f] hover:bg-[#8e654c] text-white font-medium text-xs tracking-wider uppercase px-4 py-2.5 rounded transition duration-300 shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    Descargar PDF Completo
+                </a>
+            </section>
+        </div>
+
+        <!-- ROADMAP ESTILO CANDADOS / REFERENCIA VISUAL -->
+        <section class="editorial-card editorial-shadow p-6 md:p-12 dot-grid-bg relative overflow-hidden">
+            <div class="text-center mb-10">
+                <h2 class="editorial-title text-2xl md:text-3xl font-normal text-[#2c2825]">Roadmap de Laboratorios</h2>
+                <p class="text-xs text-[#8c7865] uppercase tracking-widest mt-1">Pasa el cursor o haz clic en los nodos para explorar cada hito</p>
             </div>
-            <a href="Road_to_Hall_of_Fame.pdf" target="_blank" class="inline-flex items-center gap-3 bg-[#a87b5f] hover:bg-[#8e654c] text-white font-medium text-xs tracking-wider uppercase px-6 py-3.5 rounded transition duration-300 shrink-0 shadow-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+
+            <!-- Contenedor del Roadmap en Zig-Zag (Diseño Inspirado en la Referencia) -->
+            <div class="relative max-w-5xl mx-auto py-10 px-4">
+                
+                <!-- Línea conectora SVG de fondo en zigzag -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none stroke-[#a87b5f]/40" fill="none" stroke-width="2" stroke-dasharray="4 4">
+                    <path d="M 80,180 Q 220,60 380,140 T 680,220 T 900,100" class="hidden md:block w-full h-full" />
                 </svg>
-                Descargar Reporte PDF
-            </a>
-        </section>
 
-        <!-- ROADMAP VISUAL (RUTA DE PROGRESO) -->
-        <section class="editorial-card editorial-shadow p-8 md:p-12">
-            <h2 class="editorial-title text-3xl font-normal mb-2 text-[#2c2825] text-center">
-                🗺️ Ruta de Progreso: Road to Hall of Fame
-            </h2>
-            <p class="text-xs text-[#8c7865] text-center uppercase tracking-widest mb-10 font-light">Evolución de laboratorios y prácticas integradas</p>
+                <!-- Grid de Nodos de Laboratorios -->
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-4 relative z-10 items-center">
 
-            <!-- Contenedor del Roadmap -->
-            <div class="relative pl-8 md:pl-12 space-y-12 roadmap-line">
-
-                <!-- Hito 1 -->
-                <div class="relative group">
-                    <div class="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-[#a87b5f] border-4 border-[#f5f0eb] flex items-center justify-center text-white text-xs font-bold">1</div>
-                    <div class="bg-[#f5f0eb] p-6 rounded border border-[#d5cbc1] editorial-shadow">
-                        <span class="text-[11px] uppercase tracking-widest terracotta-accent font-semibold block mb-1">Fase Inicial</span>
-                        <h3 class="editorial-title text-xl font-semibold text-[#2c2825] mb-2">Análisis de Vulnerabilidades y Phishing</h3>
-                        <p class="text-xs md:text-sm text-[#6c6158] font-light mb-4">
-                            Implementación de entornos controlados de simulación de ataques de ingeniería social y recolección de credenciales para concientización defensiva.
-                        </p>
-                        <a href="actividad04.html" class="inline-flex items-center text-xs tracking-wider uppercase terracotta-accent font-medium hover:text-[#8e654c]">
-                            Ver evidencia asociada →
+                    <!-- FPT 01 -->
+                    <div class="flex flex-col items-center group md:-mt-12">
+                        <div class="w-16 h-16 rounded-full border-2 border-dashed border-[#8c7865] bg-[#f5f0eb] flex items-center justify-center shadow-md group-hover:border-[#a87b5f] group-hover:scale-110 transition duration-300 cursor-pointer">
+                            <svg class="w-7 h-7 text-[#8c7865] group-hover:text-[#a87b5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-[#2c2825] mt-2">FPT 01</span>
+                        <a href="actividad04.html" title="Descargar reporte" class="mt-2 p-1.5 border border-[#d5cbc1] bg-[#f5f0eb] rounded hover:bg-[#a87b5f] hover:text-white transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         </a>
+                        <div class="text-[10px] text-[#6c6158] text-center mt-1 max-w-[120px]">Phishing & Credential Harvester</div>
                     </div>
-                </div>
 
-                <!-- Hito 2 -->
-                <div class="relative group">
-                    <div class="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-[#8c7865] border-4 border-[#f5f0eb] flex items-center justify-center text-white text-xs font-bold">2</div>
-                    <div class="bg-[#f5f0eb] p-6 rounded border border-[#d5cbc1] editorial-shadow">
-                        <span class="text-[11px] uppercase tracking-widest text-[#8c7865] font-semibold block mb-1">Fase Intermedia</span>
-                        <h3 class="editorial-title text-xl font-semibold text-[#2c2825] mb-2">Hardening y Aseguramiento de Sistemas</h3>
-                        <p class="text-xs md:text-sm text-[#6c6158] font-light mb-4">
-                            Aplicación de políticas de control de accesos, auditorías de configuración y mitigación de brechas en infraestructuras de red locales.
-                        </p>
-                        <span class="text-xs text-[#8c7865] font-mono italic">Módulo completado</span>
+                    <!-- FPT 02 -->
+                    <div class="flex flex-col items-center group md:mt-16">
+                        <div class="w-16 h-16 rounded-full border-2 border-dashed border-[#8c7865] bg-[#f5f0eb] flex items-center justify-center shadow-md group-hover:border-[#a87b5f] group-hover:scale-110 transition duration-300 cursor-pointer">
+                            <svg class="w-7 h-7 text-[#8c7865] group-hover:text-[#a87b5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-[#2c2825] mt-2">FPT 02</span>
+                        <a href="#" class="mt-2 p-1.5 border border-[#d5cbc1] bg-[#f5f0eb] rounded hover:bg-[#a87b5f] hover:text-white transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                        <div class="text-[10px] text-[#6c6158] text-center mt-1 max-w-[120px]">Análisis de vulnerabilidades web</div>
                     </div>
-                </div>
 
-                <!-- Hito 3 -->
-                <div class="relative group">
-                    <div class="absolute -left-[35px] md:-left-[51px] top-1 w-6 h-6 rounded-full bg-[#6c6158] border-4 border-[#f5f0eb] flex items-center justify-center text-white text-xs font-bold">3</div>
-                    <div class="bg-[#f5f0eb] p-6 rounded border border-[#d5cbc1] editorial-shadow">
-                        <span class="text-[11px] uppercase tracking-widest text-[#6c6158] font-semibold block mb-1">Fase Avanzada (Hall of Fame)</span>
-                        <h3 class="editorial-title text-xl font-semibold text-[#2c2825] mb-2">Consolidación y Buenas Prácticas</h3>
-                        <p class="text-xs md:text-sm text-[#6c6158] font-light mb-4">
-                            Evaluación final de competencias en ciberseguridad defensiva, estructuración arquitectónica y despliegue del portafolio profesional.
-                        </p>
-                        <span class="text-xs terracotta-accent font-semibold uppercase tracking-wider">Meta Alcanzada 🏆</span>
+                    <!-- FPT 03 con Tarjeta Flotante Destacada (Estilo de la imagen) -->
+                    <div class="flex flex-col items-center group md:-mt-8 relative">
+                        <!-- Cuadro flotante informativo -->
+                        <div class="absolute -top-24 bg-[#f5f0eb] border border-[#d5cbc1] p-3 rounded shadow-lg max-w-[200px] text-[11px] text-[#6c6158] z-20 font-light">
+                            <strong class="text-[#2c2825] block mb-0.5">FPT 03:</strong> File path traversal, traversal sequences stripped with superfluous URL-decode.
+                        </div>
+                        <div class="w-16 h-16 rounded-full border-2 border-dashed border-[#a87b5f] bg-[#f5f0eb] flex items-center justify-center shadow-md group-hover:scale-110 transition duration-300 cursor-pointer">
+                            <svg class="w-7 h-7 text-[#a87b5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-[#a87b5f] mt-2">FPT 03</span>
+                        <a href="#" class="mt-2 p-1.5 border border-[#d5cbc1] bg-[#f5f0eb] rounded hover:bg-[#a87b5f] hover:text-white transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                        <div class="text-[10px] text-[#6c6158] text-center mt-1 max-w-[120px]">Path Traversal avanzado</div>
                     </div>
-                </div>
 
+                    <!-- FPT 04 -->
+                    <div class="flex flex-col items-center group md:mt-12">
+                        <div class="w-16 h-16 rounded-full border-2 border-dashed border-[#8c7865] bg-[#f5f0eb] flex items-center justify-center shadow-md group-hover:border-[#a87b5f] group-hover:scale-110 transition duration-300 cursor-pointer">
+                            <svg class="w-7 h-7 text-[#8c7865] group-hover:text-[#a87b5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-[#2c2825] mt-2">FPT 04</span>
+                        <a href="#" class="mt-2 p-1.5 border border-[#d5cbc1] bg-[#f5f0eb] rounded hover:bg-[#a87b5f] hover:text-white transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                        <div class="text-[10px] text-[#6c6158] text-center mt-1 max-w-[120px]">Auditoría de contraseñas y hashes</div>
+                    </div>
+
+                    <!-- FPT 05 -->
+                    <div class="flex flex-col items-center group md:-mt-10">
+                        <div class="w-16 h-16 rounded-full border-2 border-dashed border-[#8c7865] bg-[#f5f0eb] flex items-center justify-center shadow-md group-hover:border-[#a87b5f] group-hover:scale-110 transition duration-300 cursor-pointer">
+                            <svg class="w-7 h-7 text-[#8c7865] group-hover:text-[#a87b5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-[#2c2825] mt-2">FPT 05</span>
+                        <a href="#" class="mt-2 p-1.5 border border-[#d5cbc1] bg-[#f5f0eb] rounded hover:bg-[#a87b5f] hover:text-white transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                        <div class="text-[10px] text-[#6c6158] text-center mt-1 max-w-[120px]">Mitigación de inyecciones SQL</div>
+                    </div>
+
+                    <!-- FPT 06 -->
+                    <div class="flex flex-col items-center group md:mt-14">
+                        <div class="w-16 h-16 rounded-full border-2 border-dashed border-[#8c7865] bg-[#f5f0eb] flex items-center justify-center shadow-md group-hover:border-[#a87b5f] group-hover:scale-110 transition duration-300 cursor-pointer">
+                            <svg class="w-7 h-7 text-[#8c7865] group-hover:text-[#a87b5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-[#2c2825] mt-2">FPT 06</span>
+                        <a href="#" class="mt-2 p-1.5 border border-[#d5cbc1] bg-[#f5f0eb] rounded hover:bg-[#a87b5f] hover:text-white transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                        <div class="text-[10px] text-[#6c6158] text-center mt-1 max-w-[120px]">Consolidación Hall of Fame</div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
@@ -222,7 +236,7 @@
         </p>
     </footer>
 
-    <!-- Script de Menú Móvil -->
+    <!-- Script Menú Móvil -->
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
