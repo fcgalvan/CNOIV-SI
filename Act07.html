@@ -34,7 +34,7 @@
 
     <!-- BARRA SUPERIOR ROJA -->
     <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase">
-        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026[cite: 2]
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026
     </div>
 
     <!-- MENÚ DE NAVEGACIÓN -->
@@ -77,13 +77,13 @@
         <div class="main-card p-8 md:p-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             <div class="space-y-4 max-w-2xl">
                 <span class="inline-block px-3 py-1 bg-blue-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-full shadow-sm">
-                    CNO IV – Seguridad Informática[cite: 2]
+                    CNO IV – Seguridad Informática
                 </span>
                 <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-                    ACT. 07: Lab: File Path Traversal Simple Case[cite: 2]
+                    ACT. 07: Lab: File Path Traversal Simple Case
                 </h1>
                 <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
-                    Universidad Politécnica de San Luis Potosí — Documentación de prácticas de seguridad ofensiva en PortSwigger Web Security Academy[cite: 2].
+                    Universidad Politécnica de San Luis Potosí — Documentación de prácticas de seguridad ofensiva en PortSwigger Web Security Academy.
                 </p>
             </div>
 
@@ -94,8 +94,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                 </div>
-                <h3 class="font-bold text-gray-900 text-sm tracking-wide">SEGURIDAD OFENSIVA</h3>
-                <p class="text-xs text-gray-400 mt-2">Otoño 2026[cite: 2]</p>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">SEGURIDAD INFORMÁTICA</h3>
+                <p class="text-xs text-gray-400 mt-2">Otoño 2026</p>
             </div>
         </div>
     </header>
@@ -110,7 +110,7 @@
                     <span>📄</span> Reporte Consolidado de la Actividad
                 </h2>
                 <p class="text-gray-600 text-xs font-light">
-                    Obtén el documento PDF oficial con todo el procedimiento detallado de esta práctica[cite: 2].
+                    Obtén el documento PDF oficial con todo el procedimiento detallado de esta práctica.
                 </p>
             </div>
             <a href="Act07. LAB FTP Simple Case.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-lg transition duration-300 shadow-sm whitespace-nowrap">
@@ -126,9 +126,9 @@
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Introducción</h2>
             <div class="grid md:grid-cols-2 gap-6 items-center">
                 <div class="space-y-4 text-gray-600 text-sm font-light leading-relaxed">
-                    <p><strong class="font-semibold text-gray-800">Nombre del laboratorio:</strong> File Path Traversal Simple Case[cite: 2]</p>
-                    <p><strong class="font-semibold text-gray-800">Nivel del laboratorio:</strong> Apprentice[cite: 2]</p>
-                    <p><strong class="font-semibold text-gray-800">Tipo de explotación:</strong> Se trata de una vulnerabilidad Path Traversal (también llamada Directory Traversal o Traversal de Directorios) específicamente una variante de lectura arbitraria de archivos[cite: 2].</p>
+                    <p><strong class="font-semibold text-gray-800">Nombre del laboratorio:</strong> File Path Traversal Simple Case</p>
+                    <p><strong class="font-semibold text-gray-800">Nivel del laboratorio:</strong> Apprentice</p>
+                    <p><strong class="font-semibold text-gray-800">Tipo de explotación:</strong> Se trata de una vulnerabilidad Path Traversal (también llamada Directory Traversal o Traversal de Directorios) específicamente una variante de lectura arbitraria de archivos.</p>
                 </div>
                 <div class="border rounded-xl p-4 bg-gray-50 flex justify-center">
                     <img src="LAB1.png" alt="Lab 1" class="max-h-48 object-contain rounded">
@@ -140,7 +140,7 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Objetivo del Laboratorio</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                El objetivo de este laboratorio es poder leer un archivo que se encuentra completamente fuera del directorio determinado por la aplicación, es una prueba de concepto clásica, ya que es legible por cualquier usuario[cite: 2].
+                El objetivo de este laboratorio es poder leer un archivo que se encuentra completamente fuera del directorio determinado por la aplicación, es una prueba de concepto clásica, ya que es legible por cualquier usuario.
             </p>
         </section>
 
@@ -148,7 +148,7 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación Técnica de la Vulnerabilidad</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                La página nos muestra un catálogo en donde se presentan diferentes imágenes. Estas imágenes tienen un endpoint, que es donde se presenta la vulnerabilidad. El endpoint recibe el nombre del archivo a través de un parámetro controlado por el usuario y se utiliza directamente para construir la ruta del archivo que será leído en el sistema de archivos del servidor[cite: 2].
+                La página nos muestra un catálogo en donde se presentan diferentes imágenes. Estas imágenes tienen un endpoint, que es donde se presenta la vulnerabilidad. El endpoint recibe el nombre del archivo a través de un parámetro controlado por el usuario y se utiliza directamente para construir la ruta del archivo que será leído en el sistema de archivos del servidor.
             </p>
             <div class="bg-gray-900 text-gray-100 p-4 rounded-xl font-mono text-xs overflow-x-auto">
                 GET /image?filename=218.png
@@ -164,7 +164,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 1: Búsqueda e inicio de Burp Suite</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Buscamos y abrimos Burp Suite Community Edition[cite: 2].
+                        Buscamos y abrimos Burp Suite Community Edition.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB2.png" alt="Lab 2" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -173,7 +173,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 2: Creación de proyecto temporal</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Seleccionamos la opción de proyecto temporal en memoria[cite: 2].
+                        Seleccionamos la opción de proyecto temporal en memoria.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB3.png" alt="Lab 3" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -182,7 +182,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 3: Configuración por defecto</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Dejamos la configuración por defecto y damos inicio[cite: 2].
+                        Dejamos la configuración por defecto y damos inicio.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB4.png" alt="Lab 4" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -191,7 +191,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 4: Ingreso al Dashboard y Proxy</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Nos dirigimos a la pestaña de Proxy en el dashboard principal[cite: 2].
+                        Nos dirigimos a la pestaña de Proxy en el dashboard principal.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.png" alt="Lab 5" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -200,7 +200,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 5: Activación de Intercept y Open Browser</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Activamos el interceptor y abrimos el navegador integrado[cite: 2].
+                        Activamos el interceptor y abrimos el navegador integrado.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB6.png" alt="Lab 6" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -209,7 +209,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 6: Acceso a la URL del laboratorio</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Ingresamos la URL proporcionada por el laboratorio en el navegador de Burp[cite: 2].
+                        Ingresamos la URL proporcionada por el laboratorio en el navegador de Burp.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB7.png" alt="Lab 7" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -217,8 +217,8 @@
                 <!-- Paso 7 -->
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 7: Envío a Repeater</h3>
-                    <p class="text-gray-600 text-sm font-light leading-relaxed>
-                        Capturamos la petición de imagen y la enviamos a Repeater[cite: 2].
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Capturamos la petición de imagen y la enviamos a Repeater.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB8.png" alt="Lab 8" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -227,7 +227,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 8: Modificación de la solicitud</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Modificamos el parámetro filename con la secuencia de escape[cite: 2].
+                        Modificamos el parámetro filename con la secuencia de escape.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB9.png" alt="Lab 9" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -236,7 +236,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 9: Ejecución del ataque con Send</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Enviamos la petición modificada para procesar la lectura del archivo[cite: 2].
+                        Enviamos la petición modificada para procesar la lectura del archivo.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB10.png" alt="Lab 10" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -245,7 +245,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 10: Visualización de resultados en Response</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Observamos el contenido devuelto del archivo de sistema en la respuesta[cite: 2].
+                        Observamos el contenido devuelto del archivo de sistema en la respuesta.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB11.png" alt="Lab 11" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -256,7 +256,7 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación del Payload</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                <strong class="font-semibold text-gray-800">Payload utilizado:</strong> <code>../../../../etc/passwd</code>[cite: 2]
+                <strong class="font-semibold text-gray-800">Payload utilizado:</strong> <code>../../../../etc/passwd</code>
             </p>
         </section>
 
@@ -264,7 +264,7 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Mitigación Recomendada</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                Validar estrictamente los parámetros de entrada mediante listas blancas o el uso de identificadores indirectos[cite: 2].
+                Validar estrictamente los parámetros de entrada mediante listas blancas o el uso de identificadores indirectos.
             </p>
         </section>
 
@@ -276,7 +276,7 @@
             🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
         </p>
         <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
-            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática[cite: 2].
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
         </p>
     </footer>
 
