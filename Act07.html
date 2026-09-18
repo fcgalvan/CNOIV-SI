@@ -145,17 +145,23 @@
         </section>
 
         <!-- EXPLICACIÓN TÉCNICA -->
-        <section class="content-card p-8 md:p-12 space-y-4">
+        <section class="content-card p-8 md:p-12 space-y-6">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación Técnica de la Vulnerabilidad</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                La página nos muestra un catálogo en donde se presentan diferentes imágenes. Estas imágenes tienen un endpoint, que es donde se presenta la vulnerabilidad. El endpoint recibe el nombre del archivo a través de un parámetro controlado por el usuario y se utiliza directamente para construir la ruta del archivo que será leído en el sistema de archivos del servidor.
+                La página nos muestra un catálogo en donde se presentan diferentes imágenes. Estas imágenes tienen un endpoint, que es donde se presenta la vulnerabilidad. El endpoint recibe el nombre del archivo a través de un parámetro controlado por el usuario y se utiliza directamente para construir la ruta del archivo que será leído en el sistema de archivos del servidor, sin aplicar ningún tipo de validación o normalización previa.
             </p>
             <div class="bg-gray-900 text-gray-100 p-4 rounded-xl font-mono text-xs overflow-x-auto">
                 GET /image?filename=218.png
             </div>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                El problema surge porque no cuenta con una validación, y la aplicación confía ciegamente en que el valor de <code>filename</code> corresponderá siempre a un nombre de archivo simple y legítimo dentro del directorio de imágenes.
+            </p>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                Dado que los sistemas operativos interpretan la secuencia <code>../</code> como una instrucción para retroceder un nivel de jerarquía de directorios, un atacante puede manipular fácilmente el parámetro para incluir múltiples secuencias de este tipo y así "escapar" del directorio, alcanzando la raíz del sistema de archivos y navegando hacia cualquier otro archivo del servidor.
+            </p>
         </section>
 
-        <!-- EXPLOTACIÓN Y PASO A PASO -->
+        <!-- PROCEDIMIENTO PASO A PASO -->
         <section class="content-card p-8 md:p-12 space-y-6">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Procedimiento Paso a Paso</h2>
             
@@ -164,7 +170,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 1: Búsqueda e inicio de Burp Suite</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Buscamos y abrimos Burp Suite Community Edition.
+                        Como primer paso, tenemos que buscar el sistema BurpSuite, en este caso estamos utilizando el BurpSuite Community Edition. Damos clic e iniciamos el sistema.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB2.png" alt="Lab 2" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -173,7 +179,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 2: Creación de proyecto temporal</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Seleccionamos la opción de proyecto temporal en memoria.
+                        Una vez iniciado el sistema, se muestra en pantalla para poder inicializar un nuevo proyecto, en esta ocasión estaremos utilizando la opción de Proyecto temporal en memoria, damos siguiente.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB3.png" alt="Lab 3" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -182,7 +188,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 3: Configuración por defecto</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Dejamos la configuración por defecto y damos inicio.
+                        Continuamos y en la siguiente página se muestra la configuración con la que estaremos trabajando, dejaremos la configuración que maneja por default y damos clic en Start Burp.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB4.png" alt="Lab 4" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -191,7 +197,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 4: Ingreso al Dashboard y Proxy</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Nos dirigimos a la pestaña de Proxy en el dashboard principal.
+                        Después de haber ingresado, en la pestaña actual se muestra el dashboard que es la página principal, en este momento nosotros debemos de buscar el apartado de proxy, para ahora dar clic e irnos a esa pestaña.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.png" alt="Lab 5" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -200,7 +206,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 5: Activación de Intercept y Open Browser</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Activamos el interceptor y abrimos el navegador integrado.
+                        Ya estando en Proxy, podemos observar que hay un botón que dice Intercept off, debemos de dar clic ahí para encenderlo, también podemos observar que en medio de la pestaña aparece un botón en naranja que dice Open Browser, también debemos de dar clic en ese botón para poder abrir el navegador e iniciar nuestra práctica.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB6.png" alt="Lab 6" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -209,7 +215,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 6: Acceso a la URL del laboratorio</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Ingresamos la URL proporcionada por el laboratorio en el navegador de Burp.
+                        Ya dentro del navegador tenemos que ingresar el URL que nos sale cuando accedimos al laboratorio.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB7.png" alt="Lab 7" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -218,7 +224,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 7: Envío a Repeater</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Capturamos la petición de imagen y la enviamos a Repeater.
+                        Una vez cargada la página debemos de dar clic en Forward para que se puedan cargar las diferentes acciones de la página, en cuanto nos salga un endpoint que diga <code>GET /image?filename=18.jpg HTTP/2</code>, seleccionamos esa instrucción y damos clic derecho, en donde se nos mostraran diferentes opciones, daremos clic en la opción de Send to Repeater, para después irnos a la pestaña de Repeater.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB8.png" alt="Lab 8" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -227,7 +233,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 8: Modificación de la solicitud</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Modificamos el parámetro filename con la secuencia de escape.
+                        Una vez en la pestaña de Repeater debemos de modificar el endpoint, debemos de reemplazar el nombre del filename por lo siguiente: <code>../../../../etc/passwd</code> esto para poder movernos al directorio root y poder visualizar la información que contiene ese directorio.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB9.png" alt="Lab 9" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -236,7 +242,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 9: Ejecución del ataque con Send</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Enviamos la petición modificada para procesar la lectura del archivo.
+                        Para eso debemos de dar clic en Send, para poder realizar esta acción y enviar la solicitud modificada.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB10.png" alt="Lab 10" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -245,7 +251,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 10: Visualización de resultados en Response</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Observamos el contenido devuelto del archivo de sistema en la respuesta.
+                        Después de haber mandado la instrucción, en el apartado de Response se muestra el contenido del directorio del sistema. Una vez que podamos observar esta información, la práctica de este laboratorio está terminada y podemos comprobar que la completamos al visualizar <code>LAB Solved</code> en la esquina superior de la página web.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB11.png" alt="Lab 11" class="rounded object-contain max-h-40"></div>
                 </div>
@@ -258,14 +264,45 @@
             <p class="text-gray-600 text-sm font-light leading-relaxed">
                 <strong class="font-semibold text-gray-800">Payload utilizado:</strong> <code>../../../../etc/passwd</code>
             </p>
+            <div class="overflow-x-auto pt-2">
+                <table class="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700 uppercase tracking-wider">
+                            <th class="p-3 border">Componente</th>
+                            <th class="p-3 border">Función</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 font-light">
+                        <tr>
+                            <td class="p-3 border font-mono font-medium text-gray-800">../</td>
+                            <td class="p-3 border">Cada ocurrencia indica al sistema operativo "sube un nivel en la jerarquía de directorios".</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 border font-mono font-medium text-gray-800">../../../../</td>
+                            <td class="p-3 border">Retrocede múltiples niveles desde el directorio base de imágenes hasta alcanzar la raíz del sistema de archivos (/).</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 border font-mono font-medium text-gray-800">etc/passwd</td>
+                            <td class="p-3 border">Una vez en la raíz, especifica la ruta relativa al archivo objetivo del sistema.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- MITIGACIÓN -->
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Mitigación Recomendada</h2>
-            <p class="text-gray-600 text-sm font-light leading-relaxed">
-                Validar estrictamente los parámetros de entrada mediante listas blancas o el uso de identificadores indirectos.
-            </p>
+            <div class="space-y-4 text-gray-600 text-sm font-light leading-relaxed">
+                <div class="p-4 bg-blue-50 border-l-4 border-blue-600 rounded-r-xl">
+                    <h3 class="font-bold text-gray-900 mb-1">1. Validación mediante lista blanca (Allow-list)</h3>
+                    <p>En lugar de aceptar cualquier nombre de archivo arbitrario, validar estrictamente la entrada contra una lista de archivos o patrones permitidos explícitamente. Esta es la mitigación más robusta, ya que no depende de detectar patrones maliciosos, sino de permitir únicamente lo seguro.</p>
+                </div>
+                <div class="p-4 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-xl">
+                    <h3 class="font-bold text-gray-900 mb-1">2. Uso de identificadores indirectos</h3>
+                    <p>Reemplazar el nombre de archivo real por un identificador (ID numérico o UUID) que se mapee internamente en el servidor de forma segura, evitando que el usuario controle rutas del sistema de archivos.</p>
+                </div>
+            </div>
         </section>
 
     </main>
