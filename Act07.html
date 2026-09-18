@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act. 07: Lab File Path Traversal Simple Case | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #ffffff; 
+            color: #1f2937; 
+        }
+        .main-card {
+            background: linear-gradient(135deg, rgba(239, 246, 255, 0.6) 0%, rgba(254, 243, 199, 0.3) 50%, rgba(253, 232, 232, 0.4) 100%);
+            border-radius: 2rem;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.02);
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .content-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.05);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase">
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026[cite: 2]
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-4">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-8 md:h-10 w-auto object-contain">
+                <span class="text-xs md:text-sm font-bold tracking-tight text-gray-900 uppercase">
+                    PORTAFOLIO<span class="text-blue-600">.</span>CNO IV
+                </span>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-7 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-blue-600 transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-blue-600 transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-blue-600 transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+            <a href="index.html" class="hover:text-blue-600 transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-blue-600 transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-blue-600 transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-blue-600 transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="hover:text-blue-600 transition py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="hover:text-blue-600 transition py-1">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-blue-600 transition py-1">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO TIPO HERO -->
+    <header class="container mx-auto px-6 py-10 max-w-6xl">
+        <div class="main-card p-8 md:p-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-block px-3 py-1 bg-blue-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                    CNO IV – Seguridad Informática[cite: 2]
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+                    ACT. 07: Lab: File Path Traversal Simple Case[cite: 2]
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
+                    Universidad Politécnica de San Luis Potosí — Documentación de prácticas de seguridad ofensiva en PortSwigger Web Security Academy[cite: 2].
+                </p>
+            </div>
+
+            <!-- Tarjeta lateral -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center w-full lg:w-80 flex-shrink-0 flex flex-col items-center">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">SEGURIDAD OFENSIVA</h3>
+                <p class="text-xs text-gray-400 mt-2">Otoño 2026[cite: 2]</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-6xl">
+
+        <!-- SECCIÓN DE DESCARGA DE PDF -->
+        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+                <h2 class="text-xl font-bold mb-2 text-gray-900 flex items-center gap-2">
+                    <span>📄</span> Reporte Consolidado de la Actividad
+                </h2>
+                <p class="text-gray-600 text-xs font-light">
+                    Obtén el documento PDF oficial con todo el procedimiento detallado de esta práctica[cite: 2].
+                </p>
+            </div>
+            <a href="Act07. LAB FTP Simple Case.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-lg transition duration-300 shadow-sm whitespace-nowrap">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Descargar Reporte PDF
+            </a>
+        </section>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-6">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Introducción</h2>
+            <div class="grid md:grid-cols-2 gap-6 items-center">
+                <div class="space-y-4 text-gray-600 text-sm font-light leading-relaxed">
+                    <p><strong class="font-semibold text-gray-800">Nombre del laboratorio:</strong> File Path Traversal Simple Case[cite: 2]</p>
+                    <p><strong class="font-semibold text-gray-800">Nivel del laboratorio:</strong> Apprentice[cite: 2]</p>
+                    <p><strong class="font-semibold text-gray-800">Tipo de explotación:</strong> Se trata de una vulnerabilidad Path Traversal (también llamada Directory Traversal o Traversal de Directorios) específicamente una variante de lectura arbitraria de archivos[cite: 2].</p>
+                </div>
+                <div class="border rounded-xl p-4 bg-gray-50 flex justify-center">
+                    <img src="LAB1.png" alt="Lab 1" class="max-h-48 object-contain rounded">
+                </div>
+            </div>
+        </section>
+
+        <!-- OBJETIVO -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Objetivo del Laboratorio</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                El objetivo de este laboratorio es poder leer un archivo que se encuentra completamente fuera del directorio determinado por la aplicación, es una prueba de concepto clásica, ya que es legible por cualquier usuario[cite: 2].
+            </p>
+        </section>
+
+        <!-- EXPLICACIÓN TÉCNICA -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación Técnica de la Vulnerabilidad</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                La página nos muestra un catálogo en donde se presentan diferentes imágenes. Estas imágenes tienen un endpoint, que es donde se presenta la vulnerabilidad. El endpoint recibe el nombre del archivo a través de un parámetro controlado por el usuario y se utiliza directamente para construir la ruta del archivo que será leído en el sistema de archivos del servidor[cite: 2].
+            </p>
+            <div class="bg-gray-900 text-gray-100 p-4 rounded-xl font-mono text-xs overflow-x-auto">
+                GET /image?filename=218.png
+            </div>
+        </section>
+
+        <!-- EXPLOTACIÓN Y PASO A PASO -->
+        <section class="content-card p-8 md:p-12 space-y-6">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Procedimiento Paso a Paso</h2>
+            
+            <div class="space-y-8">
+                <!-- Paso 1 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 1: Búsqueda e inicio de Burp Suite</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Buscamos y abrimos Burp Suite Community Edition[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB2.png" alt="Lab 2" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 2: Creación de proyecto temporal</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Seleccionamos la opción de proyecto temporal en memoria[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB3.png" alt="Lab 3" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 3: Configuración por defecto</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Dejamos la configuración por defecto y damos inicio[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB4.png" alt="Lab 4" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 4: Ingreso al Dashboard y Proxy</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Nos dirigimos a la pestaña de Proxy en el dashboard principal[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.png" alt="Lab 5" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 5: Activación de Intercept y Open Browser</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Activamos el interceptor y abrimos el navegador integrado[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB6.png" alt="Lab 6" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 6: Acceso a la URL del laboratorio</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Ingresamos la URL proporcionada por el laboratorio en el navegador de Burp[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB7.png" alt="Lab 7" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 7 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 7: Envío a Repeater</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed>
+                        Capturamos la petición de imagen y la enviamos a Repeater[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB8.png" alt="Lab 8" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 8 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 8: Modificación de la solicitud</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Modificamos el parámetro filename con la secuencia de escape[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB9.png" alt="Lab 9" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 9 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 9: Ejecución del ataque con Send</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Enviamos la petición modificada para procesar la lectura del archivo[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB10.png" alt="Lab 10" class="rounded object-contain max-h-40"></div>
+                </div>
+
+                <!-- Paso 10 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 10: Visualización de resultados en Response</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Observamos el contenido devuelto del archivo de sistema en la respuesta[cite: 2].
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB11.png" alt="Lab 11" class="rounded object-contain max-h-40"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPLICACIÓN DEL PAYLOAD -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación del Payload</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                <strong class="font-semibold text-gray-800">Payload utilizado:</strong> <code>../../../../etc/passwd</code>[cite: 2]
+            </p>
+        </section>
+
+        <!-- MITIGACIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Mitigación Recomendada</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                Validar estrictamente los parámetros de entrada mediante listas blancas o el uso de identificadores indirectos[cite: 2].
+            </p>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-10 text-center border-t border-gray-100 bg-white">
+        <p class="text-gray-500 text-xs mb-2 px-4">
+            🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática[cite: 2].
+        </p>
+    </footer>
+
+    <!-- Script Menú Móvil -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
