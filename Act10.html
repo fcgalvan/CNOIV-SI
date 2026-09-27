@@ -135,7 +135,7 @@
                     <p><strong class="font-semibold text-gray-800">Tipo de explotación:</strong> Path Traversal (Directory Traversal) mediante doble codificación URL (Double URL Encoding). La vulnerabilidad corresponde principalmente a CWE-22, ya que permite acceder a archivos fuera del directorio previsto.</p>
                 </div>
                 <div class="border rounded-xl p-4 bg-gray-50 flex justify-center">
-                    <img src="3.1.png" alt="Lab 3.1" class="max-h-48 object-contain rounded">
+                    <img src="LAB3.1.png" alt="Lab 3.1" class="max-h-48 object-contain rounded">
                 </div>
             </div>
         </section>
@@ -161,7 +161,7 @@
                 <li>Debido a esto, podemos enviar la secuencia codificada dos veces.</li>
                 <li>La primera decodificación convierte <code>%25</code> en <code>%</code>.</li>
                 <li>La segunda decodificación convierte <code>%2f</code> en <code>/</code>.</li>
-                <li>Finalmente, el servidor termina interpretando <code>../</code>, permitiendo salir del directorio de imágenes y acceder a <code>/etc/passwd</code>.</li>
+                <li>Finalmente, el servidor termina interpretando <code>../</code>, permitiendo salir del directorio de imágenes y acceder al archivo <code>/etc/passwd</code>.</li>
             </ol>
             <p class="text-gray-600 text-sm font-light leading-relaxed pt-2">
                 Por ejemplo: <code>..%252f</code> se procesa aproximadamente así: <code>..%252f</code> primera decodificación <code>..%2f</code>, segunda decodificación <code>../</code>. Por eso el filtro no detecta inicialmente la secuencia <code>../</code>.
@@ -188,7 +188,7 @@
                         Primero deberemos acceder a la página en donde podremos ingresar a nuestra práctica de laboratorio. Después de haber ingresado, debemos iniciar Burp Suite, que es en donde estaremos realizando la práctica, moviéndonos a la pestaña de Proxy.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
-                        <img src="3.2.png" alt="Lab 3.2" class="rounded object-contain max-h-48">
+                        <img src="LAB3.2.png" alt="Lab 3.2" class="rounded object-contain max-h-48">
                     </div>
                 </div>
 
@@ -199,8 +199,8 @@
                         Una vez en la pestaña de Proxy, podemos ver que el Intercept está apagado, por lo que debemos encenderlo para así dar clic en Open Browser.
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="3.3.png" alt="Lab 3.3" class="rounded object-contain max-h-40"></div>
-                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="3.4.png" alt="Lab 3.4" class="rounded object-contain max-h-40"></div>
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB3.3.png" alt="Lab 3.3" class="rounded object-contain max-h-40"></div>
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB3.4.png" alt="Lab 3.4" class="rounded object-contain max-h-40"></div>
                     </div>
                 </div>
 
@@ -211,8 +211,8 @@
                         Una vez abierto el navegador deberemos ingresar el enlace de la práctica. Ya que ingresamos el enlace, nos moveremos a la ventana de Burp Suite, en donde veremos todas las acciones para que la página cargue y daremos clic en Forward hasta que nos aparezca la ruta de una imagen.
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="3.5.png" alt="Lab 3.5" class="rounded object-contain max-h-40"></div>
-                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="3.6.png" alt="Lab 3.6" class="rounded object-contain max-h-40"></div>
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB3.5.png" alt="Lab 3.5" class="rounded object-contain max-h-40"></div>
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB3.6.png" alt="Lab 3.6" class="rounded object-contain max-h-40"></div>
                     </div>
                 </div>
 
@@ -223,7 +223,7 @@
                         Ya que ubicamos el endpoint, debemos seleccionarlo y dar clic derecho sobre lo seleccionado para desplegar el menú y seleccionar la opción de <strong>Send to Repeater</strong>.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
-                        <img src="3.7.png" alt="Lab 3.7" class="rounded object-contain max-h-48">
+                        <img src="LAB3.7.png" alt="Lab 3.7" class="rounded object-contain max-h-48">
                     </div>
                 </div>
 
@@ -234,7 +234,7 @@
                         Nos movemos a la pestaña de Repeater y cambiamos la ruta a la siguiente: <code>GET /image?filename=..%252f..%252f..%252fetc/passwd</code>. Damos clic en <strong>Send</strong> para visualizar el directorio.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
-                        <img src="3.8.png" alt="Lab 3.8" class="rounded object-contain max-h-48">
+                        <img src="LAB3.8.png" alt="Lab 3.8" class="rounded object-contain max-h-48">
                     </div>
                 </div>
 
@@ -245,7 +245,7 @@
                         Una vez que dimos clic en Send, se muestra el contenido del directorio en el apartado de Response, confirmando la resolución satisfactoria del laboratorio (LAB Solved).
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
-                        <img src="3.9.png" alt="Lab 3.9" class="rounded object-contain max-h-48">
+                        <img src="LAB3.9.png" alt="Lab 3.9" class="rounded object-contain max-h-48">
                     </div>
                 </div>
             </div>
