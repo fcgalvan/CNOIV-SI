@@ -144,7 +144,7 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Objetivo del Laboratorio</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                El objetivo es explotar la vulnerabilidad de Path Traversal en la funcionalidad de visualización de imágenes de productos para conseguir acceder a un archivo fuera del directorio autorizado. En concreto, se debe recuperar el contenido del archivo: <code>/etc/passwd</code>. La aplicación transmite la ruta completa del archivo mediante un parámetro de la petición y comprueba que la ruta comience con el directorio esperado[cite: 8].
+                El objetivo es explotar la vulnerabilidad de Path Traversal en la funcionalidad de visualización de imágenes de productos para conseguir acceder a un archivo fuera del directorio autorizado. En concreto, se debe recuperar el contenido del archivo: <code>/etc/passwd</code>. La aplicación transmite la ruta completa del archivo mediante un parámetro de la petición y comprueba que la ruta comience con el directorio esperado.
             </p>
         </section>
 
@@ -152,18 +152,18 @@
         <section class="content-card p-8 md:p-12 space-y-6">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación Técnica de la Explotación</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                La aplicación utiliza una validación similar a: ¿La ruta proporcionada comienza con el directorio permitido?[cite: 8] Por ejemplo, podría esperar una ruta como: <code>/var/www/images/36.jpg</code>[cite: 8].
+                La aplicación utiliza una validación similar a: ¿La ruta proporcionada comienza con el directorio permitido? Por ejemplo, podría esperar una ruta como: <code>/var/www/images/36.jpg</code>.
             </p>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                El problema es que comprobar únicamente el comienzo de la cadena no garantiza que el archivo se encuentre realmente dentro de ese directorio[cite: 8]. Se puede construir una ruta que inicialmente comience con el directorio permitido: <code>/var/www/images/../../../etc/passwd</code>[cite: 8].
+                El problema es que comprobar únicamente el comienzo de la cadena no garantiza que el archivo se encuentre realmente dentro de ese directorio. Se puede construir una ruta que inicialmente comience con el directorio permitido: <code>/var/www/images/../../../etc/passwd</code>.
             </p>
             <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm font-light pl-4">
-                <li>La ruta comienza con: <code>/var/www/images/</code>, por lo que puede superar la validación inicial[cite: 8].</li>
-                <li>Sin embargo, cuando el sistema resuelve la ruta, las secuencias <code>../</code> hacen que se retroceda en la estructura de directorios[cite: 8].</li>
-                <li>Finalmente se llega a <code>/etc/passwd</code>[cite: 8].</li>
+                <li>La ruta comienza con: <code>/var/www/images/</code>, por lo que puede superar la validación inicial.</li>
+                <li>Sin embargo, cuando el sistema resuelve la ruta, las secuencias <code>../</code> hacen que se retroceda en la estructura de directorios.</li>
+                <li>Finalmente se llega a <code>/etc/passwd</code>.</li>
             </ul>
             <p class="text-gray-600 text-sm font-light leading-relaxed pt-2">
-                El problema principal es que la aplicación valida la cadena de texto, pero no verifica correctamente la ruta normalizada que finalmente utilizará el sistema[cite: 8].
+                El problema principal es que la aplicación valida la cadena de texto, pero no verifica correctamente la ruta normalizada que finalmente utilizará el sistema.
             </p>
         </section>
 
@@ -171,10 +171,10 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explotación</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                Primero se identifica una petición relacionada con la imagen del producto, por ejemplo: <code>GET /image?filename=/var/www/images/36.jpg HTTP/2</code>[cite: 8]. El parámetro vulnerable sería: <code>filename</code>[cite: 8].
+                Primero se identifica una petición relacionada con la imagen del producto, por ejemplo: <code>GET /image?filename=/var/www/images/36.jpg HTTP/2</code>. El parámetro vulnerable sería: <code>filename</code>.
             </p>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                En lugar del archivo original, se introduce una ruta que comienza con el directorio esperado y posteriormente utiliza Path Traversal: <code>/var/www/images/../../../etc/passwd</code>[cite: 8]. La petición quedaría conceptualmente: <code>GET /image?filename=/var/www/images/../../../etc/passwd HTTP/2</code>[cite: 8]. El servidor valida inicialmente que la ruta comienza con el directorio esperado, pero posteriormente resuelve los <code>../</code>, terminando en <code>/etc/passwd</code>[cite: 8]. Si la explotación es correcta, la respuesta HTTP mostrará el contenido del archivo <code>/etc/passwd</code>[cite: 8].
+                En lugar del archivo original, se introduce una ruta que comienza con el directorio esperado y posteriormente utiliza Path Traversal: <code>/var/www/images/../../../etc/passwd</code>. La petición quedaría conceptualmente: <code>GET /image?filename=/var/www/images/../../../etc/passwd HTTP/2</code>. El servidor valida inicialmente que la ruta comienza con el directorio esperado, pero posteriormente resuelve los <code>../</code>, terminando en <code>/etc/passwd</code>. Si la explotación es correcta, la respuesta HTTP mostrará el contenido del archivo <code>/etc/passwd</code>.
             </p>
         </section>
 
@@ -187,7 +187,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 1: Acceso a la página y Burp Suite</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Primero deberemos acceder a la página en donde podremos ingresar a nuestra práctica de laboratorio[cite: 8].
+                        Primero deberemos acceder a la página en donde podremos ingresar a nuestra práctica de laboratorio.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
                         <img src="LAB4.1.png" alt="Lab 4.1" class="rounded object-contain max-h-48">
@@ -198,7 +198,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 2: Activación del Intercept en Proxy</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Después de haber ingresado, debemos iniciar BurpSuite, que es en donde estaremos realizando la práctica[cite: 8]. Continuando, una vez iniciado BurpSuite, debemos de movernos a la pestaña de Proxy[cite: 8]. En donde tendremos que Encender el Interceptador y Abrir Navegador para poder iniciar nuestra práctica[cite: 8].
+                        Después de haber ingresado, debemos iniciar BurpSuite, que es en donde estaremos realizando la práctica. Continuando, una vez iniciado BurpSuite, debemos de movernos a la pestaña de Proxy. En donde tendremos que Encender el Interceptador y Abrir Navegador para poder iniciar nuestra práctica.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
                         <img src="LAB4.2.png" alt="Lab 4.2" class="rounded object-contain max-h-48">
@@ -209,7 +209,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 3: Ingreso del enlace de la práctica y Forward</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Una vez abierto el navegador deberemos ingresar el enlace de la práctica, para poder ingresar a la página[cite: 8]. Ya que ingresamos el enlace, nos moveremos a la ventana de BurpSuite, en donde veremos todas las acciones que se llegan hacer para que la página cargue[cite: 8]. Para poder realizar la práctica debemos de dar clic en Forward hasta que en las peticiones nos aparezca la ruta de una imagen[cite: 8].
+                        Una vez abierto el navegador deberemos ingresar el enlace de la práctica, para poder ingresar a la página. Ya que ingresamos el enlace, nos moveremos a la ventana de BurpSuite, en donde veremos todas las acciones que se llegan hacer para que la página cargue. Para poder realizar la práctica debemos de dar clic en Forward hasta que en las peticiones nos aparezca la ruta de una imagen.
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4 pt-2">
                         <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB4.3.png" alt="Lab 4.3" class="rounded object-contain max-h-40"></div>
@@ -221,7 +221,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 4: Envío a Repeater</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Ya que ubicamos el endpoint, debemos selecionarlo y dar clic derecho sobre lo seleccionado, para que se nos despliegue un menú en el cual se mostrarán diferentes opciones, nosotros en este caso seleccionaremos la opción de <strong>Send to Repeater</strong> (Enviar al Repetidor)[cite: 8].
+                        Ya que ubicamos el endpoint, debemos selecionarlo y dar clic derecho sobre lo seleccionado, para que se nos despliegue un menú en el cual se mostrarán diferentes opciones, nosotros en este caso seleccionaremos la opción de <strong>Send to Repeater</strong> (Enviar al Repetidor).
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
                         <img src="LAB4.5.png" alt="Lab 4.5" class="rounded object-contain max-h-48">
@@ -232,7 +232,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 5: Modificación de la ruta en Repeater</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Después de haber mandado esta intrucción al repetidor, debemos movernos a la pestaña de Repeater, en donde cambiaremos la ruta para que se pueda abrir la imagen[cite: 8]. Nosotros, cambiaremos esa ruta a la siguiente: <code>GET /image?filename=/var/www/images/../../../etc/passwd HTTP/2</code>[cite: 8]. Esto para poder visualizar lo que se encuentra en ese directorio, pero para eso debemos dar clic en <strong>Send</strong>[cite: 8].
+                        Después de haber mandado esta intrucción al repetidor, debemos movernos a la pestaña de Repeater, en donde cambiaremos la ruta para que se pueda abrir la imagen. Nosotros, cambiaremos esa ruta a la siguiente: <code>GET /image?filename=/var/www/images/../../../etc/passwd HTTP/2</code>. Esto para poder visualizar lo que se encuentra en ese directorio, pero para eso debemos dar clic en <strong>Send</strong>.
                     </p>
                     <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
                         <img src="LAB4.6.png" alt="Lab 4.6" class="rounded object-contain max-h-48">
@@ -243,7 +243,7 @@
                 <div class="space-y-3">
                     <h3 class="font-bold text-gray-800 text-base">Paso 6: Verificación de Resultados</h3>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        Una vez que dimos clic en Send, se deberá mostrar el contenido del directorio en el apartado de Response[cite: 8]. Al poder observar esta información, esto nos indica que nuestra práctica está terminada de manera satisfactoria[cite: 8]. Pero podemos confirmar esto al irnos a la página de la práctica, en donde se deberá ver que ya la resolvimos[cite: 8].
+                        Una vez que dimos clic en Send, se deberá mostrar el contenido del directorio en el apartado de Response. Al poder observar esta información, esto nos indica que nuestra práctica está terminada de manera satisfactoria. Pero podemos confirmar esto al irnos a la página de la práctica, en donde se deberá ver que ya la resolvimos.
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4 pt-2">
                         <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB4.7.png" alt="Lab 4.7" class="rounded object-contain max-h-40"></div>
@@ -257,17 +257,17 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación del Payload</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                El payload tiene esta estructura: <code>[RUTA_PERMITIDA]/../../../etc/passwd</code>[cite: 8]. Por ejemplo: <code>/var/www/images/../../../etc/passwd</code>[cite: 8]. Cada elemento tiene una función[cite: 8]:
+                El payload tiene esta estructura: <code>[RUTA_PERMITIDA]/../../../etc/passwd</code>. Por ejemplo: <code>/var/www/images/../../../etc/passwd</code>. Cada elemento tiene una función:
             </p>
             <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm font-light pl-4">
-                <li><code>/var/www/images/</code> es el directorio que la aplicación espera encontrar al inicio[cite: 8].</li>
-                <li><code>..</code> representa el directorio padre[cite: 8].</li>
-                <li><code>/../</code> permite subir un nivel en la estructura de directorios[cite: 8].</li>
-                <li><code>../../../</code> permite retroceder varios niveles[cite: 8].</li>
-                <li><code>/etc/passwd</code> es el archivo objetivo[cite: 8].</li>
+                <li><code>/var/www/images/</code> es el directorio que la aplicación espera encontrar al inicio.</li>
+                <li><code>..</code> representa el directorio padre.</li>
+                <li><code>/../</code> permite subir un nivel en la estructura de directorios.</li>
+                <li><code>../../../</code> permite retroceder varios niveles.</li>
+                <li><code>/etc/passwd</code> es el archivo objetivo.</li>
             </ul>
             <p class="text-gray-600 text-sm font-light leading-relaxed pt-2">
-                La característica importante de este ataque es que la cadena comienza de forma válida, pero posteriormente contiene instrucciones para abandonar el directorio autorizado[cite: 8].
+                La característica importante de este ataque es que la cadena comienza de forma válida, pero posteriormente contiene instrucciones para abandonar el directorio autorizado.
             </p>
         </section>
 
@@ -275,15 +275,15 @@
         <section class="content-card p-8 md:p-12 space-y-4">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Mitigación Recomendada</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">
-                La aplicación no debería limitarse a comprobar que la cadena empiece con un directorio determinado[cite: 8]. Se recomienda[cite: 8]:
+                La aplicación no debería limitarse a comprobar que la cadena empiece con un directorio determinado. Se recomienda:
             </p>
             <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm font-light pl-4">
-                <li>Normalizar/canonicalizar la ruta antes de validarla[cite: 8].</li>
-                <li>Comprobar que la ruta final normalizada se encuentre realmente dentro del directorio permitido[cite: 8].</li>
-                <li>No permitir que el usuario proporcione directamente rutas del sistema[cite: 8].</li>
-                <li>Utilizar identificadores de archivos en lugar de rutas proporcionadas por el usuario[cite: 8].</li>
-                <li>Aplicar una lista blanca de archivos o extensiones permitidas[cite: 8].</li>
-                <li>Ejecutar la aplicación con los mínimos permisos necesarios, evitando que pueda leer archivos sensibles[cite: 8].</li>
+                <li>Normalizar/canonicalizar la ruta antes de validarla.</li>
+                <li>Comprobar que la ruta final normalizada se encuentre realmente dentro del directorio permitido.</li>
+                <li>No permitir que el usuario proporcione directamente rutas del sistema.</li>
+                <li>Utilizar identificadores de archivos en lugar de rutas proporcionadas por el usuario.</li>
+                <li>Aplicar una lista blanca de archivos o extensiones permitidas.</li>
+                <li>Ejecutar la aplicación con los mínimos permisos necesarios, evitando que pueda leer archivos sensibles.</li>
             </ol>
         </section>
 
