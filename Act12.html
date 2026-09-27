@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act. 12: Lab File Path Traversal - Validation of File Extension with Null Byte Bypass | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #ffffff; 
+            color: #1f2937; 
+        }
+        .main-card {
+            background: linear-gradient(135deg, rgba(239, 246, 255, 0.6) 0%, rgba(254, 243, 199, 0.3) 50%, rgba(253, 232, 232, 0.4) 100%);
+            border-radius: 2rem;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.02);
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .content-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.05);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase">
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-4">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-8 md:h-10 w-auto object-contain">
+                <span class="text-xs md:text-sm font-bold tracking-tight text-gray-900 uppercase">
+                    PORTAFOLIO<span class="text-blue-600">.</span>CNO IV
+                </span>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-7 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-blue-600 transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-blue-600 transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-blue-600 transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+            <a href="index.html" class="hover:text-blue-600 transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-blue-600 transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-blue-600 transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="hover:text-blue-600 transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="hover:text-blue-600 transition py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="hover:text-blue-600 transition py-1">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-blue-600 transition py-1">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO TIPO HERO -->
+    <header class="container mx-auto px-6 py-10 max-w-6xl">
+        <div class="main-card p-8 md:p-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-block px-3 py-1 bg-blue-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                    CNO IV – Seguridad Informática
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+                    LAB: File Path Traversal - Validation of File Extension with Null Byte Bypass
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
+                    Universidad Politécnica de San Luis Potosí — Documentación de prácticas de seguridad ofensiva en PortSwigger Web Security Academy.
+                </p>
+                <div class="pt-2 text-xs text-gray-500 space-y-1">
+                    <p><strong>Mtro. Servando López Contreras</strong> | Otoño 2026</p>
+                    <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455)</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta lateral -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center w-full lg:w-80 flex-shrink-0 flex flex-col items-center">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">SEGURIDAD INFORMÁTICA</h3>
+                <p class="text-xs text-gray-400 mt-2">Otoño 2026</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-6xl">
+
+        <!-- SECCIÓN DE DESCARGA DE PDF -->
+        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+                <h2 class="text-xl font-bold mb-2 text-gray-900 flex items-center gap-2">
+                    <span>📄</span> Reporte Consolidado de la Actividad
+                </h2>
+                <p class="text-gray-600 text-xs font-light">
+                    Obtén el documento PDF oficial con todo el procedimiento detallado de esta práctica.
+                </p>
+            </div>
+            <a href="Act12.pdf" download class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-lg transition duration-300 shadow-sm whitespace-nowrap">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Descargar Reporte PDF
+            </a>
+        </section>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-6">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Introducción</h2>
+            <div class="grid md:grid-cols-2 gap-6 items-center">
+                <div class="space-y-4 text-gray-600 text-sm font-light leading-relaxed">
+                    <p><strong class="font-semibold text-gray-800">Nombre del laboratorio:</strong> File Path Traversal: Validation of File Extension with Null Byte Bypass</p>
+                    <p><strong class="font-semibold text-gray-800">Nivel del Laboratorio:</strong> Practitioner</p>
+                    <p><strong class="font-semibold text-gray-800">Tipo de explotación:</strong> Path Traversal (Directory Traversal) con bypass mediante Null Byte (%00). La vulnerabilidad permite manipular el nombre de un archivo solicitado para acceder a archivos fuera del directorio permitido.</p>
+                </div>
+                <div class="border rounded-xl p-4 bg-gray-50 flex justify-center">
+                    <img src="LAB5.1.png" alt="Lab 5.1" class="max-h-48 object-contain rounded">
+                </div>
+            </div>
+        </section>
+
+        <!-- OBJETIVO -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Objetivo del Laboratorio</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                El objetivo es obtener el contenido del archivo <code>/etc/passwd</code> aprovechando una vulnerabilidad de Path Traversal en la funcionalidad que muestra las imágenes de los productos. La aplicación intenta impedir el acceso a archivos que no tengan la extensión esperada, pero su validación puede ser evadida mediante un Null Byte.
+            </p>
+        </section>
+
+        <!-- EXPLICACIÓN TÉCNICA -->
+        <section class="content-card p-8 md:p-12 space-y-6">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación Técnica de la Explotación</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                La aplicación recibe mediante un parámetro el nombre de la imagen que debe mostrar. Antes de procesarlo, comprueba que el nombre termine con una extensión determinada, por ejemplo <code>.jpg</code>. El problema aparece cuando se introduce un Null Byte (<code>%00</code>) dentro del nombre del archivo.
+            </p>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm font-light pl-4">
+                <li>El payload puede seguir una estructura como: <code>../../../../etc/passwd%00.jpg</code>.</li>
+                <li>La validación puede interpretar que el nombre termina en <code>.jpg</code>, por lo que considera que el archivo es válido.</li>
+                <li>Posteriormente, dependiendo de cómo el servidor procese la cadena, el <code>%00</code> puede actuar como terminador de la cadena y hacer que la extensión agregada después sea ignorada.</li>
+                <li>De esta manera, la aplicación puede terminar intentando acceder realmente a: <code>/etc/passwd</code> en lugar de una imagen.</li>
+            </ol>
+        </section>
+
+        <!-- EXPLOTACIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explotación</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                Primero se identifica la petición utilizada para cargar una imagen de producto. Por ejemplo, podría tener una estructura similar a: <code>/image?filename=...</code>. Se modifica el parámetro <code>filename</code> utilizando traversal <code>../../../../etc/passwd%00.jpg</code> y el Null Byte. La cantidad de <code>../</code> necesaria depende de la ubicación del directorio desde el cual la aplicación intenta cargar las imágenes. El objetivo final es conseguir que la respuesta HTTP muestre el contenido de: <code>/etc/passwd</code>.
+            </p>
+        </section>
+
+        <!-- PROCEDIMIENTO PASO A PASO -->
+        <section class="content-card p-8 md:p-12 space-y-6">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Procedimiento Paso a Paso</h2>
+
+            <div class="space-y-8">
+                <!-- Paso 1 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 1: Acceso a la página y Burp Suite</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Primero deberemos acceder a la página en donde podremos ingresar a nuestra práctica de laboratorio. Después de haber ingresado, debemos iniciar Burp Suite, que es en donde estaremos realizando la práctica. Continuando, una vez iniciado Burp Suite, debemos de movernos a la pestaña de Proxy.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.2.png" alt="Lab 5.2" class="rounded object-contain max-h-40"></div>
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.3.png" alt="Lab 5.3" class="rounded object-contain max-h-40"></div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 2: Activación del Intercept en Proxy</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Una vez en la pestaña de Proxy, podemos ver que el Intercept está apagado, por lo que debemos encenderlo, para así dar clic en Open Browser.
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
+                        <img src="LAB5.4.png" alt="Lab 5.4" class="rounded object-contain max-h-48">
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 3: Ingreso del enlace de la práctica y Forward</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Una vez abierto el navegador deberemos ingresar el enlace de la práctica. Ya que ingresamos el enlace, nos moveremos a la ventana de Burp Suite, en donde veremos todas las acciones que se llegan hacer para que la página cargue. Para poder realizar la práctica debemos de dar clic en Forward hasta que en las peticiones nos aparezca la ruta de una imagen.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.5.png" alt="Lab 5.5" class="rounded object-contain max-h-40"></div>
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.6.png" alt="Lab 5.6" class="rounded object-contain max-h-40"></div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 4: Envío a Repeater</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Ya que ubicamos el endpoint, debemos seleccionarlo y dar clic derecho sobre lo seleccionado, para que se nos despliegue un menú en el cual se mostrarán diferentes opciones, nosotros en este caso seleccionaremos la opción de <strong>Send to Repeater</strong> (Enviar al Repetidor).
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
+                        <img src="LAB5.7.png" alt="Lab 5.7" class="rounded object-contain max-h-48">
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 5: Modificación con Null Byte</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Después de haber mandado esta instrucción al repetidor, debemos movernos a la pestaña de Repeater, en donde cambiaremos la ruta para que se pueda abrir la imagen. Ahora procederemos a modificar el payload, lo cambiaremos por lo siguiente: <code>GET /image?filename=../../../../etc/passwd%00.jpg</code> y damos clic en <strong>Send</strong>.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.8.png" alt="Lab 5.8" class="rounded object-contain max-h-40"></div>
+                        <div class="border rounded-xl p-3 bg-gray-50 flex justify-center"><img src="LAB5.9.png" alt="Lab 5.9" class="rounded object-contain max-h-40"></div>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-800 text-base">Paso 6: Verificación de Resultados</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        Una vez que dimos clic en Send, se deberá mostrar el contenido del directorio en el apartado de Response. Al poder observar esta información, esto nos indica que nuestra práctica está terminada de manera satisfactoria. Para confirmar que nuestra práctica ya está completa debemos irnos a la página de la práctica, en donde se deberá ver que ya está completada.
+                    </p>
+                    <div class="border rounded-xl p-3 bg-gray-50 flex justify-center">
+                        <img src="LAB5.10.png" alt="Lab 5.10" class="rounded object-contain max-h-48">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPLICACIÓN DEL PAYLOAD -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Explicación del Payload</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                El payload utilizado es: <code>../../../../etc/passwd%00.jpg</code>
+            </p>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                Se puede dividir de esta manera:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm font-light pl-4">
+                <li><code>../../../../</code>: Intenta salir del directorio donde se encuentran las imágenes.</li>
+                <li><code>etc/passwd</code>: Especifica el archivo que se intenta obtener.</li>
+                <li><code>%00</code>: Representa un Null Byte codificado.</li>
+                <li><code>.jpg</code>: Busca satisfacer la validación que exige una extensión de imagen.</li>
+            </ul>
+            <p class="text-gray-600 text-sm font-light leading-relaxed pt-2">
+                La parte más importante es: <code>%00.jpg</code>. La aplicación puede comprobar la cadena completa y detectar <code>jpg</code>, pero una función posterior de procesamiento de archivos puede interpretar el Null Byte como el final de la cadena. Esto permite que la validación y el procesamiento del archivo tengan comportamientos diferentes.
+            </p>
+        </section>
+
+        <!-- MITIGACIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-4">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">Mitigación Recomendada</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">
+                La principal medida es no confiar en la entrada proporcionada por el usuario y evitar que el usuario controle directamente las rutas de archivos. Se recomienda:
+            </p>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm font-light pl-4">
+                <li>Resolver la ruta mediante funciones seguras y comprobar que la ruta resultante permanezca dentro del directorio autorizado.</li>
+                <li>No confiar únicamente en comprobar extensiones como <code>.jpg</code>, <code>.png</code>, etc.</li>
+                <li>Rechazar caracteres y secuencias utilizadas para traversal, como <code>../</code>, aunque esto por sí solo no debe considerarse una defensa suficiente.</li>
+                <li>Manejar correctamente los Null Bytes y realizar la validación sobre la cadena que realmente será utilizada para acceder al archivo.</li>
+                <li>Aplicar permisos mínimos al usuario con el que se ejecuta la aplicación para limitar el impacto de una posible vulnerabilidad.</li>
+            </ol>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-10 text-center border-t border-gray-100 bg-white">
+        <p class="text-gray-500 text-xs mb-2 px-4">
+            🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
+    </footer>
+
+    <!-- Script Menú Móvil -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
