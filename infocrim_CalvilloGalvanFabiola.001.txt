@@ -1,0 +1,123 @@
+﻿Created By AccessData® FTK® Imager 4.3.1.1 
+
+Case Information: 
+Acquired using: ADI4.3.1.1
+Case Number: InfoCrim-01_21.11.2023
+Evidence Number: 00
+Unique description: CNOIV - análisis de incidente de fraude bancario
+Examiner: Calvillo Galván Fabiola
+Notes: Adquisisción realizada en LIF de la UPSLP
+
+--------------------------------------------------------------
+
+Information for C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola:
+
+Physical Evidentiary Item (Source) Information:
+[Device Info]
+ Source Type: Physical
+[Drive Geometry]
+ Cylinders: 15,073
+ Tracks per Cylinder: 255
+ Sectors per Track: 63
+ Bytes per Sector: 512
+ Sector Count: 242,155,520
+[Physical Drive Information]
+ Drive Model: Kingston DataTraveler 3.0 USB Device
+ Drive Serial Number: 0000000005
+ Drive Interface Type: USB
+ Removable drive: True
+ Source data size: 118240 MB
+ Sector count:    242155520
+[Computed Hashes]
+ MD5 checksum:    1db56f2bc20cbad6f00c27338ca581ec
+ SHA1 checksum:   8e9efc10c422d0e249566d09177fb8a6db50bbc3
+
+Image Information:
+ Acquisition started:   Sun Nov  8 16:59:22 2026
+ Acquisition finished:  Sun Nov  8 17:21:21 2026
+ Segment list:
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.001
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.002
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.003
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.004
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.005
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.006
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.007
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.008
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.009
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.010
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.011
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.012
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.013
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.014
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.015
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.016
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.017
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.018
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.019
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.020
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.021
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.022
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.023
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.024
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.025
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.026
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.027
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.028
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.029
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.030
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.031
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.032
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.033
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.034
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.035
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.036
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.037
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.038
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.039
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.040
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.041
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.042
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.043
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.044
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.045
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.046
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.047
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.048
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.049
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.050
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.051
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.052
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.053
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.054
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.055
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.056
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.057
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.058
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.059
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.060
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.061
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.062
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.063
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.064
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.065
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.066
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.067
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.068
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.069
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.070
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.071
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.072
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.073
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.074
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.075
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.076
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.077
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.078
+  C:\Users\fabic\OneDrive\Desktop\InfoCrim13\infocrim_CalvilloGalvanFabiola.079
+
+Image Verification Results:
+ Verification started:  Sun Nov  8 17:21:22 2026
+ Verification finished: Sun Nov  8 17:28:07 2026
+ MD5 checksum:    1db56f2bc20cbad6f00c27338ca581ec : verified
+ SHA1 checksum:   8e9efc10c422d0e249566d09177fb8a6db50bbc3 : verified
