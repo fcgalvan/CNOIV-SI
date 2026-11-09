@@ -99,18 +99,23 @@
                 </div>
             </div>
 
-            <!-- Tarjeta lateral -->
+            <!-- Tarjeta lateral con accesos rápidos a ambos PDFs -->
             <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center w-full lg:w-80 flex-shrink-0 flex flex-col items-center">
                 <div class="w-14 h-14 bg-gradient-to-tr from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/30">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                 </div>
-                <h3 class="font-bold text-gray-900 text-sm tracking-wide">INFORME EJECUTIVO</h3>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">ARCHIVOS DE LA ACTIVIDAD</h3>
                 <p class="text-xs text-blue-600 font-semibold mt-1">Caso InfoCrim-01</p>
-                <button onclick="window.open('Informe_Actividad16_FTK_Imager_CalvilloGalvanFabiola.docx', '_blank')" class="mt-5 w-full py-2.5 bg-gray-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition shadow-sm">
-                    Ver Archivo Original
-                </button>
+                <div class="mt-5 w-full space-y-2">
+                    <a href="CalvilloGalvanFabiola-ACT16.pdf" target="_blank" class="block w-full py-2 bg-gray-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition shadow-sm text-center">
+                        Informe Ejecutivo (PDF)
+                    </a>
+                    <a href="CalvilloGalvanFabiola_ACT16.pdf" target="_blank" class="block w-full py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-xl transition shadow-sm text-center">
+                        Práctica / Preguntas (PDF)
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -118,22 +123,26 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main class="container mx-auto px-6 pb-20 space-y-12 max-w-6xl">
 
-        <!-- SECCIÓN DE DESCARGA -->
-        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col sm:flex-row justify-between items-center gap-6 shadow-sm">
+        <!-- SECCIÓN DE DESCARGA MÚLTIPLE -->
+        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
             <div>
                 <h2 class="text-xl font-bold mb-2 text-gray-900 flex items-center gap-2">
-                    <span>📄</span> Reporte Oficial de la Actividad
+                    <span>📄</span> Documentos Oficiales de la Actividad 16
                 </h2>
                 <p class="text-gray-600 text-xs font-light">
-                    Descarga el documento con el informe ejecutivo completo de la adquisición forense de la memoria USB.
+                    Descarga ambos archivos en formato PDF: el Informe Ejecutivo de la adquisición y el documento con las preguntas de la práctica.
                 </p>
             </div>
-            <a href="Informe_Actividad16_FTK_Imager_CalvilloGalvanFabiola.docx" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-xl transition duration-300 shadow-md shadow-blue-600/20 whitespace-nowrap">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                </svg>
-                Descargar Documento
-            </a>
+            <div class="flex flex-wrap sm:flex-nowrap gap-3 w-full md:w-auto">
+                <a href="CalvilloGalvanFabiola-ACT16.pdf" target="_blank" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-md shadow-blue-600/20 whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Informe (PDF)
+                </a>
+                <a href="CalvilloGalvanFabiola_ACT16.pdf" target="_blank" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-900 text-white font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-md whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Preguntas (PDF)
+                </a>
+            </div>
         </section>
 
         <!-- 1. RESUMEN EJECUTIVO -->
@@ -198,78 +207,78 @@
             </div>
         </section>
 
-        <!-- 4. PROCEDIMIENTO REALIZADO -->
+        <!-- 4. PROCEDIMIENTO REALIZADO (CON LAB16.1 HASTA LAB16.10) -->
         <section class="content-card p-8 md:p-12 space-y-8 shadow-sm">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">4. Procedimiento realizado</h2>
-            <p class="text-gray-600 text-sm font-light">A continuación se describe cada paso con su evidencia gráfica. El proceso se realizó en el orden en que aparece.</p>
+            <p class="text-gray-600 text-sm font-light">A continuación se describe cada paso con su evidencia gráfica (haz clic en cualquier imagen para ampliarla). El proceso se realizó en el orden en que aparece.</p>
 
-            <!-- 4.1 -->
+            <!-- 4.1 Preparación -->
             <div class="space-y-4">
                 <h3 class="font-bold text-gray-800 text-base">4.1 Preparación del entorno de trabajo</h3>
                 <p class="text-gray-600 text-sm font-light leading-relaxed">Se creó en el Escritorio la carpeta de destino InfoCrim13, que alojaría la imagen forense y su archivo de resumen. La carpeta aparece con fecha de modificación 08/11/2026 16:50 h, previa al inicio de la adquisición.</p>
                 <div class="grid md:grid-cols-2 gap-4">
-                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_1.png', 'Figura 1. Creación de la carpeta')">
-                        <img src="Act16_1.png" alt="Figura 1" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
-                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 1. Creación de la carpeta de destino.</p>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('LAB16.1.png', 'LAB16.1 - Creación de la carpeta')">
+                        <img src="LAB16.1.png" alt="LAB16.1" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.1. Creación de la carpeta de destino desde el menú «Nuevo → Carpeta».</p>
                     </div>
-                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_2.png', 'Figura 2. Carpeta InfoCrim13')">
-                        <img src="Act16_2.png" alt="Figura 2" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
-                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 2. Carpeta InfoCrim13 creada en el Escritorio.</p>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('LAB16.2.png', 'LAB16.2 - Carpeta InfoCrim13')">
+                        <img src="LAB16.2.png" alt="LAB16.2" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.2. Carpeta InfoCrim13 creada en el Escritorio.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 4.2 -->
+            <!-- 4.2 Selección de evidencia -->
             <div class="space-y-4 pt-4 border-t">
                 <h3 class="font-bold text-gray-800 text-base">4.2 Selección de la evidencia</h3>
                 <p class="text-gray-600 text-sm font-light leading-relaxed">Con la memoria USB conectada, en FTK Imager se eligió File → Create Disk Image…</p>
-                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('Act16_3.png', 'Figura 3. Menú File')">
-                    <img src="Act16_3.png" alt="Figura 3" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
-                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 3. Menú File de FTK Imager 4.3.1.1.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('LAB16.3.png', 'LAB16.3 - Menú File de FTK Imager')">
+                    <img src="LAB16.3.png" alt="LAB16.3" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.3. Menú File de FTK Imager 4.3.1.1 con la opción «Create Disk Image…».</p>
                 </div>
                 <p class="text-gray-600 text-sm font-light leading-relaxed">Como tipo de fuente se seleccionó Physical Drive, de modo que se copie el dispositivo completo (tabla de particiones, espacio no asignado y archivos eliminados) y no solo un volumen lógico.</p>
-                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_4.png', 'Figura 4. Selección Physical Drive')">
-                    <img src="Act16_4.png" alt="Figura 4" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
-                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 4. Selección del tipo de fuente: Physical Drive.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('LAB16.4.png', 'LAB16.4 - Selección Physical Drive')">
+                    <img src="LAB16.4.png" alt="LAB16.4" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.4. Selección del tipo de fuente: Physical Drive.</p>
                 </div>
                 <p class="text-gray-600 text-sm font-light leading-relaxed">En el selector de dispositivos se eligió \\.\PHYSICALDRIVE1 – Kingston DataTraveler 3.0 USB Device. Es fundamental confirmar la unidad antes de continuar para no adquirir un disco equivocado.</p>
-                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_5.png', 'Figura 5. Selección de unidad')">
-                    <img src="Act16_5.png" alt="Figura 5" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
-                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 5. Selección de la unidad de origen.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('LAB16.5.png', 'LAB16.5 - Selección de unidad de origen')">
+                    <img src="LAB16.5.png" alt="LAB16.5" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.5. Selección de la unidad de origen.</p>
                 </div>
             </div>
 
-            <!-- 4.3 -->
+            <!-- 4.3 Configuración -->
             <div class="space-y-4 pt-4 border-t">
                 <h3 class="font-bold text-gray-800 text-base">4.3 Configuración de la imagen</h3>
                 <p class="text-gray-600 text-sm font-light leading-relaxed">Se agregó el destino con Add…, se eligió el formato Raw (dd) y se capturaron los datos de identificación de la evidencia.</p>
-                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_6.png', 'Figura 6. Información del ítem')">
-                    <img src="Act16_6.png" alt="Figura 6" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
-                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 6. Información del ítem de evidencia.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('LAB16.6.png', 'LAB16.6 - Información del ítem de evidencia')">
+                    <img src="LAB16.6.png" alt="LAB16.6" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.6. Información del ítem de evidencia (caso, examinadora y notas).</p>
                 </div>
                 <p class="text-gray-600 text-sm font-light leading-relaxed">Después se definió la carpeta de destino, el nombre de archivo infocrim_CalvilloGalvanFabiola, un tamaño de fragmento de 1,500 MB y compresión 0.</p>
-                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_7.png', 'Figura 7. Destino de imagen')">
-                    <img src="Act16_7.png" alt="Figura 7" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
-                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 7. Parámetros de destino de la imagen.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('LAB16.7.png', 'LAB16.7 - Parámetros de destino')">
+                    <img src="LAB16.7.png" alt="LAB16.7" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.7. Parámetros de destino de la imagen.</p>
                 </div>
                 <p class="text-gray-600 text-sm font-light leading-relaxed">En la ventana de resumen se confirmó el origen, el destino [raw/dd] y la casilla de verificación posterior activada. Se hizo clic en Start.</p>
-                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_8.png', 'Figura 8. Resumen de configuración')">
-                    <img src="Act16_8.png" alt="Figura 8" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
-                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 8. Resumen de configuración previo al inicio.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('LAB16.8.png', 'LAB16.8 - Resumen de configuración')">
+                    <img src="LAB16.8.png" alt="LAB16.8" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.8. Resumen de configuración previo al inicio de la adquisición.</p>
                 </div>
             </div>
 
-            <!-- 4.4 -->
+            <!-- 4.4 Adquisición -->
             <div class="space-y-4 pt-4 border-t">
                 <h3 class="font-bold text-gray-800 text-base">4.4 Adquisición y marcas de tiempo</h3>
                 <div class="grid md:grid-cols-2 gap-4">
-                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_9.png', 'Figura 9. Adquisición en curso')">
-                        <img src="Act16_9.png" alt="Figura 9" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
-                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 9. Adquisición en curso (0:00:03).</p>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('LAB16.9.png', 'LAB16.9 - Adquisición en curso')">
+                        <img src="LAB16.9.png" alt="LAB16.9" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.9. Adquisición en curso (tiempo transcurrido 0:00:03).</p>
                     </div>
-                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_10.png', 'Figura 10. Adquisición finalizada')">
-                        <img src="Act16_10.png" alt="Figura 10" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
-                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 10. Adquisición finalizada (0:21:59).</p>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('LAB16.10.png', 'LAB16.10 - Adquisición finalizada')">
+                        <img src="LAB16.10.png" alt="LAB16.10" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.10. Adquisición finalizada exitosamente (0:21:59).</p>
                     </div>
                 </div>
                 <div class="overflow-x-auto pt-2">
@@ -278,20 +287,20 @@
                         <tbody class="divide-y text-gray-600">
                             <tr><td class="p-2">Inicio de adquisición</td><td class="p-2">16:59 h</td><td class="p-2">Registro del examinador</td></tr>
                             <tr><td class="p-2">Término de adquisición</td><td class="p-2">17:21 h</td><td class="p-2">Registro del examinador</td></tr>
-                            <tr><td class="p-2">Tiempo transcurrido</td><td class="p-2">21 min 59 s (0:21:59)</td><td class="p-2">Ventana de FTK Imager (Figura 9)</td></tr>
+                            <tr><td class="p-2">Tiempo transcurrido</td><td class="p-2">21 min 59 s (0:21:59)</td><td class="p-2">Ventana de FTK Imager (LAB16.9)</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- 5. RESULTADOS OBTENIDOS -->
+        <!-- 5. RESULTADOS OBTENIDOS (CON LAB16.11) -->
         <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
             <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">5. Resultados obtenidos</h2>
             <p class="text-gray-600 text-sm font-light leading-relaxed">Al terminar la creación, FTK Imager verificó automáticamente la imagen. La ventana Drive/Image Verify Results muestra el conteo de sectores, los hashes calculados y la lista de bloques defectuosos.</p>
-            <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_11.png', 'Figura 11. Resultados de verificación')">
-                <img src="Act16_11.png" alt="Figura 11" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
-                <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 11. Resultados de verificación: MD5 y SHA-1 Match.</p>
+            <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('LAB16.11.png', 'LAB16.11 - Resultados de verificación')">
+                <img src="LAB16.11.png" alt="LAB16.11" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                <p class="text-xs text-center text-gray-500 mt-2 font-medium">LAB16.11. Resultados de verificación: MD5 y SHA-1 Match; sin bloques defectuosos.</p>
             </div>
 
             <div class="overflow-x-auto pt-2">
@@ -311,10 +320,6 @@
             </div>
 
             <p class="text-gray-600 text-sm font-light leading-relaxed pt-2">FTK Imager también generó un archivo de texto con el mismo nombre de la imagen que documenta todo el proceso.</p>
-            <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_12.png', 'Figura 12. Archivo de resumen')">
-                <img src="Act16_12.png" alt="Figura 12" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
-                <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 12. Archivo de resumen (.txt) generado por FTK Imager.</p>
-            </div>
         </section>
 
         <!-- 6. CONCEPTOS DE ADQUISICIÓN FORENSE -->
@@ -433,7 +438,7 @@
             </div>
 
             <!-- Nota al pie destacada -->
-            <div class="pt-4 text-sm text-gray-700 font-bold border-t flex items-start gap-3 bg-amber-50/60 p-4 rounded-xl border border-amber-200/60 mt-6">
+            <div class="pt-6 text-sm text-gray-700 font-bold border-t flex items-start gap-3 bg-amber-50/60 p-4 rounded-xl border border-amber-200/60 mt-6">
                 <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <p>Nota: La actividad fue realizada en el Laboratorio de Informática Forense (LIF) de la UPSLP por la alumna Fabiola Calvillo Galván.</p>
             </div>
