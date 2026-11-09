@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act. 16: Adquisición forense con FTK Imager | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1f2937; 
+        }
+        .main-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(147, 51, 234, 0.05) 50%, rgba(239, 68, 68, 0.05) 100%);
+            border-radius: 2rem;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .content-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.1);
+        }
+        .img-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .img-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase shadow-md">
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 px-6 py-4 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-4">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-8 md:h-10 w-auto object-contain">
+                <span class="text-xs md:text-sm font-bold tracking-tight text-gray-900 uppercase">
+                    PORTAFOLIO<span class="text-blue-600">.</span>CNO IV
+                </span>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-7 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-blue-600 transition">Parcial 2</a>
+                <a href="parcial3.html" class="text-blue-600 font-bold transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-blue-600 transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+            <a href="index.html" class="hover:text-blue-600 transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-blue-600 transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-blue-600 transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="text-blue-600 font-bold transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="hover:text-blue-600 transition py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="hover:text-blue-600 transition py-1">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-blue-600 transition py-1">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO TIPO HERO -->
+    <header class="container mx-auto px-6 py-12 max-w-6xl">
+        <div class="main-card p-8 md:p-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-block px-3.5 py-1.5 bg-blue-600 text-white text-[11px] font-extrabold uppercase tracking-widest rounded-full shadow-sm">
+                    CNO IV – Seguridad Informática & Informática Forense
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                    Actividad 16: Adquisición forense con FTK Imager
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
+                    Universidad Politécnica de San Luis Potosí — Informe ejecutivo del caso InfoCrim-01_21.11.2023 sobre análisis de incidente de fraude bancario.
+                </p>
+                <div class="pt-2 text-xs text-gray-500 space-y-1">
+                    <p><strong>Laboratorio:</strong> LIF (UPSLP) | 8 de noviembre de 2026</p>
+                    <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455)</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta lateral -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center w-full lg:w-80 flex-shrink-0 flex flex-col items-center">
+                <div class="w-14 h-14 bg-gradient-to-tr from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">INFORME EJECUTIVO</h3>
+                <p class="text-xs text-blue-600 font-semibold mt-1">Caso InfoCrim-01</p>
+                <button onclick="window.open('Informe_Actividad16_FTK_Imager_CalvilloGalvanFabiola.docx', '_blank')" class="mt-5 w-full py-2.5 bg-gray-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition shadow-sm">
+                    Ver Archivo Original
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-6xl">
+
+        <!-- SECCIÓN DE DESCARGA -->
+        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col sm:flex-row justify-between items-center gap-6 shadow-sm">
+            <div>
+                <h2 class="text-xl font-bold mb-2 text-gray-900 flex items-center gap-2">
+                    <span>📄</span> Reporte Oficial de la Actividad
+                </h2>
+                <p class="text-gray-600 text-xs font-light">
+                    Descarga el documento con el informe ejecutivo completo de la adquisición forense de la memoria USB.
+                </p>
+            </div>
+            <a href="Informe_Actividad16_FTK_Imager_CalvilloGalvanFabiola.docx" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-xl transition duration-300 shadow-md shadow-blue-600/20 whitespace-nowrap">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Descargar Documento
+            </a>
+        </section>
+
+        <!-- 1. RESUMEN EJECUTIVO -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">1. Resumen ejecutivo</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>Se realizó la adquisición forense de una memoria USB Kingston DataTraveler 3.0 (118,240 MB; 242,155,520 sectores de 512 bytes) mediante FTK Imager 4.3.1.1, en el Laboratorio de Informática Forense (LIF) de la UPSLP, como parte del caso <strong>InfoCrim-01_21.11.2023</strong> (CNOIV – análisis de incidente de fraude bancario).</p>
+                <p>La imagen se generó en formato Raw (dd), fragmentada en segmentos de 1,500 MB, en 21 min 59 s. La verificación posterior coincidió en MD5 y SHA-1 y no encontró bloques defectuosos, por lo que la imagen es una réplica íntegra del dispositivo original en el momento de la adquisición. No se utilizó bloqueador de escritura, lo que se documenta como limitación en la sección 8.</p>
+                
+                <div class="bg-blue-50/60 border border-blue-100 p-6 rounded-2xl mt-4 space-y-2">
+                    <h3 class="font-bold text-gray-900 text-sm">Resultados clave</h3>
+                    <ul class="list-disc list-inside space-y-1 text-xs text-gray-700">
+                        <li><strong>Integridad:</strong> MD5 y SHA-1 con resultado «Match»; ningún bloque defectuoso.</li>
+                        <li><strong>Sectores copiados:</strong> 242,155,520 (≈ 115.5 GiB).</li>
+                        <li><strong>Archivos generados:</strong> 80 (79 segmentos de imagen y 1 archivo de texto de resumen).</li>
+                        <li><strong>Duración:</strong> 16:59 h a 17:21 h (tiempo transcurrido 0:21:59).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. OBJETIVO Y ALCANCE -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">2. Objetivo y alcance</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>Obtener una copia forense bit a bit de un dispositivo de almacenamiento USB, verificar su integridad mediante funciones hash y documentar el proceso de forma que pueda ser reproducido y verificado, como primera fase (adquisición) del análisis forense digital. El flujo completo contempla cinco fases: adquisición, preservación, análisis, documentación y presentación; este informe cubre la adquisición y deja planteadas las líneas de investigación para las fases siguientes.</p>
+                <ul class="list-disc list-inside space-y-1 pl-2">
+                    <li>Aplicar una herramienta de código abierto/gratuito para la extracción de evidencia digital.</li>
+                    <li>Comprender la importancia de los metadatos y de los hashes en la cadena de custodia.</li>
+                    <li>Analizar de forma crítica los resultados y proponer líneas de investigación.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. DATOS DEL CASO Y CONFIGURACIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">3. Datos del caso y configuración</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700">Parámetro</th>
+                            <th class="p-3 font-bold text-gray-700">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-medium">Número de caso</td><td class="p-3">InfoCrim-01_21.11.2023</td></tr>
+                        <tr><td class="p-3 font-medium">Número de evidencia</td><td class="p-3">00 (adquisición original)</td></tr>
+                        <tr><td class="p-3 font-medium">Descripción</td><td class="p-3">CNOIV – análisis de incidente de fraude bancario</td></tr>
+                        <tr><td class="p-3 font-medium">Examinadora</td><td class="p-3">Calvillo Galván Fabiola</td></tr>
+                        <tr><td class="p-3 font-medium">Notas</td><td class="p-3">Adquisición realizada en LIF de la UPSLP</td></tr>
+                        <tr><td class="p-3 font-medium">Herramienta</td><td class="p-3">AccessData FTK Imager 4.3.1.1</td></tr>
+                        <tr><td class="p-3 font-medium">Evidencia</td><td class="p-3">Memoria USB Kingston DataTraveler 3.0 (\\.\PHYSICALDRIVE1)</td></tr>
+                        <tr><td class="p-3 font-medium">Tipo de fuente</td><td class="p-3">Physical Drive (dispositivo físico completo)</td></tr>
+                        <tr><td class="p-3 font-medium">Formato de imagen</td><td class="p-3">Raw (dd), sin compresión ni cifrado</td></tr>
+                        <tr><td class="p-3 font-medium">Fragmentación</td><td class="p-3">1,500 MB por segmento</td></tr>
+                        <tr><td class="p-3 font-medium">Verificación posterior</td><td class="p-3">Activada («Verify images after they are created»)</td></tr>
+                        <tr><td class="p-3 font-medium">Destino</td><td class="p-3">C:\Users\fabic\OneDrive\Desktop\InfoCrim13</td></tr>
+                        <tr><td class="p-3 font-medium">Nombre de la imagen</td><td class="p-3">infocrim_CalvilloGalvanFabiola</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. PROCEDIMIENTO REALIZADO -->
+        <section class="content-card p-8 md:p-12 space-y-8 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">4. Procedimiento realizado</h2>
+            <p class="text-gray-600 text-sm font-light">A continuación se describe cada paso con su evidencia gráfica. El proceso se realizó en el orden en que aparece.</p>
+
+            <!-- 4.1 -->
+            <div class="space-y-4">
+                <h3 class="font-bold text-gray-800 text-base">4.1 Preparación del entorno de trabajo</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Se creó en el Escritorio la carpeta de destino InfoCrim13, que alojaría la imagen forense y su archivo de resumen. La carpeta aparece con fecha de modificación 08/11/2026 16:50 h, previa al inicio de la adquisición.</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_1.png', 'Figura 1. Creación de la carpeta')">
+                        <img src="Act16_1.png" alt="Figura 1" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 1. Creación de la carpeta de destino.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_2.png', 'Figura 2. Carpeta InfoCrim13')">
+                        <img src="Act16_2.png" alt="Figura 2" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 2. Carpeta InfoCrim13 creada en el Escritorio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4.2 -->
+            <div class="space-y-4 pt-4 border-t">
+                <h3 class="font-bold text-gray-800 text-base">4.2 Selección de la evidencia</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Con la memoria USB conectada, en FTK Imager se eligió File → Create Disk Image…</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('Act16_3.png', 'Figura 3. Menú File')">
+                    <img src="Act16_3.png" alt="Figura 3" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 3. Menú File de FTK Imager 4.3.1.1.</p>
+                </div>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Como tipo de fuente se seleccionó Physical Drive, de modo que se copie el dispositivo completo (tabla de particiones, espacio no asignado y archivos eliminados) y no solo un volumen lógico.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_4.png', 'Figura 4. Selección Physical Drive')">
+                    <img src="Act16_4.png" alt="Figura 4" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 4. Selección del tipo de fuente: Physical Drive.</p>
+                </div>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">En el selector de dispositivos se eligió \\.\PHYSICALDRIVE1 – Kingston DataTraveler 3.0 USB Device. Es fundamental confirmar la unidad antes de continuar para no adquirir un disco equivocado.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_5.png', 'Figura 5. Selección de unidad')">
+                    <img src="Act16_5.png" alt="Figura 5" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 5. Selección de la unidad de origen.</p>
+                </div>
+            </div>
+
+            <!-- 4.3 -->
+            <div class="space-y-4 pt-4 border-t">
+                <h3 class="font-bold text-gray-800 text-base">4.3 Configuración de la imagen</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Se agregó el destino con Add…, se eligió el formato Raw (dd) y se capturaron los datos de identificación de la evidencia.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_6.png', 'Figura 6. Información del ítem')">
+                    <img src="Act16_6.png" alt="Figura 6" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 6. Información del ítem de evidencia.</p>
+                </div>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Después se definió la carpeta de destino, el nombre de archivo infocrim_CalvilloGalvanFabiola, un tamaño de fragmento de 1,500 MB y compresión 0.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_7.png', 'Figura 7. Destino de imagen')">
+                    <img src="Act16_7.png" alt="Figura 7" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 7. Parámetros de destino de la imagen.</p>
+                </div>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">En la ventana de resumen se confirmó el origen, el destino [raw/dd] y la casilla de verificación posterior activada. Se hizo clic en Start.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_8.png', 'Figura 8. Resumen de configuración')">
+                    <img src="Act16_8.png" alt="Figura 8" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 8. Resumen de configuración previo al inicio.</p>
+                </div>
+            </div>
+
+            <!-- 4.4 -->
+            <div class="space-y-4 pt-4 border-t">
+                <h3 class="font-bold text-gray-800 text-base">4.4 Adquisición y marcas de tiempo</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_9.png', 'Figura 9. Adquisición en curso')">
+                        <img src="Act16_9.png" alt="Figura 9" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 9. Adquisición en curso (0:00:03).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('Act16_10.png', 'Figura 10. Adquisición finalizada')">
+                        <img src="Act16_10.png" alt="Figura 10" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 10. Adquisición finalizada (0:21:59).</p>
+                    </div>
+                </div>
+                <div class="overflow-x-auto pt-2">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead><tr class="bg-gray-50 border-b"><th class="p-2">Evento</th><th class="p-2">Hora</th><th class="p-2">Fuente</th></tr></thead>
+                        <tbody class="divide-y text-gray-600">
+                            <tr><td class="p-2">Inicio de adquisición</td><td class="p-2">16:59 h</td><td class="p-2">Registro del examinador</td></tr>
+                            <tr><td class="p-2">Término de adquisición</td><td class="p-2">17:21 h</td><td class="p-2">Registro del examinador</td></tr>
+                            <tr><td class="p-2">Tiempo transcurrido</td><td class="p-2">21 min 59 s (0:21:59)</td><td class="p-2">Ventana de FTK Imager (Figura 9)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. RESULTADOS OBTENIDOS -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">5. Resultados obtenidos</h2>
+            <p class="text-gray-600 text-sm font-light leading-relaxed">Al terminar la creación, FTK Imager verificó automáticamente la imagen. La ventana Drive/Image Verify Results muestra el conteo de sectores, los hashes calculados y la lista de bloques defectuosos.</p>
+            <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_11.png', 'Figura 11. Resultados de verificación')">
+                <img src="Act16_11.png" alt="Figura 11" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 11. Resultados de verificación: MD5 y SHA-1 Match.</p>
+            </div>
+
+            <div class="overflow-x-auto pt-2">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead><tr class="bg-gray-50 border-b"><th class="p-3 font-bold text-gray-700">Concepto</th><th class="p-3 font-bold text-gray-700">Resultado</th></tr></thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-medium">Sectores copiados</td><td class="p-3">242,155,520</td></tr>
+                        <tr><td class="p-3 font-medium">Hash MD5</td><td class="p-3 font-mono text-xs">1db56f2bc20cbad6f00c27338ca581ec</td></tr>
+                        <tr><td class="p-3 font-medium">Verificación MD5</td><td class="p-3 text-green-600 font-semibold">Match (calculado = reporte)</td></tr>
+                        <tr><td class="p-3 font-medium">Hash SHA-1</td><td class="p-3 font-mono text-xs">8e9efc10c422d0e249566d09177fb8a6db50bbc3</td></tr>
+                        <tr><td class="p-3 font-medium">Verificación SHA-1</td><td class="p-3 text-green-600 font-semibold">Match (calculado = reporte)</td></tr>
+                        <tr><td class="p-3 font-medium">Bloques defectuosos</td><td class="p-3">Ninguno (No bad blocks found in image)</td></tr>
+                        <tr><td class="p-3 font-medium">Tamaño de origen</td><td class="p-3">118,240 MB</td></tr>
+                        <tr><td class="p-3 font-medium">Archivos generados</td><td class="p-3">80</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-gray-600 text-sm font-light leading-relaxed pt-2">FTK Imager también generó un archivo de texto con el mismo nombre de la imagen que documenta todo el proceso.</p>
+            <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-lg mx-auto" onclick="abrirModal('Act16_12.png', 'Figura 12. Archivo de resumen')">
+                <img src="Act16_12.png" alt="Figura 12" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 12. Archivo de resumen (.txt) generado por FTK Imager.</p>
+            </div>
+        </section>
+
+        <!-- 6. CONCEPTOS DE ADQUISICIÓN FORENSE -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">6. Conceptos de adquisición forense</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">¿A qué tipo de formato se refiere Raw (dd)?</h3>
+                    <p>Es una imagen en bruto: una réplica exacta, byte por byte, del origen, sin encabezado, sin compresión y sin metadatos propios. Su gran ventaja es la compatibilidad universal, pues casi cualquier herramienta forense puede leerla. Su desventaja es que no almacena hashes ni datos del caso dentro del archivo, por lo que dependen del archivo de resumen externo; además ocupa el mismo espacio que el dispositivo original.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">¿A qué tipo de formato se refiere E01?</h3>
+                    <p>Es el formato Expert Witness de EnCase, estándar de la industria para imágenes forenses. Guarda la imagen en segmentos consecutivos (.E01, .E02…) con un encabezado de metadatos del caso (examinador, fecha, descripción), sumas de verificación (CRC) por bloque, el hash almacenado en el propio archivo y compresión opcional. Permite acceder a posiciones arbitrarias de los datos sin descomprimir todo el flujo.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">¿Cuál es la diferencia entre un formato SMART y un formato E01?</h3>
+                    <p>Ambos son formatos forenses bit a bit, segmentables y con compresión opcional. E01 es el estándar de la industria, aceptado por FTK Imager, EnCase, Autopsy y X-Ways, entre otras. SMART fue desarrollado por ASR Data para su suite de herramientas forenses en Linux (usa extensiones .s01, .s02…); su uso comercial disminuyó, aunque sigue siendo un formato robusto para preservar la integridad. En la práctica, E01 ofrece mayor compatibilidad entre herramientas.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">¿Cuántos archivos fueron generados?</h3>
+                    <p>Fueron generados 80 archivos. Con fragmentos de 1,500 MB, los 118,240 MB del dispositivo requieren 79 segmentos (118,240 ÷ 1,500 ≈ 78.8, es decir, de .001 a .079), más el archivo de texto de resumen, lo que da 80.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ANÁLISIS DE RESULTADOS -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">7. Análisis de resultados</h2>
+            
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">7.1 Integridad de la imagen</h3>
+                    <p>Los hashes calculados sobre la imagen coinciden con los del reporte, tanto en MD5 como en SHA-1. Esto demuestra que la imagen es idéntica, bit a bit, a lo leído del dispositivo durante la adquisición: cualquier alteración posterior, aun de un solo bit, cambiaría ambos valores. El uso de dos algoritmos distintos refuerza la confianza, ya que sería prácticamente imposible que una modificación conservara ambos hashes. La ausencia de bloques defectuosos indica además que se leyó la totalidad del dispositivo sin errores.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-2">7.2 Coherencia de los datos</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead><tr class="bg-gray-50 border-b"><th class="p-2">Verificación</th><th class="p-2">Resultado</th></tr></thead>
+                            <tbody class="divide-y text-gray-600">
+                                <tr><td class="p-2">Sectores × bytes por sector</td><td class="p-2">242,155,520 × 512 = 123,983,626,240 bytes</td></tr>
+                                <tr><td class="p-2">Conversión a MiB</td><td class="p-2">123,983,626,240 ÷ 1,048,576 = 118,240 MiB</td></tr>
+                                <tr><td class="p-2">Tamaño reportado por FTK Imager</td><td class="p-2">118,240 MB (coincide)</td></tr>
+                                <tr><td class="p-2">Segmentos a 1,500 MB</td><td class="p-2">≈ 78.8 → 79 segmentos + 1 resumen = 80 archivos</td></tr>
+                                <tr><td class="p-2">Hora de inicio + duración</td><td class="p-2">16:59 h + 0:21:59 ≈ 17:21 h (coincide)</td></tr>
+                                <tr><td class="p-2">Velocidad promedio</td><td class="p-2">118,240 MB ÷ 1,319 s ≈ 89.6 MB/s</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-2">Todas las cifras son consistentes entre sí, lo que respalda la confiabilidad de la documentación. La velocidad promedio es acorde con una unidad USB 3.0.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">7.3 Metadatos y documentación</h3>
+                    <p>El archivo de resumen conserva los metadatos del caso (número de caso, examinadora, notas), la geometría del dispositivo (15,073 cilindros, 255 pistas por cilindro, 63 sectores por pista), el modelo, la interfaz USB, el indicador de unidad removible y los hashes. Junto con las capturas y las marcas de tiempo, constituyen la base documental de la cadena de custodia y permiten que un tercero reproduzca y valide el procedimiento.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. HIPÓTESIS, LIMITACIONES Y LÍNEAS DE INVESTIGACIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">8. Hipótesis, limitaciones y líneas de investigación</h2>
+            
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">8.1 Hipótesis de trabajo</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-2">
+                        <li><strong>H1.</strong> La memoria USB contiene, o contuvo, documentos relacionados con el fraude bancario (estados de cuenta, credenciales, números de cuenta, comprobantes), incluidos archivos eliminados recuperables.</li>
+                        <li><strong>H2.</strong> El dispositivo fue utilizado para transportar o extraer información desde uno o más equipos vinculados con el incidente.</li>
+                        <li><strong>H3.</strong> Existen indicios de manipulación de archivos, observables en inconsistencias de metadatos y marcas de tiempo.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">8.2 Limitaciones y observaciones</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-2">
+                        <li><strong>Sin bloqueador de escritura.</strong> Windows pudo escribir en la USB al montarla (metadatos o carpetas del sistema). Los hashes prueban que la imagen es fiel a la unidad en el momento de la adquisición, pero no que la unidad no se alterara antes. En un caso real, el uso de un bloqueador por hardware o software es indispensable.</li>
+                        <li><strong>Destino en OneDrive.</strong> La ruta de destino pertenece a un Escritorio sincronizado con OneDrive, por lo que la imagen podría replicarse a la nube. Para evidencia real se recomienda un medio local controlado.</li>
+                        <li><strong>Versión de la herramienta.</strong> La guía indica la versión 4.7.1, mientras que el equipo utilizado ejecuta FTK Imager 4.3.1.1 (visible en las capturas y en el archivo de resumen).</li>
+                        <li><strong>Número de serie.</strong> El archivo de resumen muestra caracteres ilegibles al final del número de serie del dispositivo; conviene corroborarlo con otra herramienta.</li>
+                        <li><strong>Número de caso.</strong> Contiene la fecha 21.11.2023, asignada por la guía de la práctica, que no corresponde a la fecha de adquisición (08/11/2026).</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">8.3 Líneas de investigación propuestas</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-2">
+                        <li><strong>Preservar y trabajar sobre copias.</strong> Resguardar la imagen original, trabajar sobre una copia y volver a verificar MD5 y SHA-1 antes de cada análisis.</li>
+                        <li><strong>Análisis del sistema de archivos.</strong> Montar la imagen en modo solo lectura y revisar particiones, estructura de directorios, espacio no asignado y archivos eliminados (file carving).</li>
+                        <li><strong>Búsqueda de evidencia del fraude.</strong> Localizar documentos, hojas de cálculo, correos, credenciales y números de cuenta mediante búsqueda por palabras clave y expresiones regulares.</li>
+                        <li><strong>Línea de tiempo.</strong> Analizar fechas de creación, modificación y acceso para reconstruir la actividad y detectar inconsistencias.</li>
+                        <li><strong>Artefactos de uso de USB.</strong> Revisar el registro de Windows y los registros del equipo donde se conectó la unidad para vincularla con usuarios y sesiones.</li>
+                        <li><strong>Comparación de hashes.</strong> Contrastar los hashes de los archivos hallados con bases de datos de archivos conocidos.</li>
+                        <li><strong>Repetición formal.</strong> Replicar la adquisición con bloqueador de escritura y en un medio controlado, manteniendo la cadena de custodia.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CONCLUSIONES Y REFERENCIAS -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">9. Conclusiones</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>La adquisición de la memoria USB se completó correctamente: la imagen Raw (dd) se creó sin errores, se verificó mediante MD5 y SHA-1 con resultado «Match», y todo el proceso quedó documentado con capturas, marcas de tiempo y el archivo de resumen de FTK Imager. La imagen es apta para continuar con las fases de preservación y análisis.</p>
+                <p>El ejercicio muestra que la validez de una evidencia depende tanto de la integridad técnica (hashes) como de la rigurosidad del procedimiento: el uso de bloqueador de escritura, la documentación completa y un destino controlado son lo que permite sostener la evidencia ante una instancia legal.</p>
+            </div>
+
+            <div class="pt-6 border-t space-y-2">
+                <h3 class="font-bold text-gray-900 text-sm">Referencias</h3>
+                <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                    <li>E01 Compression Format | ASR Data. <a href="http://www.asrdata.com/whitepaper-html/" target="_blank" class="text-blue-600 hover:underline">http://www.asrdata.com/whitepaper-html/</a></li>
+                    <li>Tipos de imágenes forenses :: Indigitoz. <a href="https://indigitoz.webnode.mx/l/confeccion-a-medida/" target="_blank" class="text-blue-600 hover:underline">https://indigitoz.webnode.mx/l/confeccion-a-medida/</a></li>
+                    <li>Exterro. FTK Imager. <a href="https://www.exterro.com/" target="_blank" class="text-blue-600 hover:underline">https://www.exterro.com/</a></li>
+                </ul>
+            </div>
+
+            <!-- Nota al pie destacada -->
+            <div class="pt-4 text-sm text-gray-700 font-bold border-t flex items-start gap-3 bg-amber-50/60 p-4 rounded-xl border border-amber-200/60 mt-6">
+                <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p>Nota: La actividad fue realizada en el Laboratorio de Informática Forense (LIF) de la UPSLP por la alumna Fabiola Calvillo Galván.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL PARA AMPLIAR IMÁGENES -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="cerrarModal()">
+        <div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col items-center" onclick="event.stopPropagation()">
+            <div class="w-full flex justify-between items-center pb-3 border-b">
+                <h3 id="modalTitle" class="font-bold text-gray-800 text-sm">Evidencia</h3>
+                <button onclick="cerrarModal()" class="text-gray-400 hover:text-gray-700 font-bold text-lg px-2">&times;</button>
+            </div>
+            <img id="modalImg" src="" alt="Ampliada" class="max-h-[75vh] w-auto object-contain mt-4 rounded-xl">
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-10 text-center border-t border-gray-100 bg-white">
+        <p class="text-gray-500 text-xs mb-2 px-4">
+            🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
+    </footer>
+
+    <!-- Scripts de Interactividad -->
+    <script>
+        // Menú Móvil
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Funciones del Modal de Imágenes
+        function abrirModal(src, titulo) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('modalTitle').innerText = 'Evidencia: ' + titulo;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function cerrarModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
