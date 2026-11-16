@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act. 18: La investigación forense: la huella digital de un cibercriminal | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1f2937; 
+        }
+        .main-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(147, 51, 234, 0.05) 50%, rgba(239, 68, 68, 0.05) 100%);
+            border-radius: 2rem;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .content-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.1);
+        }
+        .img-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .img-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase shadow-md">
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 px-6 py-4 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-4">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-8 md:h-10 w-auto object-contain">
+                <span class="text-xs md:text-sm font-bold tracking-tight text-gray-900 uppercase">
+                    PORTAFOLIO<span class="text-blue-600">.</span>CNO IV
+                </span>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-7 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-blue-600 transition">Parcial 2</a>
+                <a href="parcial3.html" class="text-blue-600 font-bold transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-blue-600 transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+            <a href="index.html" class="hover:text-blue-600 transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-blue-600 transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-blue-600 transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="text-blue-600 font-bold transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="hover:text-blue-600 transition py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="hover:text-blue-600 transition py-1">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-blue-600 transition py-1">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO TIPO HERO -->
+    <header class="container mx-auto px-6 py-12 max-w-6xl">
+        <div class="main-card p-8 md:p-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-block px-3.5 py-1.5 bg-blue-600 text-white text-[11px] font-extrabold uppercase tracking-widest rounded-full shadow-sm">
+                    CNO IV – Seguridad Informática & Informática Forense
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                    Actividad 18: La huella digital de un cibercriminal
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
+                    Universidad Politécnica de San Luis Potosí — Investigación forense digital sobre la imagen RAW "Hacking Case" (NIST CFREDS) utilizando Autopsy 4.23.1.
+                </p>
+                <div class="pt-2 text-xs text-gray-500 space-y-1">
+                    <p><strong>Caso:</strong> INV01UPSLP – Fraude (carding) Greg Schardt | 16 de noviembre de 2026</p>
+                    <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455) | Herramienta: Autopsy 4.23.1</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta lateral con accesos rápidos -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center w-full lg:w-80 flex-shrink-0 flex flex-col items-center">
+                <div class="w-14 h-14 bg-gradient-to-tr from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">ARCHIVOS DE LA ACTIVIDAD</h3>
+                <p class="text-xs text-blue-600 font-semibold mt-1">Evidencia: SCHARDT.001 - .008 (4.87 GB)</p>
+                <div class="mt-5 w-full space-y-2">
+                    <a href="CalvilloGalvanFabiola-ACT18.pdf" target="_blank" class="block w-full py-2 bg-gray-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition shadow-sm text-center">
+                        Informe Ejecutivo (PDF)
+                    </a>
+                    <a href="CalvilloGalvanFabiolaPreguntas-ACT18.pdf" target="_blank" class="block w-full py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-xl transition shadow-sm text-center">
+                        Práctica / Preguntas (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-6xl">
+
+        <!-- SECCIÓN DE DESCARGA MÚLTIPLE -->
+        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
+            <div>
+                <h2 class="text-xl font-bold mb-2 text-gray-900 flex items-center gap-2">
+                    <span>📄</span> Documentos Oficiales de la Actividad 18
+                </h2>
+                <p class="text-gray-600 text-xs font-light">
+                    Descarga el informe ejecutivo completo de investigación forense o el documento PDF con el cuestionario técnico resuelto paso a paso.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full md:w-auto justify-end">
+                <a href="CalvilloGalvanFabiola-ACT18.pdf" target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-md shadow-blue-600/20 whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Informe Ejecutivo (PDF)
+                </a>
+                <a href="CalvilloGalvanFabiolaPreguntas-ACT18.pdf" target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-gray-800 hover:bg-gray-900 text-white font-bold text-[11px] tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-md whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Preguntas y Evidencias (PDF)
+                </a>
+            </div>
+        </section>
+
+        <!-- 1. ESCENARIO Y RESUMEN EJECUTIVO -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">1. Escenario y resumen ejecutivo</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p><strong>Escenario del caso:</strong> El 20/09/04, una computadora portátil Dell CPi, número de serie <strong>VLQLW</strong>, fue encontrada abandonada junto con una tarjeta PCMCIA inalámbrica y una antena externa 802.11b casera. Se sospecha que esta computadora fue utilizada con fines de piratería e interceptación de tráfico inalámbrico en puntos de acceso públicos (como Starbucks y hotspots de T-Mobile) por el sospechoso <strong>Greg Schardt</strong>, conocido en línea bajo el alias <strong>"Mr. Evil"</strong>, con el objetivo de obtener números de tarjetas de crédito, nombres de usuario y contraseñas.</p>
+                <p><strong>Conclusión principal:</strong> Los datos del sistema vinculan el equipo con el sospechoso: propietario registrado <strong>Greg Schardt</strong>, dominio primario <strong>EVIL</strong> y cuenta local <strong>"Mr. Evil"</strong>. La integridad de la evidencia está verificada mediante su hash MD5. Queda pendiente revisar los artefactos de actividad (programas instalados/ejecutados, historial web, correo y archivos sospechosos) para demostrar el uso del equipo en la interceptación de tráfico.</p>
+                
+                <div class="grid md:grid-cols-3 gap-4 pt-2">
+                    <div class="bg-blue-50/70 border border-blue-100 p-4 rounded-xl">
+                        <span class="text-[11px] font-bold uppercase text-blue-600 tracking-wider">Propietario Registrado</span>
+                        <p class="font-bold text-gray-900 text-base mt-1">Greg Schardt</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Windows XP (x86) | ID: 55274-640-0147306-23684</p>
+                    </div>
+                    <div class="bg-indigo-50/70 border border-indigo-100 p-4 rounded-xl">
+                        <span class="text-[11px] font-bold uppercase text-indigo-600 tracking-wider">Cuenta & Dominio</span>
+                        <p class="font-bold text-gray-900 text-base mt-1">"Mr. Evil" / EVIL</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Única cuenta de usuario creada manualmente (RID 1003)</p>
+                    </div>
+                    <div class="bg-emerald-50/70 border border-emerald-100 p-4 rounded-xl">
+                        <span class="text-[11px] font-bold uppercase text-emerald-600 tracking-wider">Integridad Verificada</span>
+                        <p class="font-bold text-gray-900 text-xs font-mono mt-1 break-all">aee4fcd9301c03b3b054623ca261959a</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Hash MD5 coincidente (4.87 GB RAW)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. METODOLOGÍA Y CADENA DE CUSTODIA -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">2. Metodología y cadena de custodia</h2>
+            <p class="text-gray-700 text-sm font-light leading-relaxed">El análisis siguió un proceso estructurado en Autopsy 4.23.1, documentado paso a paso con capturas de pantalla para garantizar la reproducibilidad y preservación de la evidencia:</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700 w-16">Paso</th>
+                            <th class="p-3 font-bold text-gray-700 w-40">Fase</th>
+                            <th class="p-3 font-bold text-gray-700">Descripción del proceso</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-semibold">1</td><td class="p-3 font-medium">Adquisición</td><td class="p-3">Descarga de las 8 partes de la imagen (<code>SCHARDT.001</code> a <code>SCHARDT.008</code>) en una sola carpeta desde el repositorio oficial de NIST.</td></tr>
+                        <tr><td class="p-3 font-semibold">2</td><td class="p-3 font-medium">Caso</td><td class="p-3">Creación del caso <code>INV01UPSLP</code> (Número 01) en Autopsy con credenciales de examinadora, organización (Universidad Politécnica de San Luis Potosí) y notas (<em>Fraude (carding) Greg Schardt</em>).</td></tr>
+                        <tr><td class="p-3 font-semibold">3</td><td class="p-3 font-medium">Importación</td><td class="p-3">Selección de fuente <em>Disk Image or VM File</em> trabajando sobre la copia de imagen, configurando zona horaria <code>(GMT-6:00) America/Mexico_City</code>.</td></tr>
+                        <tr><td class="p-3 font-semibold">4</td><td class="p-3 font-medium">Ingesta</td><td class="p-3">Activación de todos los módulos de búsqueda (Recent Activity, Hash Lookup, Keyword Search, Email Parser, Extension Mismatch Detector, entre otros) sobre archivos, directorios y espacio no asignado.</td></tr>
+                        <tr><td class="p-3 font-semibold">5</td><td class="p-3 font-medium">Verificación</td><td class="p-3">Cálculo y comparación de hashes MD5, SHA-1 y SHA-256 para confirmar que la imagen no sufrió alteraciones.</td></tr>
+                        <tr><td class="p-3 font-semibold">6</td><td class="p-3 font-medium">Análisis</td><td class="p-3">Consulta de <em>Operating System Information</em>, <em>OS Accounts</em> y colmenas del registro de Windows (<code>SOFTWARE</code>, <code>SYSTEM</code>, <code>SAM</code>, <code>SECURITY</code>).</td></tr>
+                        <tr><td class="p-3 font-semibold">7</td><td class="p-3 font-medium">Documentación</td><td class="p-3">Captura de cada etapa y registro formal de los hallazgos.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. DESARROLLO PASO A PASO Y EVIDENCIAS GRÁFICAS (ACT18.1 A ACT18.7) -->
+        <section class="content-card p-8 md:p-12 space-y-10 shadow-sm">
+            <div class="border-b pb-3">
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight">3. Desarrollo técnico y preguntas de análisis</h2>
+                <p class="text-gray-600 text-sm font-light mt-1">Evidencia gráfica y respuestas a las 11 preguntas de análisis forense (haz clic en cualquier imagen para ampliarla).</p>
+            </div>
+
+            <!-- Paso 1 -->
+            <div class="space-y-3">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">Paso 1</span> Creación y configuración del caso en Autopsy</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Se descargaron las 8 partes de la imagen forense en una carpeta dedicada y se creó el caso <strong>INV01UPSLP</strong> (Número 01) en Autopsy, registrando los datos de la examinadora, la organización <em>Universidad Politécnica de San Luis Potosí</em> y la opción <em>Generate new host name based on data source name</em>.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-2xl mx-auto" onclick="abrirModal('ACT18.1.png', 'ACT18.1 - Configuración de New Case Information en Autopsy')">
+                    <img src="ACT18.1.png" alt="ACT18.1" class="rounded-lg w-full object-contain max-h-72 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT18.1. Configuración de información opcional del caso INV01UPSLP y organización.</p>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">Paso 2</span> Tipo de origen de datos: <em>Disk Image or VM File</em></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>¿A qué se refiere el tipo de origen "Logical Files"?</strong> Permite agregar al caso archivos o carpetas individuales, ya sea de un disco local, una unidad de red o un dispositivo extraíble. Autopsy los lee a través del sistema operativo, por lo que solo puede analizar el contenido visible: no incluye archivos eliminados, espacio no asignado ni estructuras internas del sistema de archivos. Se utiliza para revisiones rápidas o cuando únicamente se requiere analizar un conjunto específico de archivos.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>¿A qué se refiere el tipo de origen "Local Disk"?</strong> Permite analizar directamente un dispositivo físico o una partición conectada al equipo (disco duro, USB o tarjeta SD), accediendo a nivel de sector. De esta forma se incluyen los archivos eliminados, el espacio no asignado y la estructura completa del sistema de archivos. Requiere permisos de administrador y, al trabajar sobre evidencia original, debe usarse un bloqueador de escritura; por ello se recomienda crear primero una imagen forense y analizar la copia, como se hizo en esta práctica con la opción <em>Disk Image or VM File</em>.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-2xl mx-auto" onclick="abrirModal('ACT18.2.png', 'ACT18.2 - Selección de Disk Image or VM File')">
+                    <img src="ACT18.2.png" alt="ACT18.2" class="rounded-lg w-full object-contain max-h-72 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT18.2. Selección del tipo de fuente de datos Disk Image or VM File en Add Data Source.</p>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">Paso 3</span> Selección de la imagen, configuración de ingesta y verificación de hash</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Se seleccionó el archivo inicial <code>SCHARDT.001</code> (Autopsy enlaza automáticamente los segmentos <code>.001</code> al <code>.008</code>) con zona horaria <code>(GMT-6:00) America/Mexico_City</code> y se habilitaron todos los módulos de ingesta.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>¿Cuál es el hash de la imagen? ¿Coinciden el hash de adquisición y verificación?</strong><br>
+                El hash MD5 de la imagen es <code>aee4fcd9301c03b3b054623ca261959a</code> (SHA-1: <code>da2fe30fe21711edf42310873af475859a68f300</code> | SHA-256: <code>65e2002fed0b286f49541c7e97dcec0dda913d51a063ceeed86782bdacda2312</code>). Sí, el hash de adquisición y el de verificación coinciden, lo que confirma que la imagen no sufrió alteraciones y que su integridad se mantuvo durante todo el análisis.</p>
+                <div class="grid md:grid-cols-3 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT18.3.png', 'ACT18.3 - Selección del archivo SCHARDT.001')">
+                        <img src="ACT18.3.png" alt="ACT18.3" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT18.3. Ruta de evidencia SCHARDT.001 y zona horaria.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT18.4.png', 'ACT18.4 - Configuración de módulos de ingesta')">
+                        <img src="ACT18.4.png" alt="ACT18.4" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT18.4. Activación de todos los módulos de análisis.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT18.5.png', 'ACT18.5 - Propiedades y hashes de la imagen RAW')">
+                        <img src="ACT18.5.png" alt="ACT18.5" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT18.5. Propiedades RAW Single (4.87 GB) y hashes verificados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preguntas 4 a 10 -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">Preguntas 4 – 10</span> Información del sistema operativo y registro de Windows</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700 font-light">
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1">
+                        <p class="font-bold text-gray-900">4. ¿Qué sistema operativo se utilizó en la computadora?</p>
+                        <p>El equipo utilizaba el sistema operativo <strong>Microsoft Windows XP</strong> (arquitectura x86).</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1">
+                        <p class="font-bold text-gray-900">5. ¿Cuándo fue la fecha de instalación?</p>
+                        <p>El sistema operativo fue instalado el <strong>19 de agosto de 2004 a las 05:48:27 PM</strong> (<code>SOFTWARE\InstallDate</code>).</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1">
+                        <p class="font-bold text-gray-900">6. ¿Cuál es la configuración de zona horaria?</p>
+                        <p><strong>Central Standard Time (CST)</strong>, equivalente a UTC-6 (Bias de 360 min). Con horario de verano activo en agosto (<code>ActiveTimeBias</code> = 300 min, UTC-5; <em>Central Daylight Time</em>).</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1">
+                        <p class="font-bold text-gray-900">7. ¿Quién es el propietario registrado?</p>
+                        <p><strong>Greg Schardt</strong> (<code>RegisteredOwner</code>). Organización: N/A | Product ID: <code>55274-640-0147306-23684</code>. Vincula directamente el equipo con el sospechoso.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1">
+                        <p class="font-bold text-gray-900">8. ¿Cuál es el nombre de la cuenta de la computadora?</p>
+                        <p><strong>N-1A9ODN6ZXK4LQ</strong> (<code>ComputerName</code>), valor coincidente con el Account Domain Name de la política local (<code>PolAcDmN</code>).</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1">
+                        <p class="font-bold text-gray-900">9. ¿Cuál es el nombre de dominio principal?</p>
+                        <p><strong>EVIL</strong> (<code>PolPrDmN</code> en la colmena <code>SECURITY</code>), definido en la política de seguridad local.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1 md:col-span-2">
+                        <p class="font-bold text-gray-900">10. ¿Cuándo fue la última fecha/hora registrada en que se apagó la computadora?</p>
+                        <p>El equipo se apagó por última vez el <strong>27 de agosto de 2004 a las 15:46:33 UTC (10:46:33 AM hora local)</strong>, obtenido del valor <code>ShutdownTime</code> (formato FILETIME) en <code>SYSTEM\ControlSet001\Control\Windows</code>.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-2xl mx-auto mt-3" onclick="abrirModal('ACT18.6.png', 'ACT18.6 - Artefactos de Operating System Information en Autopsy')">
+                    <img src="ACT18.6.png" alt="ACT18.6" class="rounded-lg w-full object-contain max-h-72 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT18.6. Artefacto Operating System Information mostrando sistema operativo, nombre de equipo y propietario.</p>
+                </div>
+            </div>
+
+            <!-- Pregunta 11 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">Pregunta 11</span> ¿Cuántas cuentas están registradas (número total)?</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">El equipo tiene <strong>5 cuentas registradas</strong> en la base de datos <code>SAM</code>:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm font-light pl-2">
+                    <li><strong>Administrator (RID 500):</strong> cuenta integrada de administrador.</li>
+                    <li><strong>Guest (RID 501):</strong> cuenta integrada de invitado.</li>
+                    <li><strong>HelpAssistant (RID 1000):</strong> cuenta de asistencia remota.</li>
+                    <li><strong>SUPPORT_388945a0 (RID 1002):</strong> cuenta de soporte del fabricante.</li>
+                    <li><strong>Mr. Evil (RID 1003):</strong> única cuenta de usuario creada manualmente.</li>
+                </ul>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Autopsy muestra 4 elementos en <em>OS Accounts</em> porque solo enumera las cuentas observadas en artefactos; sin embargo, la enumeración directa de la colmena <code>SAM</code> confirma las 5 cuentas locales mencionadas.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-2xl mx-auto" onclick="abrirModal('ACT18.7.png', 'ACT18.7 - Cuentas de sistema operativo en OS Accounts')">
+                    <img src="ACT18.7.png" alt="ACT18.7" class="rounded-lg w-full object-contain max-h-72 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT18.7. Vista de cuentas en OS Accounts destacando el SID con RID 1003 (mr / Mr. Evil).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ANÁLISIS Y CORRELACIÓN DE HALLAZGOS -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">4. Análisis y correlación de hallazgos</h2>
+            <p class="text-gray-700 text-sm font-light leading-relaxed">Ningún dato aislado es concluyente; la fuerza del caso está en la coincidencia entre evidencias independientes:</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700">Evidencia en el equipo</th>
+                            <th class="p-3 font-bold text-gray-700">Dato del escenario</th>
+                            <th class="p-3 font-bold text-gray-700">Lo que indica</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-medium">Propietario registrado: Greg Schardt</td><td class="p-3">Sospechoso: Greg Schardt</td><td class="p-3">Vínculo directo equipo-sospechoso.</td></tr>
+                        <tr><td class="p-3 font-medium">Cuenta de usuario "Mr. Evil"</td><td class="p-3">Apodo en línea "Mr. Evil"</td><td class="p-3">La cuenta usa el alias del sospechoso.</td></tr>
+                        <tr><td class="p-3 font-medium">Dominio primario "EVIL"</td><td class="p-3">Alias "Mr. Evil"</td><td class="p-3">Configuración personalizada coherente con el alias.</td></tr>
+                        <tr><td class="p-3 font-medium">1 sola cuenta manual de 5</td><td class="p-3">Equipo hallado abandonado</td><td class="p-3">Uso personal; no se compartía con otros usuarios.</td></tr>
+                        <tr><td class="p-3 font-medium">Instalación 19/08, apagado 27/08/2004</td><td class="p-3">Hallazgo el 20/09/2004</td><td class="p-3">Periodo de uso por contrastar con la actividad.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-gray-700 text-sm font-light leading-relaxed">El hardware encontrado junto al equipo (tarjeta PCMCIA inalámbrica y antena 802.11b) es consistente con la técnica atribuida al sospechoso: interceptar tráfico en redes Wi-Fi públicas. Asimismo, Autopsy reporta artefactos pendientes de inspección profunda: <strong>32</strong> programas instalados, <strong>81</strong> programas ejecutados, <strong>887</strong> registros de historial web, <strong>2</strong> archivos con cifrado sospechoso, <strong>8</strong> extensiones alteradas y <strong>5</strong> elementos de interés.</p>
+            <div class="bg-amber-50/70 border border-amber-200/70 p-4 rounded-xl text-xs text-gray-700">
+                <strong>Limitaciones:</strong> El propietario registrado lo escribe el usuario al instalar Windows y puede ser falso; es un indicio que debe corroborarse. Hasta revisar los programas y la actividad, no se puede afirmar que el equipo se usó para interceptar información.
+            </div>
+        </section>
+
+        <!-- 5. CONSIDERACIONES LEGALES Y LÍNEAS DE INVESTIGACIÓN -->
+        <section class="content-card p-8 md:p-12 space-y-8 shadow-sm">
+            <div class="space-y-4">
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">5. Consideraciones legales</h2>
+                <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700 font-light">
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200/70">
+                        <p class="font-bold text-gray-900">Cadena de custodia</p>
+                        <p class="mt-1">Cada paso se documentó con captura y se verificó el hash para demostrar que la evidencia no fue modificada. En México, el Código Nacional de Procedimientos Penales regula la cadena de custodia.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200/70">
+                        <p class="font-bold text-gray-900">Trabajo sobre copias</p>
+                        <p class="mt-1">El análisis se hizo sobre una imagen forense y no sobre el dispositivo original, lo que preserva la evidencia íntegra.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200/70">
+                        <p class="font-bold text-gray-900">Autorización y privacidad</p>
+                        <p class="mt-1">Un caso real requiere autorización legal (orden de autoridad o consentimiento del dueño) y manejo cuidadoso de datos personales como tarjetas y contraseñas.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200/70">
+                        <p class="font-bold text-gray-900">Reproducibilidad</p>
+                        <p class="mt-1">Documentar herramienta, versión y procedimiento permite que otro perito repita el análisis y obtenga los mismos resultados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4 pt-4">
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">6. Líneas de investigación propuestas</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-50 border-b">
+                                <th class="p-3 font-bold text-gray-700 w-12">#</th>
+                                <th class="p-3 font-bold text-gray-700">Línea</th>
+                                <th class="p-3 font-bold text-gray-700">Qué buscar</th>
+                                <th class="p-3 font-bold text-gray-700 w-28">Prioridad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y text-gray-600">
+                            <tr><td class="p-3 font-semibold">1</td><td class="p-3 font-medium">Programas instalados y ejecutados</td><td class="p-3">Herramientas de captura de tráfico, escaneo de redes inalámbricas y obtención de contraseñas, con sus fechas de instalación y uso.</td><td class="p-3"><span class="px-2.5 py-0.5 bg-red-100 text-red-700 text-xs font-bold rounded-full">Alta</span></td></tr>
+                            <tr><td class="p-3 font-semibold">2</td><td class="p-3 font-medium">Archivos sospechosos</td><td class="p-3">Abrir los cifrados, de extensión alterada y elementos de interés: capturas de tráfico o listas de credenciales.</td><td class="p-3"><span class="px-2.5 py-0.5 bg-red-100 text-red-700 text-xs font-bold rounded-full">Alta</span></td></tr>
+                            <tr><td class="p-3 font-semibold">3</td><td class="p-3 font-medium">Navegación y búsquedas</td><td class="p-3">Sitios visitados, foros y búsquedas sobre redes inalámbricas o tarjetas de crédito (historial, búsquedas y marcadores).</td><td class="p-3"><span class="px-2.5 py-0.5 bg-red-100 text-red-700 text-xs font-bold rounded-full">Alta</span></td></tr>
+                            <tr><td class="p-3 font-semibold">4</td><td class="p-3 font-medium">Palabras clave y borrados</td><td class="p-3">"Mr. Evil", "Schardt", "password", "credit card", nombres de redes; archivos eliminados y espacio no asignado.</td><td class="p-3"><span class="px-2.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Media</span></td></tr>
+                            <tr><td class="p-3 font-semibold">5</td><td class="p-3 font-medium">Correo y cuentas</td><td class="p-3">Remitentes, destinatarios y apodos que refuercen el vínculo con Greg Schardt.</td><td class="p-3"><span class="px-2.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Media</span></td></tr>
+                            <tr><td class="p-3 font-semibold">6</td><td class="p-3 font-medium">Línea de tiempo</td><td class="p-3">Ordenar la actividad entre el 19/08 y el 27/08/2004 y correlacionarla con el hallazgo del 20/09/2004.</td><td class="p-3"><span class="px-2.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Media</span></td></tr>
+                            <tr><td class="p-3 font-semibold">7</td><td class="p-3 font-medium">Dispositivo USB</td><td class="p-3">Identificarlo y determinar si se usó para copiar o mover información.</td><td class="p-3"><span class="px-2.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Media</span></td></tr>
+                            <tr><td class="p-3 font-semibold">8</td><td class="p-3 font-medium">Fuentes externas</td><td class="p-3">Registros de los puntos de acceso (Starbucks, T-Mobile) y testimonios de los asociados.</td><td class="p-3"><span class="px-2.5 py-0.5 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">Baja</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONCLUSIONES -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">7. Conclusiones</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>La imagen analizada es íntegra y los datos del sistema operativo relacionan el equipo con Greg Schardt. Para sostener la acusación de piratería hace falta demostrar el uso de herramientas de interceptación y la obtención de datos ajenos, lo que se logrará con las líneas de investigación propuestas, empezando por las de prioridad alta.</p>
+            </div>
+
+            <!-- Nota al pie destacada -->
+            <div class="pt-6 text-sm text-gray-700 font-bold border-t flex items-start gap-3 bg-amber-50/60 p-4 rounded-xl border border-amber-200/60 mt-6">
+                <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p>Nota: Este informe es de carácter académico y fue elaborado por la alumna Fabiola Calvillo Galván como parte de las prácticas de Informática Forense (CNO IV - Seguridad Informática, UPSLP).</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL PARA AMPLIAR IMÁGENES -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="cerrarModal()">
+        <div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col items-center" onclick="event.stopPropagation()">
+            <div class="w-full flex justify-between items-center pb-3 border-b">
+                <h3 id="modalTitle" class="font-bold text-gray-800 text-sm">Evidencia</h3>
+                <button onclick="cerrarModal()" class="text-gray-400 hover:text-gray-700 font-bold text-lg px-2">&times;</button>
+            </div>
+            <img id="modalImg" src="" alt="Ampliada" class="max-h-[75vh] w-auto object-contain mt-4 rounded-xl">
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-10 text-center border-t border-gray-100 bg-white">
+        <p class="text-gray-500 text-xs mb-2 px-4">
+            🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
+    </footer>
+
+    <!-- Scripts de Interactividad -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        function abrirModal(src, titulo) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('modalTitle').innerText = 'Evidencia: ' + titulo;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function cerrarModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
