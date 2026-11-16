@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act. 19: Adquisición forense en escenas del crimen digital | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1f2937; 
+        }
+        .main-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(147, 51, 234, 0.05) 50%, rgba(239, 68, 68, 0.05) 100%);
+            border-radius: 2rem;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .content-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.1);
+        }
+        .img-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .img-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase shadow-md">
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 px-6 py-4 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-4">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-8 md:h-10 w-auto object-contain">
+                <span class="text-xs md:text-sm font-bold tracking-tight text-gray-900 uppercase">
+                    PORTAFOLIO<span class="text-blue-600">.</span>CNO IV
+                </span>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-7 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-blue-600 transition">Parcial 2</a>
+                <a href="parcial3.html" class="text-blue-600 font-bold transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-blue-600 transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+            <a href="index.html" class="hover:text-blue-600 transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-blue-600 transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-blue-600 transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="text-blue-600 font-bold transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="hover:text-blue-600 transition py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="hover:text-blue-600 transition py-1">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-blue-600 transition py-1">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO TIPO HERO -->
+    <header class="container mx-auto px-6 py-12 max-w-6xl">
+        <div class="main-card p-8 md:p-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-block px-3.5 py-1.5 bg-blue-600 text-white text-[11px] font-extrabold uppercase tracking-widest rounded-full shadow-sm">
+                    CNO IV – Seguridad Informática & Informática Forense
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                    Actividad 19: Los primeros minutos cuentan
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
+                    Universidad Politécnica de San Luis Potosí — Informe ejecutivo de adquisición forense en escenas del crimen digital sobre un sistema Windows 11 en caliente.
+                </p>
+                <div class="pt-2 text-xs text-gray-500 space-y-1">
+                    <p><strong>Equipo analizado:</strong> FABI (Windows 11 | IP 10.0.0.9) | 15 – 16 de noviembre de 2026</p>
+                    <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455) | Rol: Primer Respondiente</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta lateral con accesos rápidos -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center w-full lg:w-80 flex-shrink-0 flex flex-col items-center">
+                <div class="w-14 h-14 bg-gradient-to-tr from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">ARCHIVOS DE LA ACTIVIDAD</h3>
+                <p class="text-xs text-blue-600 font-semibold mt-1">Evidencia: Carpeta Act19</p>
+                <div class="mt-5 w-full space-y-2">
+                    <a href="CalvilloGalvanFabiola-ACT19.pdf" target="_blank" class="block w-full py-2 bg-gray-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition shadow-sm text-center">
+                        Informe Ejecutivo (PDF)
+                    </a>
+                    <a href="CalvilloGalvanFabiolaPreguntas-ACT19.pdf" target="_blank" class="block w-full py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-xl transition shadow-sm text-center">
+                        Práctica / Preguntas (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-6xl">
+
+        <!-- SECCIÓN DE DESCARGA MÚLTIPLE -->
+        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
+            <div>
+                <h2 class="text-xl font-bold mb-2 text-gray-900 flex items-center gap-2">
+                    <span>📄</span> Documentos Oficiales de la Actividad 19
+                </h2>
+                <p class="text-gray-600 text-xs font-light">
+                    Descarga el informe ejecutivo completo o el documento PDF con el desarrollo detallado de los 20 procedimientos forenses en vivo.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full md:w-auto justify-end">
+                <a href="CalvilloGalvanFabiola-ACT19.pdf" target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-md shadow-blue-600/20 whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Informe Ejecutivo (PDF)
+                </a>
+                <a href="CalvilloGalvanFabiolaPreguntas-ACT19.pdf" target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-gray-800 hover:bg-gray-900 text-white font-bold text-[11px] tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-md whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Preguntas y Evidencias (PDF)
+                </a>
+            </div>
+        </section>
+
+        <!-- 1. RESUMEN EJECUTIVO -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">1. Resumen ejecutivo</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>Se realizó la adquisición de evidencia volátil y semivolátil sobre un equipo Windows 11 en caliente (host <strong>FABI</strong>, IP <strong>10.0.0.9</strong>), simulando la respuesta de un primer respondiente ante un incidente. Se ejecutaron 20 procedimientos desde el Símbolo del sistema y PowerShell, y cada salida se redirigió a un archivo de texto dentro de una carpeta exclusiva (<code>Act19</code>), de modo que cada resultado quedara documentado y disponible para su análisis.</p>
+                <p><strong>Conclusión principal:</strong> Con la evidencia recopilada no se identifican indicios concluyentes de actividad maliciosa. Procesos, servicios, tareas programadas, recursos compartidos, archivo hosts y caché DNS corresponden a un comportamiento normal de Windows y de software legítimo (Microsoft Office, OneDrive, Adobe, Brave). Se detectan cuatro puntos que deben validarse en una investigación real y varias limitaciones del procedimiento, entre ellas que no se capturó la memoria RAM ni se calcularon hashes de la evidencia.</p>
+                
+                <div class="overflow-x-auto pt-2">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-50 border-b">
+                                <th class="p-3 font-bold text-gray-700">Elemento</th>
+                                <th class="p-3 font-bold text-gray-700">Dato observado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y text-gray-600">
+                            <tr><td class="p-3 font-medium">Sistema</td><td class="p-3">Microsoft Windows 11 Home Single Language, versión 10.0.26300</td></tr>
+                            <tr><td class="p-3 font-medium">Equipo</td><td class="p-3">HP Laptop 15-dy5xxx, x64, Intel ~1.7 GHz, BIOS AMI F.19 (03/07/2023)</td></tr>
+                            <tr><td class="p-3 font-medium">Host / IP</td><td class="p-3">FABI / 10.0.0.9 (adaptador Wi-Fi, DHCP)</td></tr>
+                            <tr><td class="p-3 font-medium">Zona horaria</td><td class="p-3">UTC-06:00 (Ciudad de México)</td></tr>
+                            <tr><td class="p-3 font-medium">Instalación / último arranque</td><td class="p-3">16/10/2026 / 14/11/2026 08:13 a. m.</td></tr>
+                            <tr><td class="p-3 font-medium">Memoria física</td><td class="p-3">7,863 MB totales; 1,215 MB disponibles</td></tr>
+                            <tr><td class="p-3 font-medium">Ventana de adquisición</td><td class="p-3">15/11/2026 11:10 p. m. a 16/11/2026 12:10 a. m. (según fechas de los archivos)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. METODOLOGÍA -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">2. Metodología</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>El procedimiento siguió tres principios básicos de la informática forense:</p>
+                <ul class="list-disc list-inside space-y-2 pl-2">
+                    <li><strong>Orden de volatilidad:</strong> primero lo que desaparece al apagar el equipo (fecha, procesos, conexiones, caché DNS y ARP, sesiones) y después lo que persiste (cuentas, tareas programadas, logs, sistema de archivos).</li>
+                    <li><strong>Documentación de cada paso:</strong> cada comando se ejecutó con redirección (<code>&gt;</code>) a un archivo con nombre descriptivo y se revisó con <code>more</code>; se conservó además el historial de comandos con <code>doskey /history</code>.</li>
+                    <li><strong>Privilegios adecuados:</strong> los comandos que requieren información de procesos y de caché del sistema (<code>netstat -anob</code>, <code>ipconfig /displaydns</code>, lectura del archivo hosts) se ejecutaron en PowerShell como administrador.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. PROCEDIMIENTOS, EVIDENCIAS Y RESULTADOS (CON ACT19.1 HASTA ACT19.25) -->
+        <section class="content-card p-8 md:p-12 space-y-10 shadow-sm">
+            <div class="border-b pb-3">
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight">3. Procedimientos, evidencias y resultados</h2>
+                <p class="text-gray-600 text-sm font-light mt-1">Detalle de los 20 procedimientos aplicados con su evidencia gráfica correspondiente (haz clic en cualquier captura para ampliarla).</p>
+            </div>
+
+            <!-- Paso 1 -->
+            <div class="space-y-3">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">1</span> Fecha y hora del sistema — <code>date &gt; fechaSistema.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Se abrió el Símbolo del sistema dentro de la carpeta de trabajo Act19 y se ejecutó <code>date</code> redirigiendo la salida (<code>&gt;</code>) al archivo <code>fechaSistema.txt</code>. Después se listó la carpeta con <code>ls</code> para confirmar que el archivo se creó y se abrió en el Bloc de notas para verificar su contenido.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> El archivo registra la fecha 15/11/2026. El comando además solicita escribir una nueva fecha, que no se modificó para no alterar el sistema. Esta captura solo devuelve la fecha; para registrar también la hora se recomienda <code>Get-Date</code> o <code>time /t</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Fija el punto de referencia temporal de toda la adquisición y permite correlacionar la evidencia con los registros de eventos.</p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.1.png', 'ACT19.1 - Ejecución del comando date')">
+                        <img src="ACT19.1.png" alt="ACT19.1" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.1. Ejecución de date y comprobación en consola.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.2.png', 'ACT19.2 - Contenido de fechaSistema.txt')">
+                        <img src="ACT19.2.png" alt="ACT19.2" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.2. Verificación del archivo fechaSistema.txt en el Bloc de notas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">2</span> Procesos en ejecución — <code>tasklist &gt; ProcesosEjecutandose.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Con <code>tasklist</code> se obtiene la lista de procesos activos; la salida se redirigió a <code>ProcesosEjecutandose.txt</code> y se abrió el archivo para comprobarla.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> El listado muestra nombre de imagen, PID, nombre y número de sesión y uso de memoria. Aparecen procesos propios de Windows (System, smss, csrss, wininit, winlogon, services, lsass, svchost) en la sesión 0 (servicios) y en la sesión 1 (consola). No se observan nombres extraños.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Es la base para detectar procesos desconocidos o con nombres engañosos. Los PID se usan después para vincular procesos con conexiones de red.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.3.png', 'ACT19.3 - Listado de procesos activos')">
+                    <img src="ACT19.3.png" alt="ACT19.3" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.3. Salida de tasklist en ProcesosEjecutandose.txt.</p>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">3</span> Servicios desde CMD y PowerShell — <code>get-service / sc query</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En PowerShell se ejecutó <code>get-service &gt; ServiciosDispositivoA.txt</code> y se revisó con <code>more</code>. En el Símbolo del sistema se ejecutó <code>sc query &gt; ServiciosDispositivos.txt</code> y se abrió en el Bloc de notas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> PowerShell lista todos los servicios (activos y detenidos) en una tabla de tres columnas (Status, Name, DisplayName). <code>sc query</code> muestra por defecto solo los servicios activos, en bloques de texto con campos técnicos. Ambos arrojan el mismo inventario con distinto nivel de detalle; los servicios son coherentes con un equipo personal.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Los servicios son un punto típico de persistencia de malware. PowerShell sirve para el panorama general y <code>sc</code> para el detalle técnico.</p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.4.png', 'ACT19.4 - Servicios en PowerShell (get-service)')">
+                        <img src="ACT19.4.png" alt="ACT19.4" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.4. Listado de servicios mediante get-service en PowerShell.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.5.png', 'ACT19.5 - Servicios en CMD (sc query)')">
+                        <img src="ACT19.5.png" alt="ACT19.5" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.5. Detalle técnico de servicios mediante sc query en CMD.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">4</span> Usuarios con sesión actual — <code>.\NetUsers.exe &gt; UsuariosLogueados.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Se ejecutó la herramienta de terceros <code>NetUsers.exe</code> desde la carpeta de trabajo y se redirigió su salida a <code>UsuariosLogueados.txt</code>; después se revisó con <code>more</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> La salida indica <em>Current users logged on locally at FABI</em> sin listar ninguna sesión, y termina con <em>The command completed successfully</em>. Esto debe corroborarse con otro método (por ejemplo <code>query user</code>), porque normalmente la cuenta <code>fabic</code> tendría sesión.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Identifica quién tenía acceso al equipo en el momento de la captura. Al ser un binario externo, en un caso real debe ejecutarse desde medios de confianza y registrar su hash.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.6.png', 'ACT19.6 - Ejecución de NetUsers.exe')">
+                    <img src="ACT19.6.png" alt="ACT19.6" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.6. Consulta de sesiones activas con NetUsers.exe.</p>
+                </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">5</span> Usuarios que alguna vez iniciaron sesión — <code>Get-LocalUser</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En PowerShell se ejecutó <code>Get-LocalUser</code>, que enumera las cuentas locales del equipo con su estado.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Hay seis cuentas: Administrador, DefaultAccount, Invitado, WDAGUtilityAccount y WsiAccount están deshabilitadas, y solo <code>fabic</code> está habilitada. No hay cuentas nuevas ni sospechosas. Para conocer el historial real de inicios de sesión se necesitan los eventos 4624 del registro Security o la propiedad LastLogon.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Permite detectar cuentas creadas por un atacante o cuentas integradas habilitadas sin justificación.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.7.png', 'ACT19.7 - Cuentas locales mediante Get-LocalUser')">
+                    <img src="ACT19.7.png" alt="ACT19.7" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.7. Enumeración de cuentas locales con Get-LocalUser.</p>
+                </div>
+            </div>
+
+            <!-- Paso 6 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">6</span> Información de red — <code>ipconfig /all &gt; InfoRed.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En PowerShell se ejecutó <code>ipconfig /all</code> redirigiendo la salida a <code>InfoRed.txt</code> y se revisó con <code>more</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Host FABI, tipo de nodo híbrido, enrutamiento IP deshabilitado y proxy WINS deshabilitado. Se listan los adaptadores Wi-Fi Direct con sus direcciones físicas y DHCP habilitado, además del adaptador Wi-Fi activo (IP 10.0.0.9).</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Identifica al equipo en la red, sus interfaces y direcciones MAC, y sirve para relacionarlo con otros dispositivos y registros.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.8.png', 'ACT19.8 - Configuración IP del equipo')">
+                    <img src="ACT19.8.png" alt="ACT19.8" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.8. Detalle de adaptadores de red con ipconfig /all.</p>
+                </div>
+            </div>
+
+            <!-- Paso 7 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">7</span> Nombres y sesiones NetBIOS — <code>nbtstat -S &gt; ConexionesNetBios.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Se ejecutó <code>nbtstat -S</code> en PowerShell, con salida a <code>ConexionesNetBios.txt</code>, y se abrió con <code>more</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Se revisaron las interfaces Bluetooth, Wi-Fi (10.0.0.9) y las conexiones de área local* 1 y 10; en todas aparece <em>No hay conexiones</em>, es decir, no hay sesiones NetBIOS activas. Nota: <code>-S</code> muestra sesiones; los nombres NetBIOS locales se obtienen con <code>nbtstat -n</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Descarta sesiones NetBIOS hacia otros equipos, que podrían indicar movimiento lateral.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.9.png', 'ACT19.9 - Sesiones NetBIOS')">
+                    <img src="ACT19.9.png" alt="ACT19.9" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.9. Verificación de sesiones NetBIOS mediante nbtstat -S.</p>
+                </div>
+            </div>
+
+            <!-- Paso 8 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">8</span> Conexiones establecidas — <code>netstat -an &gt; ConexionesEstablecidas.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Se ejecutó <code>netstat -an</code> con salida a <code>ConexionesEstablecidas.txt</code> y se revisó con <code>more</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Hay puertos en escucha (135, 139, 445, 5040, 49664 a 49676, 54307 y 57621) y conexiones ESTABLISHED y CLOSE_WAIT desde 10.0.0.9 hacia direcciones externas, casi todas por el puerto 443. Llama la atención una conexión al puerto 4070 (104.154.127.247) y otra a 149.154.174.200:443, que conviene verificar.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Muestra con qué servidores externos se comunica el equipo; es clave para detectar comando y control o exfiltración.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.10.png', 'ACT19.10 - Conexiones de red activas')">
+                    <img src="ACT19.10.png" alt="ACT19.10" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.10. Tabla de conexiones activas y puertos en escucha con netstat -an.</p>
+                </div>
+            </div>
+
+            <!-- Paso 9 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">9</span> Aplicaciones con puertos abiertos — <code>netstat -anob &gt; AplicacionesConPuertosAbiertos.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Se abrió PowerShell como administrador, se entró a la carpeta Act19 y se ejecutó <code>netstat -anob</code>, que añade el PID (<code>-o</code>) y el ejecutable (<code>-b</code>) de cada conexión.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> El puerto 135 corresponde a svchost (RpcSs), el 5040 a svchost (CDPSvc), el 49668 a svchost (Schedule), el 49669 a svchost (EventLog) y el 445 al PID 4 (System). Los PID 1296 (lsass.exe) y 1124 (wininit.exe) coinciden con la lista de tasklist para los puertos 49664 y 49665. El puerto 7680 (PID 19452) aparece sin información de propiedad.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Vincula cada puerto con un proceso concreto, lo que permite identificar programas que se comunican sin ser legítimos.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.11.png', 'ACT19.11 - Procesos asociados a puertos')">
+                    <img src="ACT19.11.png" alt="ACT19.11" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.11. Relación de puertos, PID y ejecutables con netstat -anob.</p>
+                </div>
+            </div>
+
+            <!-- Paso 10 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">10</span> Dominios consultados (caché DNS) — <code>ipconfig /displaydns &gt; dns.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Con privilegios de administrador se ejecutó <code>ipconfig /displaydns</code>, que vuelca la caché del resolvedor DNS, y se guardó en <code>dns.txt</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Se observan dominios de Microsoft (<code>array611</code> y <code>array607.prod.do.dsp.mp.microsoft.com</code>, <code>ctldl.windowsupdate.com</code>), asociados a Windows Update y Delivery Optimization. En lo capturado no hay dominios sospechosos.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> La caché DNS es volátil y revela a qué sitios accedió el equipo recientemente.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.12.png', 'ACT19.12 - Volcado de caché DNS')">
+                    <img src="ACT19.12.png" alt="ACT19.12" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.12. Consulta de caché DNS con ipconfig /displaydns.</p>
+                </div>
+            </div>
+
+            <!-- Paso 11 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">11</span> Tabla ARP (IP y MAC) — <code>arp -a</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En el Símbolo del sistema se ejecutó <code>arp -a</code> para ver la tabla que relaciona direcciones IP con direcciones físicas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> En la interfaz 10.0.0.9 hay cuatro vecinos dinámicos (10.0.0.1, 10.0.0.4, 10.0.0.5 y 10.0.0.10) y entradas estáticas de broadcast y multicast. No se observan MAC duplicadas, por lo que no hay señales de suplantación ARP.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Identifica los dispositivos con los que el equipo se comunicó recientemente en la red local.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.13.png', 'ACT19.13 - Tabla ARP local')">
+                    <img src="ACT19.13.png" alt="ACT19.13" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.13. Resolución de direcciones físicas e IP con arp -a.</p>
+                </div>
+            </div>
+
+            <!-- Paso 12 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">12</span> Redes WiFi conectadas — <code>netsh wlan show profiles &gt; TodaslasRedesI.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En CMD se ejecutó <code>netsh wlan show profiles</code> con salida a <code>TodaslasRedesI.txt</code>, y el archivo se abrió en el Bloc de notas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> No hay perfiles de directiva de grupo. Los perfiles de usuario guardados son CNT_UPSLP, CC_UPSLP, Totalplay-5G-10e8, UAEM3_UPSLP y Superwifi Network 2.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Permite reconstruir los lugares y redes a las que se conectó el equipo y detectar redes inesperadas.</p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.14.png', 'ACT19.14 - Comando netsh wlan show profiles')">
+                        <img src="ACT19.14.png" alt="ACT19.14" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.14. Ejecución de netsh wlan show profiles en CMD.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.15.png', 'ACT19.15 - Perfiles Wi-Fi guardados')">
+                        <img src="ACT19.15.png" alt="ACT19.15" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.15. Listado de redes inalámbricas en TodaslasRedesI.txt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 13 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">13</span> Historial de comandos — <code>doskey /history</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En CMD se ejecutó <code>doskey /history</code>, que muestra los comandos escritos en esa sesión de consola.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Se ve la secuencia completa de la actividad (<code>tasklist</code>, <code>date</code>, <code>cd Act19</code>, <code>sc query</code>, <code>NetUsers.exe</code>, <code>netstat -anob</code>), incluidos errores de escritura como <code>cld</code>, <code>datetime</code> y <code>query</code>. Solo cubre la sesión de CMD abierta; el historial de PowerShell se guarda por separado.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Documenta qué ejecutó el investigador sobre el equipo, lo que protege la validez y trazabilidad de la evidencia.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.16.png', 'ACT19.16 - Historial de consola CMD')">
+                    <img src="ACT19.16.png" alt="ACT19.16" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.16. Registro de comandos ejecutados con doskey /history.</p>
+                </div>
+            </div>
+
+            <!-- Paso 14 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">14</span> Unidades mapeadas — <code>net use</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En CMD se ejecutó <code>net use</code>, que lista las conexiones a recursos de red y las unidades mapeadas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> El resultado es <em>No hay entradas en la lista</em>: no hay unidades de red mapeadas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Descarta acceso a recursos remotos o posible exfiltración hacia unidades de red.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.17.png', 'ACT19.17 - Verificación de unidades de red')">
+                    <img src="ACT19.17.png" alt="ACT19.17" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.17. Consulta de unidades mapeadas mediante net use.</p>
+                </div>
+            </div>
+
+            <!-- Paso 15 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">15</span> Recursos compartidos — <code>net share</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En CMD se ejecutó <code>net share</code> para enumerar los recursos que el equipo comparte en la red.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Solo aparecen los recursos administrativos predeterminados: <code>C$</code> (C:\), <code>IPC$</code> (IPC remota) y <code>ADMIN$</code> (C:\Windows). No hay carpetas compartidas personalizadas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Detecta carpetas expuestas que un atacante podría usar para mover datos o acceder al equipo.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.18.png', 'ACT19.18 - Recursos compartidos del sistema')">
+                    <img src="ACT19.18.png" alt="ACT19.18" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.18. Enumeración de recursos compartidos con net share.</p>
+                </div>
+            </div>
+
+            <!-- Paso 16 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">16</span> Información del equipo — <code>systeminfo &gt; SystemInfo.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En PowerShell se ejecutó <code>systeminfo</code> con salida a <code>SystemInfo.txt</code> y se revisó con <code>more</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Host FABI, Windows 11 Home Single Language (10.0.26300), instalación original el 16/10/2026, último arranque el 14/11/2026 08:13, HP Laptop 15-dy5xxx, BIOS AMI F.19, zona horaria UTC-06:00 y memoria física de 7,863 MB con 1,215 MB disponibles.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Da el perfil completo del equipo y el contexto temporal; la poca memoria libre refuerza la necesidad de capturar la RAM pronto.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.19.png', 'ACT19.19 - Perfil completo con systeminfo')">
+                    <img src="ACT19.19.png" alt="ACT19.19" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.19. Detalles de hardware y sistema operativo mediante systeminfo.</p>
+                </div>
+            </div>
+
+            <!-- Paso 17 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">17</span> Tareas programadas — <code>schtasks &gt; TareasProgramadas.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En PowerShell se ejecutó <code>schtasks</code> con salida a <code>TareasProgramadas.txt</code> y se revisó con <code>more</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Se ven tareas de Adobe Acrobat Update, OneDrive (actualización, reporte e inicio) y Microsoft Office, todas con apariencia legítima. En las carpetas <code>\GoogleSystem</code> y <code>\Microsoft</code> aparece <em>no hay tareas programadas disponibles para el nivel de acceso</em>, porque el comando se ejecutó sin privilegios elevados; conviene repetirlo como administrador.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Las tareas programadas son un mecanismo común de persistencia de malware.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.20.png', 'ACT19.20 - Tareas programadas del sistema')">
+                    <img src="ACT19.20.png" alt="ACT19.20" class="rounded-lg w-full object-contain max-h-64 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.20. Listado de tareas programadas mediante schtasks.</p>
+                </div>
+            </div>
+
+            <!-- Paso 18 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">18</span> Exportación de logs del sistema — <code>wevtutil epl System ...\LogsSistema.evtx</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En CMD se ejecutó <code>wevtutil epl System</code> indicando como destino un archivo <code>.evtx</code> en el Escritorio. Después se abrió el Explorador de archivos para confirmar que el archivo se generó.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Se creó el registro de eventos del sistema, con un tamaño aproximado de 4,164 KB. En la misma carpeta se aprecian todos los archivos de evidencia con sus fechas de modificación (del 15/11/2026 11:10 p. m. al 16/11/2026 12:10 a. m.).</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Conserva los logs para analizarlos después con un visor de eventos sin depender del equipo vivo.</p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.21.png', 'ACT19.21 - Exportación de registros EVTX')">
+                        <img src="ACT19.21.png" alt="ACT19.21" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.21. Exportación de eventos del sistema con wevtutil epl.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.22.png', 'ACT19.22 - Archivos recopilados en Act19')">
+                        <img src="ACT19.22.png" alt="ACT19.22" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.22. Verificación de los archivos generados en la carpeta Act19.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 19 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">19</span> Archivo hosts — <code>Get-Content ...\drivers\etc\hosts &gt; Host.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> Con privilegios de administrador se leyó el archivo <code>hosts</code> con <code>Get-Content</code> y se guardó en <code>Host.txt</code>.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Solo contiene el texto de ejemplo por defecto de Microsoft; las líneas de ejemplo y las de localhost están comentadas con <code>#</code>. No hay redirecciones de dominios personalizadas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Un hosts modificado puede redirigir sitios legítimos hacia servidores del atacante o bloquear actualizaciones de seguridad.</p>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-xl mx-auto" onclick="abrirModal('ACT19.23.png', 'ACT19.23 - Contenido del archivo hosts')">
+                    <img src="ACT19.23.png" alt="ACT19.23" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.23. Lectura del archivo hosts del sistema en Host.txt.</p>
+                </div>
+            </div>
+
+            <!-- Paso 20 -->
+            <div class="space-y-3 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">20</span> Árbol de directorios por fecha de creación — <code>Get-ChildItem C:\ -Recurse -Force ... &gt; ArbolDirectorios.txt</code></h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Procedimiento:</strong> En PowerShell se listaron recursivamente los archivos y carpetas de <code>C:\</code>, se ordenaron por <code>CreationTime</code> y se exportaron a <code>ArbolDirectorios.txt</code>, que se abrió en el Bloc de notas.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Resultado y análisis:</strong> Las carpetas base (Users, Windows, Program Files, etc.) datan del 01/04/2024; <code>pagefile.sys</code>, <code>swapfile.sys</code>, <code>hiberfil.sys</code> y las uniones se crearon el 16/10/2026 (instalación) y <code>OneDriveTemp</code> el 04/11/2026. Existe <code>hiberfil.sys</code> (unos 3.3 GB) y <code>pagefile.sys</code> (unos 6.1 GB), que pueden contener restos de memoria.</p>
+                <p class="text-gray-600 text-sm font-light leading-relaxed"><strong>Valor forense:</strong> Permite reconstruir qué se creó y cuándo; los elementos más recientes son los primeros que se revisan en una línea de tiempo.</p>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.24.png', 'ACT19.24 - Comando Get-ChildItem recursivo')">
+                        <img src="ACT19.24.png" alt="ACT19.24" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.24. Generación del árbol de directorios ordenado por fecha.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('ACT19.25.png', 'ACT19.25 - Listado de fechas en ArbolDirectorios.txt')">
+                        <img src="ACT19.25.png" alt="ACT19.25" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">ACT19.25. Inspección de fechas y archivos de sistema en C:\.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. COMPARACIÓN ENTRE CMD Y POWERSHELL -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">4. Comparación entre CMD y PowerShell (servicios)</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700">Aspecto</th>
+                            <th class="p-3 font-bold text-gray-700">CMD (<code>sc query</code>)</th>
+                            <th class="p-3 font-bold text-gray-700">PowerShell (<code>Get-Service</code>)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-medium">Alcance</td><td class="p-3">Por defecto solo servicios activos (para ver todos: <code>sc query state= all</code>).</td><td class="p-3">Todos los servicios, activos y detenidos.</td></tr>
+                        <tr><td class="p-3 font-medium">Formato</td><td class="p-3">Bloques de texto con campos técnicos: tipo, controles aceptados, códigos de salida, punto de comprobación.</td><td class="p-3">Tabla de tres columnas: Status, Name y DisplayName.</td></tr>
+                        <tr><td class="p-3 font-medium">Naturaleza</td><td class="p-3">Texto plano.</td><td class="p-3">Objetos .NET que se pueden filtrar, ordenar y exportar.</td></tr>
+                        <tr><td class="p-3 font-medium">Codificación</td><td class="p-3">Caracteres dañados al abrir en el Bloc de notas (CàD_SALIDA, aplicaci€n).</td><td class="p-3">Salida más legible.</td></tr>
+                        <tr><td class="p-3 font-medium">Mejor uso</td><td class="p-3">Detalle técnico de un servicio concreto.</td><td class="p-3">Panorama general y filtrado rápido.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-gray-700 text-sm font-light leading-relaxed"><strong>Análisis:</strong> Ambos comandos muestran el mismo inventario con distinto nivel de detalle. Los servicios son coherentes con un equipo personal y no se aprecian nombres aleatorios o de origen desconocido. En forense conviene usar ambos.</p>
+        </section>
+
+        <!-- 5. ANÁLISIS DE RESULTADOS E INDICIOS A VALIDAR -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">5. Análisis de resultados e indicios a validar</h2>
+            <p class="text-gray-700 text-sm font-light leading-relaxed"><strong>Correlación entre evidencias:</strong> Los PID de <code>tasklist</code> coinciden con los de <code>netstat -anob</code>: el puerto 49664 pertenece al PID 1296 (lsass.exe) y el 49665 al PID 1124 (wininit.exe), por lo que los puertos altos en escucha corresponden a procesos propios de Windows. La tabla ARP no muestra MAC duplicadas y solo la cuenta <code>fabic</code> está habilitada. Los siguientes puntos no son prueba de malicia por sí solos, pero deben validarse:</p>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700">Hallazgo</th>
+                            <th class="p-3 font-bold text-gray-700">Por qué importa</th>
+                            <th class="p-3 font-bold text-gray-700">Acción recomendada</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-medium">Conexión a 104.154.127.247 por el puerto 4070</td><td class="p-3">Puerto no estándar; el resto de las conexiones usa 443.</td><td class="p-3">Identificar el proceso y consultar el propietario de la IP (whois, reputación).</td></tr>
+                        <tr><td class="p-3 font-medium">Conexión a 149.154.174.200:443</td><td class="p-3">Rango asociado a Telegram; solo es normal si la aplicación está instalada.</td><td class="p-3">Confirmar si Telegram está en uso; si no, tratar como sospechosa.</td></tr>
+                        <tr><td class="p-3 font-medium">Puertos en escucha 7680, 54307 y 57621</td><td class="p-3">Sin explicación inmediata en las capturas; el 7680 sin información de propiedad.</td><td class="p-3">Correlacionar el PID con <code>tasklist /svc</code> y verificar la firma digital.</td></tr>
+                        <tr><td class="p-3 font-medium">NetUsers.exe (herramienta de terceros)</td><td class="p-3">Binario ejecutado en el equipo investigado.</td><td class="p-3">Verificar hash y origen; usar medios externos de confianza.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-gray-700 text-sm font-light leading-relaxed">También se observó hibernación activa (<code>hiberfil.sys</code>, unos 3.3 GB) y archivo de paginación (<code>pagefile.sys</code>, unos 6.1 GB), que pueden contener restos de memoria. Los puertos 135, 139 y 445 en escucha y los recursos administrativos <code>C$</code>, <code>IPC$</code> y <code>ADMIN$</code> son normales, pero amplían la superficie de ataque en redes no confiables.</p>
+        </section>
+
+        <!-- 6. IMPORTANCIA DE LA EVIDENCIA RECOPILADA -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">6. Importancia de la evidencia recopilada</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm font-light leading-relaxed pl-2">
+                <li><strong>Procesos, servicios y tareas programadas:</strong> muestran qué se ejecuta y cómo persiste; son los primeros indicios de malware.</li>
+                <li><strong>Conexiones, puertos, caché DNS, ARP y NetBIOS:</strong> reconstruyen con quién se comunicó el equipo y mediante qué proceso.</li>
+                <li><strong>Usuarios y sesiones:</strong> permiten atribuir las acciones a una cuenta.</li>
+                <li><strong>Perfiles Wi-Fi, hosts y recursos compartidos:</strong> indican dónde estuvo el equipo, si se redirigió tráfico y si hay datos expuestos.</li>
+                <li><strong>Logs de eventos y línea de tiempo de archivos:</strong> ordenan los hechos en el tiempo, base de cualquier reporte pericial.</li>
+                <li><strong>Historial de comandos:</strong> documenta lo que el investigador modificó en el sistema y protege la validez de la evidencia (principio de Locard: toda interacción deja rastro).</li>
+            </ul>
+        </section>
+
+        <!-- 7. LIMITACIONES Y MEJORAS AL PROCEDIMIENTO -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">7. Limitaciones y mejoras al procedimiento</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm font-light leading-relaxed pl-2">
+                <li><strong>Hora del sistema:</strong> <code>date</code> solo devolvió la fecha; se recomienda <code>Get-Date</code> o <code>date /t &amp; time /t</code>.</li>
+                <li><strong>Sesiones activas:</strong> <code>NetUsers.exe</code> no listó sesiones; corroborar con <code>query user</code>.</li>
+                <li><strong>Inicios de sesión históricos:</strong> <code>Get-LocalUser</code> muestra cuentas existentes; el historial real está en los eventos 4624 o en LastLogon.</li>
+                <li><strong>Nombres NetBIOS:</strong> <code>nbtstat -S</code> muestra sesiones; los nombres se obtienen con <code>nbtstat -n</code>.</li>
+                <li><strong>Tareas programadas:</strong> se ejecutó sin privilegios elevados y varias carpetas quedaron vacías; repetir como administrador.</li>
+                <li><strong>Evidencia en el mismo equipo y en OneDrive:</strong> el Escritorio sincroniza con la nube; en un caso real se guarda en medios externos.</li>
+                <li><strong>Sin hashes ni imagen de memoria:</strong> no se calculó SHA-256 ni se capturó la RAM (FTK Imager, DumpIt), primer paso según el orden de volatilidad.</li>
+            </ul>
+        </section>
+
+        <!-- 8. PRÓXIMOS PASOS EN UNA INVESTIGACIÓN REAL -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">8. Próximos pasos en una investigación real</h2>
+            <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm font-light leading-relaxed pl-2">
+                <li>Capturar la memoria RAM, generar hashes SHA-256 de los archivos y llenar la cadena de custodia.</li>
+                <li>Guardar la evidencia en medios externos protegidos contra escritura y trabajar sobre copias.</li>
+                <li>Analizar <code>LogsSistema.evtx</code> y exportar también los registros Security, Application y PowerShell.</li>
+                <li>Identificar los procesos tras los puertos 4070, 7680, 54307 y 57621 y validar la reputación de las IP externas.</li>
+                <li>Revisar persistencia: claves Run del registro, carpeta de inicio, servicios y tareas con privilegios de administrador.</li>
+                <li>Adquirir una imagen forense del disco y analizar navegador, Prefetch, archivos recientes y papelera.</li>
+                <li>Contrastarlo con indicadores de compromiso y elaborar el informe pericial final.</li>
+            </ol>
+        </section>
+
+        <!-- 9. CONCLUSIONES -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">9. Conclusiones</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>La adquisición permitió documentar de forma ordenada el estado del sistema en caliente y obtener un panorama amplio de procesos, red, usuarios, persistencia y línea de tiempo. Con la evidencia actual, el equipo es consistente con el uso normal de un equipo personal, aunque quedan puntos por validar.</p>
+                <p>El valor del ejercicio está en el método: priorizar la volatilidad, documentar cada comando y su resultado, y reconocer las limitaciones para mejorarlas en la siguiente fase.</p>
+            </div>
+
+            <!-- Nota al pie destacada -->
+            <div class="pt-6 text-sm text-gray-700 font-bold border-t flex items-start gap-3 bg-amber-50/60 p-4 rounded-xl border border-amber-200/60 mt-6">
+                <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p>Nota: La actividad fue realizada por la alumna Fabiola Calvillo Galván como parte de las prácticas de Informática Forense (CNO IV - Seguridad Informática, UPSLP).</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL PARA AMPLIAR IMÁGENES -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="cerrarModal()">
+        <div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col items-center" onclick="event.stopPropagation()">
+            <div class="w-full flex justify-between items-center pb-3 border-b">
+                <h3 id="modalTitle" class="font-bold text-gray-800 text-sm">Evidencia</h3>
+                <button onclick="cerrarModal()" class="text-gray-400 hover:text-gray-700 font-bold text-lg px-2">&times;</button>
+            </div>
+            <img id="modalImg" src="" alt="Ampliada" class="max-h-[75vh] w-auto object-contain mt-4 rounded-xl">
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-10 text-center border-t border-gray-100 bg-white">
+        <p class="text-gray-500 text-xs mb-2 px-4">
+            🔒 Sitio web protegido con <strong class="text-gray-800 font-medium">Certificado de Seguridad (HTTPS)</strong>.
+        </p>
+        <p class="text-gray-400 text-[11px] px-4 tracking-wider uppercase font-medium">
+            © 2026 Fabiola Calvillo Galván. CNO IV - Seguridad Informática.
+        </p>
+    </footer>
+
+    <!-- Scripts de Interactividad -->
+    <script>
+        // Menú Móvil
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Funciones del Modal de Imágenes
+        function abrirModal(src, titulo) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('modalTitle').innerText = 'Evidencia: ' + titulo;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function cerrarModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
