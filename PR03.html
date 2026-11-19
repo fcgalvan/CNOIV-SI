@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR03: Operación Narcos – Expediente Kowhai | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1f2937; 
+        }
+        .main-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(147, 51, 234, 0.05) 50%, rgba(239, 68, 68, 0.05) 100%);
+            border-radius: 2rem;
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
+        }
+        .content-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .content-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.1);
+        }
+        .img-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .img-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- BARRA SUPERIOR ROJA -->
+    <div class="bg-red-600 text-white text-center py-2 text-xs font-semibold tracking-wider uppercase shadow-md">
+        🚀 PORTAFOLIO ACADÉMICO OFICIAL – CICLO OTOÑO 2026
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 px-6 py-4 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-4">
+                <img src="UPSLP_LOGO.png" alt="Logo UPSLP" class="h-8 md:h-10 w-auto object-contain">
+                <span class="text-xs md:text-sm font-bold tracking-tight text-gray-900 uppercase">
+                    PORTAFOLIO<span class="text-blue-600">.</span>CNO IV
+                </span>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-7 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="parcial1.html" class="hover:text-blue-600 transition">Parcial 1</a>
+                <a href="parcial2.html" class="hover:text-blue-600 transition">Parcial 2</a>
+                <a href="parcial3.html" class="text-blue-600 font-bold transition">Parcial 3</a>
+                <a href="roadtohalloffame.html" class="hover:text-blue-600 transition">Road to Hall of Fame</a>
+                <a href="proyectos.html" class="hover:text-blue-600 transition">Proyectos</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+            <a href="index.html" class="hover:text-blue-600 transition py-1">Inicio</a>
+            <a href="parcial1.html" class="hover:text-blue-600 transition py-1">Parcial 1</a>
+            <a href="parcial2.html" class="hover:text-blue-600 transition py-1">Parcial 2</a>
+            <a href="parcial3.html" class="text-blue-600 font-bold transition py-1">Parcial 3</a>
+            <a href="roadtohalloffame.html" class="hover:text-blue-600 transition py-1">Road to Hall of Fame</a>
+            <a href="proyectos.html" class="hover:text-blue-600 transition py-1">Proyectos</a>
+            <a href="index.html#contacto" class="hover:text-blue-600 transition py-1">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO TIPO HERO -->
+    <header class="container mx-auto px-6 py-12 max-w-6xl">
+        <div class="main-card p-8 md:p-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <span class="inline-block px-3.5 py-1.5 bg-blue-600 text-white text-[11px] font-extrabold uppercase tracking-widest rounded-full shadow-sm">
+                    CNO IV – Seguridad Informática & Informática Forense
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                    PR03: Operación Narcos – Expediente Kowhai
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-light leading-relaxed">
+                    Universidad Politécnica de San Luis Potosí — Análisis forense digital de la imagen de disco <code>Narcos-1</code> (equipo <code>SK-DESKTOP</code>, escenario 2019 Narcos de Digital Corpora) utilizando Autopsy 4.23.1.
+                </p>
+                <div class="pt-2 text-xs text-gray-500 space-y-1">
+                    <p><strong>Expediente:</strong> Operación Narcos / Expediente Kowhai | 18 de noviembre de 2026</p>
+                    <p><strong>Alumna:</strong> Fabiola Calvillo Galván (182455) | Herramienta: Autopsy 4.23.1</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta lateral con accesos rápidos -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center w-full lg:w-80 flex-shrink-0 flex flex-col items-center">
+                <div class="w-14 h-14 bg-gradient-to-tr from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm tracking-wide">ARCHIVOS DE LA PRÁCTICA</h3>
+                <p class="text-xs text-blue-600 font-semibold mt-1">Evidencia: Narcos-1 (SK-DESKTOP)</p>
+                <div class="mt-5 w-full space-y-2">
+                    <a href="CalvilloGalvanFabiola_PR03_2.pdf" target="_blank" class="block w-full py-2 bg-gray-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition shadow-sm text-center">
+                        Informe Ejecutivo (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 pb-20 space-y-12 max-w-6xl">
+
+        <!-- SECCIÓN DE DESCARGA -->
+        <section class="content-card p-8 border-l-4 border-l-blue-600 flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
+            <div>
+                <h2 class="text-xl font-bold mb-2 text-gray-900 flex items-center gap-2">
+                    <span>📄</span> Documento Oficial de la Práctica PR03
+                </h2>
+                <p class="text-gray-600 text-xs font-light">
+                    Descarga el informe ejecutivo completo de forense digital con los 15 puntos extraídos, 27 figuras de respaldo y 5 análisis de interpretación.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full md:w-auto justify-end">
+                <a href="CalvilloGalvanFabiola_PR03_2.pdf" target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] tracking-wider uppercase px-5 py-3 rounded-xl transition duration-300 shadow-md shadow-blue-600/20 whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Informe Ejecutivo (PDF)
+                </a>
+            </div>
+        </section>
+
+        <!-- 1. RESUMEN EJECUTIVO -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">1. Resumen ejecutivo</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>Se examinó la imagen forense <strong>Narcos-1</strong>, perteneciente al equipo <strong>SK-DESKTOP</strong> (Windows 10 Pro, perfil de usuario <strong>Steve</strong>), con el objetivo de determinar qué actividades pueden demostrarse a partir del disco y qué vínculos existen con los hechos investigados: la interceptación en el aeropuerto de Wellington de dos pasajeros procedentes de Australia con un kilogramo de metanfetamina.</p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+                    <div class="bg-blue-50/70 border border-blue-100 p-4 rounded-xl">
+                        <span class="text-[11px] font-bold uppercase text-blue-600 tracking-wider">Evidencia Extraída</span>
+                        <p class="font-extrabold text-gray-900 text-2xl mt-1">15</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Puntos de evidencia verificados</p>
+                    </div>
+                    <div class="bg-indigo-50/70 border border-indigo-100 p-4 rounded-xl">
+                        <span class="text-[11px] font-bold uppercase text-indigo-600 tracking-wider">Respaldo Gráfico</span>
+                        <p class="font-extrabold text-gray-900 text-2xl mt-1">27</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Capturas de respaldo en informe</p>
+                    </div>
+                    <div class="bg-purple-50/70 border border-purple-100 p-4 rounded-xl">
+                        <span class="text-[11px] font-bold uppercase text-purple-600 tracking-wider">Interpretación</span>
+                        <p class="font-extrabold text-gray-900 text-2xl mt-1">5</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Análisis de interpretación forense</p>
+                    </div>
+                    <div class="bg-emerald-50/70 border border-emerald-100 p-4 rounded-xl">
+                        <span class="text-[11px] font-bold uppercase text-emerald-700 tracking-wider">Ventana Clave</span>
+                        <p class="font-extrabold text-gray-900 text-lg mt-1">5 días</p>
+                        <p class="text-xs text-gray-500 mt-0.5">29 ene – 2 feb 2019 (NZDT)</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2.5 pt-3">
+                    <p class="font-bold text-gray-900">Hallazgos principales:</p>
+                    <ul class="list-disc list-inside space-y-1.5 text-gray-700 text-sm font-light pl-2">
+                        <li><strong>Logística compatible con el caso:</strong> Una cotización de vuelos <em>Brisbane → Wellington</em> para dos adultos, una captura de la biblioteca de Eastbourne y dos rutas locales coinciden con el origen, destino y punto de entrega descritos en el escenario.</li>
+                        <li><strong>Herramientas de comunicación y ocultamiento:</strong> Discord, TrueCrypt e Image Steganography fueron descargados e instalados en fechas consecutivas (29/01, 30/01 y 01/02/2019).</li>
+                        <li><strong>Límite de la evidencia:</strong> No se recuperaron mensajes, contenedores cifrados ni imágenes con información oculta; el uso efectivo de las herramientas y la identidad del usuario no están demostrados.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50/60 border border-blue-200/70 p-4 rounded-xl text-sm text-gray-800">
+                    <strong>Conclusión:</strong> El disco respalda que el equipo se usó para preparar un viaje y consultar lugares clave del caso, pero no basta por sí solo para vincular a una persona concreta con la distribución de drogas. Se requieren mensajes recuperados y registros externos (aerolínea o aduana) para sostener esa relación.
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CONTEXTO, OBJETIVO Y METODOLOGÍA -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">2. Contexto, objetivo y metodología</h2>
+            <div class="space-y-4 text-gray-700 text-sm font-light leading-relaxed">
+                <p>Una operación internacional de inteligencia alertó a las autoridades de Nueva Zelanda sobre el posible ingreso de sustancias ilícitas. <strong>John Fredricksen</strong> y <strong>Jane Esteban</strong>, procedentes de Australia, fueron interceptados en el aeropuerto de Wellington con un kilogramo de metanfetamina en una maleta. Se obtuvo información sobre dos posibles lugares de entrega: la <strong>biblioteca de Eastbourne</strong> y un <strong>inmueble en Petone</strong>.</p>
+                <p>En el inmueble de Petone, vinculado a <strong>Steve Kowhai</strong> (bajo investigación), se localizaron sustancias ilícitas, armas de fuego y una computadora de escritorio. La unidad de forense digital recibió su imagen de disco, <strong>Narcos-1</strong>, para determinar qué actividades pueden demostrarse a partir del disco, distinguiendo lo observado, lo interpretado y lo que no puede confirmarse con la evidencia disponible.</p>
+            </div>
+
+            <div class="overflow-x-auto pt-2">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700 w-44">Elemento</th>
+                            <th class="p-3 font-bold text-gray-700">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-semibold text-gray-800">Evidencia</td><td class="p-3"><code>Narcos-1.zip</code> (se conservó el archivo original y se verificó su integridad), corpus forense del escenario 2019 Narcos (Digital Corpora).</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Herramienta</td><td class="p-3">Autopsy 4.23.1: árbol de archivos, metadatos NTFS, visor de registro (<code>NTUSER.DAT</code>), artefactos de datos y visor hexadecimal.</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Registro por hallazgo</td><td class="p-3">Valor exacto, ruta dentro de la imagen, procedimiento y captura comprobable.</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Zona horaria</td><td class="p-3">Se reportan fechas en <strong>NZDT</strong>. Algunas capturas iniciales de Autopsy muestran CST; el visor de registro muestra UTC (por ejemplo, <code>28/01/2019 21:00:12 UTC</code> = <code>29/01/2019 10:00:12 NZDT</code>).</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Criterio de análisis</td><td class="p-3">Cada conclusión separa lo observado, la interpretación y lo no confirmable. Una descarga no se equipara a una ejecución, ni una ejecución a un uso efectivo.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. RESULTADOS DE LA EXTRACCIÓN (15 PUNTOS Y FIGURAS 1–17) -->
+        <section class="content-card p-8 md:p-12 space-y-10 shadow-sm">
+            <div class="border-b pb-3">
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight">3. Resultados de la extracción (Parte I)</h2>
+                <p class="text-gray-600 text-sm font-light mt-1">Tabla concentradora de los 15 puntos solicitados y respaldo gráfico de las figuras 1 a 17 (haz clic en cualquier imagen para ampliarla).</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700 w-48">Elemento</th>
+                            <th class="p-3 font-bold text-gray-700">Resultado</th>
+                            <th class="p-3 font-bold text-gray-700 w-24 text-center">Figura</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-semibold text-gray-800">Windows instalado</td><td class="p-3">Windows 10 Pro (equipo <code>SK-DESKTOP</code>, AMD64). Artefacto: <em>Operating System Information</em></td><td class="p-3 text-center font-bold text-blue-600">1</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Perfil principal</td><td class="p-3">Carpeta Steve <code>C:/Users/Steve/</code></td><td class="p-3 text-center font-bold text-blue-600">2</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Clave UserAssist</td><td class="p-3"><code>C:\Users\Steve\NTUSER.DAT &gt; Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist</code></td><td class="p-3 text-center font-bold text-blue-600">3</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Navegadores</td><td class="p-3">Google Chrome (archivo <code>History</code>) y Microsoft Edge</td><td class="p-3 text-center font-bold text-blue-600">4</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">MD5 de History (Chrome)</td><td class="p-3 font-mono text-xs">f3f979c6dee9fbb7cbdf5818aaa4b723</td><td class="p-3 text-center font-bold text-blue-600">5</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Ruta de airport crystals.jpg</td><td class="p-3"><code>C:/Users/Steve/Documents/Misc/airport crystals.jpg</code></td><td class="p-3 text-center font-bold text-blue-600">6</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Creación de airport crystals.jpg</td><td class="p-3"><code>2019-01-31 10:25:18 NZDT</code></td><td class="p-3 text-center font-bold text-blue-600">7</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">MD5 de dropoff.jpg</td><td class="p-3 font-mono text-xs">7feb763bebe42c3a3464c9ee3bb1d3e8</td><td class="p-3 text-center font-bold text-blue-600">8</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Última modificación de dropoff.jpg</td><td class="p-3"><code>2019-02-02 14:06:06 NZDT</code></td><td class="p-3 text-center font-bold text-blue-600">9</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Imagen de reservaciones de vuelo</td><td class="p-3"><code>C:/Users/Steve/Documents/Misc/flightbookings.PNG</code></td><td class="p-3 text-center font-bold text-blue-600">10</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">MD5 de Method run.jpg</td><td class="p-3 font-mono text-xs">69b225bc0ef5a0c003f1e2a6646aaf92</td><td class="p-3 text-center font-bold text-blue-600">11</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">MD5 de BNE.png</td><td class="p-3 font-mono text-xs">dffa98bdd7371d1806adb09db27ba283</td><td class="p-3 text-center font-bold text-blue-600">12</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Herramienta de esteganografía</td><td class="p-3"><code>Image Steganography 1.5.2 Setup.exe</code> en <code>C:/Users/Steve/Downloads/</code> | MD5: <span class="font-mono text-xs">c9b7c382dea6d7f45ae1bf437860cb69</span></td><td class="p-3 text-center font-bold text-blue-600">13, 14</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Herramienta de cifrado</td><td class="p-3"><code>TrueCrypt Setup 7.1a.exe</code> en <code>C:/Users/Steve/Downloads/TrueCrypt Setup 7.1a.exe</code></td><td class="p-3 text-center font-bold text-blue-600">15</td></tr>
+                        <tr><td class="p-3 font-semibold text-gray-800">Caché de Discord y ActivitiesCache.db</td><td class="p-3"><code>C:/Users/Steve/AppData/Roaming/Discord/Cache</code> y <code>C:/Users/Steve/AppData/Local/ConnectedDevicesPlatform/2418c0082017486a/ActivitiesCache.db</code></td><td class="p-3 text-center font-bold text-blue-600">16, 17</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 3.1 Sistema operativo y perfil principal -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">3.1</span> Sistema operativo y perfil principal</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Se consultó el artefacto de información del sistema operativo, las propiedades de la cuenta y el registro de Windows del perfil principal.</p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.1.png', 'Figura 1. Información del sistema operativo')">
+                        <img src="PR03.1.png" alt="Figura 1" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 1. Operating System Information (SK-DESKTOP, Windows 10 Pro, AMD64).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.2.png', 'Figura 2. Cuenta de usuario del sistema')">
+                        <img src="PR03.2.png" alt="Figura 2" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 2. OS Account: login steve, SID terminado en -1001, C:/Users/Steve.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.3.png', 'Figura 3. Clave UserAssist en NTUSER.DAT')">
+                        <img src="PR03.3.png" alt="Figura 3" class="rounded-lg w-full object-contain max-h-52 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 3. NTUSER.DAT en /Users/Steve y clave UserAssist (9 subclaves).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.2 Navegación web -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">3.2</span> Navegación web</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Inspección de los archivos de Google Chrome en <code>Chrome\User Data\Default</code> (85 resultados) y verificación del hash MD5 de <code>History</code> (<code>f3f979c6dee9fbb7cbdf5818aaa4b723</code>), además de la presencia de Microsoft Edge.</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.4.png', 'Figura 4. Archivos de Google Chrome en el perfil predeterminado')">
+                        <img src="PR03.4.png" alt="Figura 4" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 4. Carpeta Chrome\User Data\Default con History y carpeta de Microsoft Edge.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.5.png', 'Figura 5. Metadatos y hash MD5 del archivo History')">
+                        <img src="PR03.5.png" alt="Figura 5" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 5. File Metadata de History con MD5 f3f979c6dee9fbb7cbdf5818aaa4b723.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.3 Documentos, imágenes y metadatos -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">3.3</span> Documentos, imágenes y metadatos</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Localización y extracción de metadatos NTFS y hashes de los archivos en <code>/Users/Steve/Documents/Misc</code> y <code>/Users/Steve/Downloads/Misc</code>: <code>airport crystals.jpg</code>, <code>dropoff.jpg</code>, <code>flightbookings.PNG</code>, <code>Method run.jpg</code> y <code>BNE.png</code>.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.6.png', 'Figura 6. Ubicación de airport crystals.jpg')">
+                        <img src="PR03.6.png" alt="Figura 6" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 6. Ubicación y vista previa de airport crystals.jpg (47 min, 31.6 km).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.7.png', 'Figura 7. Fecha de creación de airport crystals.jpg')">
+                        <img src="PR03.7.png" alt="Figura 7" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 7. Creación 2019-01-31 10:25:18 NZDT (77,643 bytes).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.8.png', 'Figura 8. Hash MD5 de dropoff.jpg')">
+                        <img src="PR03.8.png" alt="Figura 8" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 8. MD5 de dropoff.jpg: 7feb763bebe42c3a3464c9ee3bb1d3e8.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.9.png', 'Figura 9. Última modificación de dropoff.jpg')">
+                        <img src="PR03.9.png" alt="Figura 9" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 9. Modificación de dropoff.jpg: 2019-02-02 14:06:06 NZDT.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.10.png', 'Figura 10. Ruta y metadatos de flightbookings.PNG')">
+                        <img src="PR03.10.png" alt="Figura 10" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 10. Ruta de flightbookings.PNG (52,971 bytes, creado 2019-02-02 15:28:44 NZDT).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.11.png', 'Figura 11. Hash MD5 de Method run.jpg')">
+                        <img src="PR03.11.png" alt="Figura 11" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 11. MD5 de Method run.jpg: 69b225bc0ef5a0c003f1e2a6646aaf92.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer sm:col-span-2 lg:col-span-3 max-w-md mx-auto w-full" onclick="abrirModal('PR03.12.png', 'Figura 12. Hash MD5 de BNE.png')">
+                        <img src="PR03.12.png" alt="Figura 12" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 12. MD5 de BNE.png: dffa98bdd7371d1806adb09db27ba283 (Downloads/Misc).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.4 Programas y otros artefactos -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">3.4</span> Programas y otros artefactos</h3>
+                <p class="text-gray-600 text-sm font-light leading-relaxed">Instaladores en <code>Downloads</code> (<code>Image Steganography 1.5.2 Setup.exe</code> y <code>TrueCrypt Setup 7.1a.exe</code>), caché de Discord en <code>AppData\Roaming\Discord\Cache</code> y base de datos <code>ActivitiesCache.db</code> en <code>ConnectedDevicesPlatform\2418c0082017486a</code> (395 entradas).</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.13.png', 'Figura 13. Instalador de Image Steganography')">
+                        <img src="PR03.13.png" alt="Figura 13" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 13. Image Steganography 1.5.2 Setup.exe y ruta en Data Artifacts.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.14.png', 'Figura 14. Hash MD5 del instalador de esteganografía')">
+                        <img src="PR03.14.png" alt="Figura 14" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 14. MD5 del instalador: c9b7c382dea6d7f45ae1bf437860cb69.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.15.png', 'Figura 15. Instalador de TrueCrypt')">
+                        <img src="PR03.15.png" alt="Figura 15" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 15. TrueCrypt Setup 7.1a.exe (creado 2019-01-30 12:27:43 NZDT).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer md:col-span-1 lg:col-span-1" onclick="abrirModal('PR03.16.png', 'Figura 16. Caché de Discord')">
+                        <img src="PR03.16.png" alt="Figura 16" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 16. Discord\Cache (130 elementos, data_0 a data_3 y vista hex).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer sm:col-span-2 lg:col-span-2" onclick="abrirModal('PR03.17.png', 'Figura 17. Base de datos ActivitiesCache.db (Windows Timeline)')">
+                        <img src="PR03.17.png" alt="Figura 17" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 17. ActivitiesCache.db (395 entradas en tabla Activity, incluyendo Microsoft Edge).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ANÁLISIS E INTERPRETACIÓN (PARTE II – SECCIONES 5.1 A 5.5) -->
+        <section class="content-card p-8 md:p-12 space-y-10 shadow-sm">
+            <div class="border-b pb-3">
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight">4. Análisis e interpretación (Parte II)</h2>
+                <p class="text-gray-600 text-sm font-light mt-1">Reconstrucción cronológica y contraste entre lo observado, la interpretación forense y lo que no puede confirmarse.</p>
+            </div>
+
+            <!-- Línea de tiempo reconstruida -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700 w-44">Fecha y hora (NZDT)</th>
+                            <th class="p-3 font-bold text-gray-700">Evento en el equipo</th>
+                            <th class="p-3 font-bold text-gray-700 w-36">Categoría</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-mono text-xs">29/01/2019 09:56</td><td class="p-3">Se descarga <code>DiscordSetup.exe</code>; la caché se crea a las 09:57 y la clave de registro a las 10:00</td><td class="p-3"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 font-bold text-xs rounded">Comunicación</span></td></tr>
+                        <tr><td class="p-3 font-mono text-xs">30/01/2019 12:27</td><td class="p-3">Se descarga <code>TrueCrypt Setup 7.1a.exe</code>; carpeta <code>Roaming\TrueCrypt</code> a las 12:31; configuración modificada a las 13:34</td><td class="p-3"><span class="px-2 py-0.5 bg-purple-100 text-purple-700 font-bold text-xs rounded">Cifrado</span></td></tr>
+                        <tr><td class="p-3 font-mono text-xs">31/01/2019 10:21 y 10:25</td><td class="p-3">Se crean <code>Method run.jpg</code> y <code>airport crystals.jpg</code> (rutas locales)</td><td class="p-3"><span class="px-2 py-0.5 bg-amber-100 text-amber-800 font-bold text-xs rounded">Desplazamientos</span></td></tr>
+                        <tr><td class="p-3 font-mono text-xs">01/02/2019 13:13 y 13:16</td><td class="p-3">Se crea <code>BNE.png</code>; se descarga <code>Image Steganography 1.5.2</code> (carpeta a las 13:16:56)</td><td class="p-3"><span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 font-bold text-xs rounded">Ocultamiento</span></td></tr>
+                        <tr><td class="p-3 font-mono text-xs">02/02/2019 14:06</td><td class="p-3">Se crea <code>dropoff.jpg</code> (Eastbourne Library)</td><td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 font-bold text-xs rounded">Punto de entrega</span></td></tr>
+                        <tr><td class="p-3 font-mono text-xs">02/02/2019 15:28</td><td class="p-3">Se crea <code>flightbookings.PNG</code> (cotización BNE → WLG)</td><td class="p-3"><span class="px-2 py-0.5 bg-sky-100 text-sky-700 font-bold text-xs rounded">Viaje</span></td></tr>
+                        <tr><td class="p-3 font-mono text-xs">02/02/2019 15:39</td><td class="p-3">Se modifican los archivos <code>data_0</code> a <code>data_3</code> de la caché de Discord</td><td class="p-3"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 font-bold text-xs rounded">Comunicación</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 4.1 Vuelos, Brisbane y la biblioteca de Eastbourne -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">4.1</span> Vuelos, Brisbane y la biblioteca de Eastbourne</h3>
+                <p class="text-sm text-gray-800"><strong>Pregunta:</strong> ¿Qué coincidencias sobre lugares, desplazamientos o logística muestran <code>flightbookings</code>, <code>BNE.png</code> y <code>dropoff.jpg</code>?</p>
+                <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700 font-light">
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1.5">
+                        <p class="font-bold text-gray-900">Observado</p>
+                        <ul class="list-disc list-inside space-y-1 text-xs">
+                            <li><code>flightbookings.PNG</code>: cotización para dos adultos. Ida el 16/02/2019 Brisbane (BNE) → Wellington (WLG), Virgin Australia, 8:45 a 15:15, directo; regreso el 23/02/2019 WLG → BNE, Qantas, con escala en Auckland. Total de AU$1,327.82 (AU$663.91 por persona).</li>
+                            <li><code>BNE.png</code>: fotografía de un puente iluminado sobre un río, con edificios al fondo; parece el Story Bridge (identificación visual, por confirmar). Su nombre coincide con el código del aeropuerto de Brisbane.</li>
+                            <li><code>dropoff.jpg</code>: captura de Google Maps de Eastbourne Library, 38 Rimu St, Eastbourne, Lower Hutt.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1.5">
+                        <p class="font-bold text-gray-900">Coincidencias e Interpretación</p>
+                        <p class="text-xs leading-relaxed"><strong>Coincidencias:</strong> Los tres archivos apuntan a una misma logística: origen en Brisbane, destino en Wellington y un punto concreto en Eastbourne, lo que coincide con el caso (pasajeros desde Australia interceptados en Wellington y la biblioteca como lugar de entrega). Se crearon en poco más de 26 horas y los tres conservan un flujo <code>Zone.Identifier</code> (marcados como procedentes de una zona externa al equipo).</p>
+                        <p class="text-xs leading-relaxed pt-1"><strong>Interpretación:</strong> Los archivos son compatibles con la preparación de un viaje Brisbane → Wellington y de un lugar de entrega en Eastbourne, en fechas cercanas entre sí.</p>
+                    </div>
+                </div>
+                <div class="bg-amber-50/70 border border-amber-200/70 p-4 rounded-xl text-xs text-gray-700">
+                    <strong>No puede confirmarse:</strong> Que los boletos se hayan comprado (la imagen es una cotización) ni quiénes son los viajeros (no aparecen nombres); que la biblioteca fuera el punto de entrega (la imagen solo muestra un mapa); si <code>BNE.png</code> contiene información oculta, ni cómo llegó cada archivo al equipo sin leer sus <code>Zone.Identifier</code> o el historial de descargas.
+                </div>
+                <div class="grid md:grid-cols-3 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.18.png', 'Figura 18. Cotización de vuelos (flightbookings.PNG)')">
+                        <img src="PR03.18.png" alt="Figura 18" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 18. Cotización BNE → WLG (16 feb 2019) y WLG → BNE (23 feb 2019), AU$1,327.82.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.19.png', 'Figura 19. Fotografía BNE.png')">
+                        <img src="PR03.19.png" alt="Figura 19" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 19. Fotografía BNE.png (puente iluminado, visualmente Story Bridge).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.20.png', 'Figura 20. Captura de Eastbourne Library (dropoff.jpg)')">
+                        <img src="PR03.20.png" alt="Figura 20" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 20. Google Maps de Eastbourne Library (38 Rimu St, Eastbourne, Lower Hutt).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4.2 Rutas locales: airport crystals y Method run -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">4.2</span> Rutas locales: airport crystals y Method run</h3>
+                <p class="text-sm text-gray-800"><strong>Pregunta:</strong> ¿Qué interpretación sobre su finalidad puede sostenerse al contrastar ambos archivos con un registro de actividad del equipo?</p>
+                <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700 font-light">
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1.5">
+                        <p class="font-bold text-gray-900">Observado y Contraste con el registro</p>
+                        <p class="text-xs leading-relaxed"><strong>Method run.jpg:</strong> ruta en coche de 54 min y 42.5 km que une Eastbourne, Wainuiomata, Naenae y Stokes Valley, con la palabra <em>"Home"</em> escrita a mano junto a Eastbourne. Creado el <code>31/01/2019 10:21:24 NZDT</code>.</p>
+                        <p class="text-xs leading-relaxed"><strong>airport crystals.jpg:</strong> ruta en coche de 47 min y 31.6 km desde Eastbourne, por Petone, hacia el sur de Wellington, zona compatible con el aeropuerto. Creado el <code>31/01/2019 10:25:18 NZDT</code>.</p>
+                        <p class="text-xs leading-relaxed"><strong>Contraste:</strong> Con los metadatos NTFS como registro de actividad, ambas imágenes se crearon con menos de 4 minutos de diferencia, comparten el mismo último acceso (<code>31/01/2019 16:04:13 NZDT</code>, unas 5 horas y media después) y conservan un flujo <code>Zone.Identifier</code>.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1.5">
+                        <p class="font-bold text-gray-900">Interpretación y Limitaciones</p>
+                        <p class="text-xs leading-relaxed"><strong>Interpretación:</strong> Por su contenido y la cercanía de sus fechas, son compatibles con la planeación de desplazamientos locales: un trayecto Eastbourne – zona del aeropuerto y un circuito por suburbios de Lower Hutt con inicio o fin en <em>"Home"</em>.</p>
+                        <p class="text-xs leading-relaxed pt-1"><strong>No puede confirmarse:</strong> Que las rutas se hayan recorrido, quién las elaboró o si se crearon en el equipo o se recibieron desde fuera; ni que <em>"airport crystals"</em> o <em>"Method run"</em> se refieran a sustancias ilícitas (un nombre de archivo por sí solo no lo demuestra).</p>
+                    </div>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.21.png', 'Figura 21. Ruta de airport crystals.jpg')">
+                        <img src="PR03.21.png" alt="Figura 21" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 21. Ruta Eastbourne → Petone → sur de Wellington (47 min, 31.6 km).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.22.png', 'Figura 22. Metadatos de airport crystals.jpg')">
+                        <img src="PR03.22.png" alt="Figura 22" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 22. Metadatos de airport crystals.jpg (creado 10:25:18, acceso 16:04:13 NZDT).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.23.png', 'Figura 23. Ruta de Method run.jpg')">
+                        <img src="PR03.23.png" alt="Figura 23" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 23. Circuito de 54 min y 42.5 km con anotación "Home" junto a Eastbourne.</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.24.png', 'Figura 24. Metadatos de Method run.jpg')">
+                        <img src="PR03.24.png" alt="Figura 24" class="rounded-lg w-full object-contain max-h-48 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 24. Metadatos de Method run.jpg (creado 10:21:24, modificado 10:22:24 NZDT).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4.3 Presencia de Discord -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">4.3</span> Presencia de Discord</h3>
+                <p class="text-sm text-gray-800"><strong>Pregunta:</strong> ¿Qué evidencia permite afirmar que Discord estuvo presente o se utilizó, y qué no puede concluirse sin mensajes verificables?</p>
+                <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700 font-light">
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1.5">
+                        <p class="font-bold text-gray-900">Observado e Interpretación</p>
+                        <ul class="list-disc list-inside space-y-1 text-xs">
+                            <li><strong>Descarga:</strong> <code>DiscordSetup.exe</code> en <code>Downloads\Misc</code>, creado el <code>29/01/2019 09:56:03 NZDT</code>.</li>
+                            <li><strong>Instalación y datos:</strong> carpeta <code>Roaming\Discord</code> (35 elementos) con <code>0.0.304</code>, <code>Cache</code> (130 elementos), <code>Local Storage</code>, <code>GPUCache</code> y <code>logs</code>; la caché se creó el <code>29/01/2019 09:57:06 NZDT</code>.</li>
+                            <li><strong>Actividad posterior:</strong> archivos <code>data_0</code> a <code>data_3</code> de la caché modificados el <code>02/02/2019</code> entre las 15:39:07 y las 15:39:21 NZDT.</li>
+                            <li><strong>Registro de Windows:</strong> clave <code>Software\Discord\Modules\discord_game_sdk</code> en <code>NTUSER.DAT</code>, modificada el <code>28/01/2019 21:00:12 UTC</code> (<code>29/01/2019 10:00:12 NZDT</code>).</li>
+                        </ul>
+                        <p class="text-xs leading-relaxed pt-1"><strong>Interpretación:</strong> Discord se descargó e instaló en el perfil Steve el 29/01/2019; la clave creada unos 4 minutos después es compatible con su apertura tras instalarse, y las modificaciones del 02/02/2019 indican actividad ese día.</p>
+                    </div>
+                    <div class="bg-amber-50/70 border border-amber-200/70 p-4 rounded-xl space-y-1.5">
+                        <p class="font-bold text-gray-900">No puede concluirse</p>
+                        <p class="text-xs leading-relaxed">Que tener la aplicación instalada equivalga a haber conversado (escribe caché y se actualiza sola), ni quién usó la cuenta, con quién se habló, qué se dijo o quién escribió cada mensaje. Haría falta recuperar mensajes verificables con identificadores de cuenta, o registros del servicio.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer max-w-2xl mx-auto" onclick="abrirModal('PR03.25.png', 'Figura 25. Clave de registro de Discord en NTUSER.DAT')">
+                    <img src="PR03.25.png" alt="Figura 25" class="rounded-lg w-full object-contain max-h-60 bg-white border img-hover">
+                    <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 25. Clave Software\Discord\Modules\discord_game_sdk en NTUSER.DAT (2019-01-28 21:00:12 UTC).</p>
+                </div>
+            </div>
+
+            <!-- 4.4 Esteganografía y cifrado: de la descarga al uso efectivo -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">4.4</span> Esteganografía y cifrado: de la descarga al uso efectivo</h3>
+                <p class="text-sm text-gray-800"><strong>Pregunta:</strong> ¿Qué artefactos respaldan cada nivel (descarga, instalación, ejecución y uso efectivo) en las herramientas de esteganografía y cifrado?</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-50 border-b">
+                                <th class="p-3 font-bold text-gray-700 w-32">Nivel</th>
+                                <th class="p-3 font-bold text-gray-700">TrueCrypt 7.1a</th>
+                                <th class="p-3 font-bold text-gray-700">Image Steganography 1.5.2</th>
+                                <th class="p-3 font-bold text-gray-700 w-44">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y text-gray-600">
+                            <tr><td class="p-3 font-semibold text-gray-800">Descarga</td><td class="p-3">Instalador en <code>Downloads</code>, creado el <code>30/01/2019 12:27:43 NZDT</code>, con <code>Zone.Identifier</code></td><td class="p-3">Instalador en <code>Downloads</code>, creado el <code>01/02/2019 13:16:32 NZDT</code></td><td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 font-bold text-xs rounded">Sustentada</span></td></tr>
+                            <tr><td class="p-3 font-semibold text-gray-800">Instalación</td><td class="p-3">Carpeta <code>Roaming\TrueCrypt</code></td><td class="p-3">Carpetas <code>Roaming\Image_Steganography</code> y <code>Image_Steganography_Setup</code></td><td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 font-bold text-xs rounded">Sustentada (carpetas)</span></td></tr>
+                            <tr><td class="p-3 font-semibold text-gray-800">Ejecución</td><td class="p-3">Carpeta creada 12:31:25; <code>Configuration.xml</code> (2,525 bytes) creado 12:31:46 y modificado 13:34:14 NZDT</td><td class="p-3">Carpeta creada el <code>01/02/2019 13:16:56 NZDT</code>, 24 s después del instalador</td><td class="p-3"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 font-bold text-xs rounded">Compatible (Prefetch/UserAssist)</span></td></tr>
+                            <tr><td class="p-3 font-semibold text-gray-800">Uso efectivo</td><td class="p-3">No se observa un contenedor cifrado</td><td class="p-3">No se observa una imagen procesada; <code>BNE.png</code> podría ser portador, sin verificar</td><td class="p-3"><span class="px-2 py-0.5 bg-red-100 text-red-700 font-bold text-xs rounded">No demostrado</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-amber-50/70 border border-amber-200/70 p-4 rounded-xl text-xs text-gray-700">
+                    <strong>Conclusión del análisis:</strong> La descarga se sostiene con los instaladores y su <code>Zone.Identifier</code>; la instalación, con las carpetas del programa; la ejecución, con archivos de configuración creados al abrir el programa. El uso efectivo no está demostrado. La alerta automática <em>"Encryption Suspected"</em> de Autopsy sobre <code>mpenginedb.db</code> no es un indicio: es una base de datos de Windows Defender, no un archivo del usuario.
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.26.png', 'Figura 26. Carpeta de Image Steganography en el perfil')">
+                        <img src="PR03.26.png" alt="Figura 26" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 26. Roaming\Image_Steganography (creada 2019-02-01 13:16:56 NZDT, v1.5.2.0).</p>
+                    </div>
+                    <div class="bg-gray-50 border p-3 rounded-xl cursor-pointer" onclick="abrirModal('PR03.27.png', 'Figura 27. Carpeta de configuración de TrueCrypt')">
+                        <img src="PR03.27.png" alt="Figura 27" class="rounded-lg w-full object-contain max-h-56 bg-white border img-hover">
+                        <p class="text-xs text-center text-gray-500 mt-2 font-medium">Figura 27. Roaming\TrueCrypt con Configuration.xml (2,525 bytes, modificado 13:34:14 NZDT).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4.5 Hipótesis y explicación alternativa -->
+            <div class="space-y-4 pt-6 border-t">
+                <h3 class="font-bold text-gray-900 text-base flex items-center gap-2"><span class="px-2.5 py-0.5 bg-blue-600 text-white rounded-md text-xs">4.5</span> Hipótesis y explicación alternativa</h3>
+                <p class="text-sm text-gray-700 font-light leading-relaxed"><strong>Hipótesis:</strong> El equipo <code>SK-DESKTOP</code> (perfil Steve) se usó entre el 29/01/2019 y el 02/02/2019 para preparar la logística de un traslado Brisbane → Wellington y de un punto de entrega en Eastbourne, con herramientas de comunicación (Discord) y de ocultamiento de información (TrueCrypt e Image Steganography).</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-50 border-b">
+                                <th class="p-3 font-bold text-gray-700 w-16">#</th>
+                                <th class="p-3 font-bold text-gray-700">Hallazgo que sustenta la hipótesis</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y text-gray-600">
+                            <tr><td class="p-3 font-semibold">1</td><td class="p-3"><strong>Viaje:</strong> <code>flightbookings.PNG</code> (BNE → WLG el 16/02/2019, dos adultos) y <code>BNE.png</code>, creados el 02/02/2019 15:28:44 y el 01/02/2019 13:13:19 NZDT.</td></tr>
+                            <tr><td class="p-3 font-semibold">2</td><td class="p-3"><strong>Punto de entrega:</strong> <code>dropoff.jpg</code>, captura de Eastbourne Library creada el 02/02/2019 14:06:05 NZDT; la biblioteca es uno de los lugares de entrega del caso.</td></tr>
+                            <tr><td class="p-3 font-semibold">3</td><td class="p-3"><strong>Desplazamientos:</strong> <code>Method run.jpg</code> (31/01/2019 10:21:24, con <em>"Home"</em> junto a Eastbourne) y <code>airport crystals.jpg</code> (31/01/2019 10:25:18), dos rutas creadas con minutos de diferencia.</td></tr>
+                            <tr><td class="p-3 font-semibold">4</td><td class="p-3"><strong>Herramientas:</strong> Discord (instalado el 29/01), TrueCrypt (descargado y con configuración el 30/01) e Image Steganography (descargado y con carpeta el 01/02), en tres fechas consecutivas.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-amber-50/70 border border-amber-200/70 p-4 rounded-xl text-xs text-gray-700">
+                    <strong>Explicación alternativa:</strong> El equipo pudo ser usado por otra persona, o por su titular con fines legítimos (un viaje, curiosidad por mapas, privacidad). Cotizar vuelos, consultar rutas e instalar herramientas de cifrado o mensajería son actividades legales y comunes. No se recuperó contenido que las relacione con drogas, y el vínculo con los hechos proviene del escenario, no de un dato del disco que identifique a quien usaba el equipo.
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONCLUSIONES Y SIGUIENTES PASOS -->
+        <section class="content-card p-8 md:p-12 space-y-6 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight border-b pb-3">5. Conclusiones y siguientes pasos</h2>
+            <ul class="list-disc list-inside space-y-1.5 text-gray-700 text-sm font-light pl-2">
+                <li>El disco contiene evidencia compatible con la planeación de un viaje Brisbane → Wellington, la consulta del punto de entrega en Eastbourne y el traslado hacia la zona del aeropuerto.</li>
+                <li>Se instalaron herramientas de mensajería y de cifrado/esteganografía en fechas consecutivas, lo que justifica profundizar la investigación.</li>
+                <li>No está demostrado el contenido de las comunicaciones, el uso efectivo de las herramientas de ocultamiento ni la identidad de quien operaba el equipo.</li>
+            </ul>
+
+            <div class="overflow-x-auto pt-2">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b">
+                            <th class="p-3 font-bold text-gray-700 w-16">#</th>
+                            <th class="p-3 font-bold text-gray-700">Evidencia adicional necesaria y propósito</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-600">
+                        <tr><td class="p-3 font-semibold">1</td><td class="p-3">Mensajes de Discord recuperados (por ejemplo, desde la caché) con identificadores de cuenta, o registros del proveedor, para verificar interlocutores y contenido.</td></tr>
+                        <tr><td class="p-3 font-semibold">2</td><td class="p-3">Registros de la aerolínea o de aduana que vinculen una reserva real con los pasajeros del caso (<strong>John Fredricksen</strong> y <strong>Jane Esteban</strong>), o el volcado de memoria del equipo si el escenario lo incluye.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/70 space-y-1.5 text-xs text-gray-700">
+                <p class="font-bold text-gray-900 text-sm">Trabajo complementario sugerido:</p>
+                <ul class="list-disc list-inside space-y-1 pl-2">
+                    <li>Leer el contenido de los <code>Zone.Identifier</code> y el historial de descargas para establecer cómo llegó cada archivo al equipo.</li>
+                    <li>Revisar <code>Prefetch</code> y <code>UserAssist</code> para confirmar la ejecución de TrueCrypt e Image Steganography.</li>
+                    <li>Aplicar este análisis a <code>BNE.png</code> para verificar si contiene información oculta.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-white border-t border-gray-200 py-8 px-6 text-center text-xs text-gray-500">
+        <div class="container mx-auto max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>Universidad Politécnica de San Luis Potosí — Portafolio Académico CNO IV (Otoño 2026)</p>
+            <p class="font-medium text-gray-600">Operación Narcos (Expediente Kowhai) | Narcos-1 | Autopsy 4.23.1</p>
+        </div>
+    </footer>
+
+    <!-- MODAL PARA AMPLIAR EVIDENCIAS -->
+    <div id="imgModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="cerrarModal()">
+        <div class="bg-white rounded-2xl max-w-4xl w-full p-5 shadow-2xl space-y-3" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center border-b pb-3">
+                <h4 id="modalCaption" class="font-bold text-gray-900 text-sm"></h4>
+                <button onclick="cerrarModal()" class="text-gray-500 hover:text-gray-900 font-bold text-lg px-2">&times;</button>
+            </div>
+            <img id="modalImg" src="" alt="Evidencia ampliada" class="w-full max-h-[75vh] object-contain rounded-lg bg-gray-50">
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        function abrirModal(src, caption) {
+            const modal = document.getElementById('imgModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalCaption = document.getElementById('modalCaption');
+            modalImg.src = src;
+            modalCaption.textContent = caption;
+            modal.classList.remove('hidden');
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('imgModal');
+            modal.classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') cerrarModal();
+        });
+    </script>
+
+</body>
+</html>
